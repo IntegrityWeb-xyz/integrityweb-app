@@ -6,9 +6,12 @@ const axioms = [
   { number: 2, title: "Proof Replaces Trust", status: "active" },
   { number: 3, title: "Freedom is a Protocol", status: "active" },
   { number: 4, title: "Integrity by Design", status: "active" },
-  { number: 6, title: "Privacy is Sovereignty", status: "active" },
+  { number: 5, title: "Public Goods are Sacred", status: "active" },
+  { number: 6, title: "Privacy is Power", status: "active" },
   { number: 7, title: "Decentralization is Resilience", status: "active" },
   { number: 8, title: "Universality of Intelligences", status: "active" },
+  { number: 9, title: "Creativity is Integrity", status: "active" },
+  { number: 10, title: "The Integrity Web is for Everyone", status: "active" },
 ]
 
 export function AxiomsCard() {

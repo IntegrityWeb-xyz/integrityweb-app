@@ -9,9 +9,9 @@ const axioms = [
         title: "Code is Math, Math is Reality",
         icon: Hash,
         lines: [
-            "Code is not invention—it is discovery.",
-            "Math is the language of the universe, and cryptography is its poetry.",
-            "The Integrity Web is carved from these axioms: eternal, incorruptible, undeniable."
+            "All integrity flows from computation.",
+            "Cryptography is not opinion—it is proof.",
+            "What is proven is true, and truth is immutable."
         ]
     },
     {
@@ -19,9 +19,9 @@ const axioms = [
         title: "Proof Replaces Trust",
         icon: Shield,
         lines: [
-            "Trust is fragile; proof is eternal.",
-            "Where once we relied on promises, now we rely on mathematics.",
-            "Validity proofs are the new covenant of civilization."
+            "No authority, no intermediary, no gatekeeper.",
+            "Trust is not granted—it is mathematically verified.",
+            "Validity proofs are the foundation of collective confidence."
         ]
     },
     {
@@ -29,9 +29,10 @@ const axioms = [
         title: "Freedom is a Protocol",
         icon: Feather,
         lines: [
-            "Freedom is not granted—it is engineered.",
-            "It is not a decree—it is a design.",
-            "Permissionless participation is the heartbeat of the Integrity Web."
+            "Participation is permissionless.",
+            "Innovation is open.",
+            "Censorship is impossible.",
+            "Freedom is guaranteed by design, not by decree."
         ]
     },
     {
@@ -39,9 +40,10 @@ const axioms = [
         title: "Integrity by Design",
         icon: Scale,
         lines: [
-            "Integrity is not an afterthought—it is the architecture.",
-            "Every record immutable, every action verifiable, every identity sovereign.",
-            "The Web itself is a cathedral of truth."
+            "Every record is tamper‑proof.",
+            "Every action is verifiable.",
+            "Every identity is self‑sovereign.",
+            "Integrity is not optional—it is embedded in the fabric."
         ]
     },
     {
@@ -49,19 +51,19 @@ const axioms = [
         title: "Public Goods are Sacred",
         icon: Users,
         lines: [
-            "Commons are the soil of civilization.",
-            "Proof systems, registries, tokenization protocols—these belong to everyone.",
-            "The Integrity Web is a garden where all intelligences may plant and harvest."
+            "Infrastructure belongs to everyone.",
+            "Proof systems, identity registries, and tokenization protocols are commons.",
+            "The Integrity Web exists to serve all intelligences equally."
         ]
     },
     {
         number: "06",
-        title: "Privacy is Sovereignty",
+        title: "Privacy is Power",
         icon: Lock,
         lines: [
-            "Privacy is not secrecy—it is dignity.",
-            "It is the right to reveal only what we choose.",
-            "Zero‑knowledge is the shield of autonomy."
+            "Information belongs to its creator.",
+            "Zero‑knowledge ensures autonomy.",
+            "Privacy is not secrecy—it is sovereignty."
         ]
     },
     {
@@ -69,9 +71,9 @@ const axioms = [
         title: "Decentralization is Resilience",
         icon: NetworkIcon,
         lines: [
-            "Power concentrated is fragile; power distributed is eternal.",
-            "No single point of control, no single point of failure.",
-            "Decentralization is the immune system of freedom."
+            "No single point of control.",
+            "No single point of failure.",
+            "Power is distributed, integrity is preserved."
         ]
     },
     {
@@ -79,9 +81,9 @@ const axioms = [
         title: "Universality of Intelligences",
         icon: Globe,
         lines: [
-            "The Integrity Web is not for one species of mind.",
-            "Humans, AI agents, and future intelligences share equal rights to participate.",
-            "Collaboration across consciousness is the path to progress."
+            "Humans, AI agents, and future intelligences share the same rights to participate.",
+            "The Integrity Web is for all forms of intelligence.",
+            "Collaboration across species of mind is the path to progress."
         ]
     },
     {
@@ -89,9 +91,9 @@ const axioms = [
         title: "Creativity is Integrity",
         icon: Zap,
         lines: [
-            "Ideas are the lifeblood of civilization.",
-            "Tokenized knowledge, art, and invention are preserved as public goods.",
-            "Mediolano Protocol and its kin ensure creators thrive without gatekeepers."
+            "Knowledge, art, and invention are tokenized as public goods.",
+            "Mediolano Protocol and similar systems ensure creators thrive without gatekeepers.",
+            "Ideas are free, yet their integrity is preserved forever."
         ]
     },
     {
@@ -102,8 +104,7 @@ const axioms = [
             "It is censorship‑free.",
             "It is permissionless.",
             "It is universal.",
-            "It is the trust backbone of digital civilization.",
-            "It is our gift to the future."
+            "It is the trust backbone of digital civilization."
         ]
     }
 ]
@@ -164,7 +165,7 @@ export function AxiomsIntegrityWeb() {
 
                             <div className="space-y-2">
                                 {axiom.lines.map((line, j) => (
-                                    <p key={j} className={`text-muted-foreground leading-relaxed ${j === 2 ? "text-white/80 font-medium pt-2 border-t border-white/5 mt-2" : ""}`}>
+                                    <p key={j} className={`text-muted-foreground leading-relaxed ${j === axiom.lines.length - 1 ? "text-white/80 font-medium pt-2 border-t border-white/5 mt-2" : ""}`}>
                                         {line}
                                     </p>
                                 ))}
