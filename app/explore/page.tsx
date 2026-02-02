@@ -15,9 +15,9 @@ export default function ExplorePage() {
 
             <main className="container mx-auto px-4 py-12">
                 <TerminalPageHeader
-                    title="Network Scanner"
-                    subtitle="Explore the live topology of verified applications and agents on the grid."
-                    command="Title: Network Scanner"
+                    title="Ecosystem Explorer"
+                    subtitle="Discover verified applications, autonomous agents, and protocols running on the Integrity Web."
+                    command="integrity scan --network"
                     status="SCANNING_NODES"
                     statusColor="cyan"
                     stats={[
