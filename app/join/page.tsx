@@ -11,19 +11,7 @@ export default function JoinPage() {
       <Navigation />
 
       <main className="container mx-auto px-4 py-16 md:py-24 pb-48 flex flex-col items-center justify-center min-h-[80vh] overflow-hidden w-full max-w-full">
-        <TerminalPageHeader
-          title="Access Gateway"
-          subtitle="Establish a secure identity channel to interact with the Integrity Web."
-          command="ssh -i identity_key user@gateway"
-          status="SECURE_CONN"
-          statusColor="cyan"
-          stats={[
-            { label: "Encryption", value: "AES-256" },
-            { label: "Handshake", value: "VERIFIED" },
-            { label: "Latency", value: "4ms" }
-          ]}
-          className="max-w-6xl"
-        />
+
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Panel: Welcome Message */}

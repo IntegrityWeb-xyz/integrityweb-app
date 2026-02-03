@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ShieldCheck, Globe, BookOpen, Cpu, Bot, Lock, Handshake, Menu, X, ChevronRight, Zap } from "lucide-react"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
 const navItems = [
   { href: "/explore", label: "EXPLORE", icon: Globe, code: "01", desc: "Discover the network" },
@@ -73,8 +74,17 @@ export function Navigation() {
         {/* Sidebar Header */}
         <div className="h-14 border-b border-white/5 flex items-center justify-between px-4 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/0 via-slate-900/50 to-slate-900/0 animate-shimmer pointer-events-none" />
+
+
           <div className="flex items-center gap-2 relative z-10">
-            <ShieldCheck className="h-5 w-5 text-cyan-400" />
+            <div className="relative w-5 h-5">
+              <Image
+                src="/icon.svg"
+                alt="Integrity Web Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
             <span className="font-mono text-[11px] uppercase tracking-widest text-white/90">INTEGRITY WEB</span>
           </div>
           <button
@@ -166,7 +176,14 @@ export function Navigation() {
                     : "text-white/40 hover:text-cyan-400"
                 )}
               >
-                <ShieldCheck className="h-6 w-6" />
+                <div className="relative w-6 h-6">
+                  <Image
+                    src="/icon.svg"
+                    alt="Start"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </Link>
 
               {/* Spacer */}
@@ -178,15 +195,14 @@ export function Navigation() {
                 className="flex items-center gap-2 px-4 h-14 text-white/60 hover:text-cyan-400 transition-colors border-l border-white/5 hover:bg-white/5 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-500/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
-                <span className="font-mono text-[10px] uppercase tracking-widest">START</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest">Start</span>
                 <Menu className="h-4 w-4" />
               </button>
 
               {/* Connect Button */}
               <SignedOut>
                 <Link href="/join" className="flex items-center gap-2 px-4 h-14 text-cyan-400 border-l border-white/5 hover:bg-cyan-500/5 transition-colors group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
-                  <span className="font-mono text-[10px] uppercase tracking-widest">CONNECT</span>
+                  <span className="font-mono text-[10px]">CONNECT</span>
                   <Zap className="h-4 w-4" />
                 </Link>
               </SignedOut>
@@ -209,7 +225,14 @@ export function Navigation() {
                     : "text-white/60 hover:text-cyan-400"
                 )}
               >
-                <ShieldCheck className="h-5 w-5" />
+                <div className="relative w-5 h-5">
+                  <Image
+                    src="/icon.svg"
+                    alt="Home"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <span className="font-mono text-[10px] uppercase tracking-widest">HOME</span>
               </Link>
 
@@ -242,9 +265,10 @@ export function Navigation() {
               {/* Auth */}
               <div className="flex items-center border-l border-white/5 bg-black/20">
                 <SignedOut>
-                  <Link href="/join" className="flex items-center gap-2 px-6 py-3 text-cyan-400 hover:bg-cyan-500/10 transition-colors">
-                    <Zap className="h-4 w-4" />
-                    <span className="font-mono text-[10px] uppercase tracking-widest">CONNECT</span>
+                  <Link href="/join" className="flex items-center gap-2 px-2 py-3 text-cyan-400 hover:bg-cyan-500/10 transition-colors">
+
+                    <span className="font-mono text-[10px]">CONNECT</span>
+                    <Zap className="h-4 w-4 pr-2" />
                   </Link>
                 </SignedOut>
                 <SignedIn>
