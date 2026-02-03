@@ -15,11 +15,10 @@ export default async function ResourcesPage() {
         <section className="mb-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Integrity Resources
+              Resources for the Integrity Web
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Curated tools, frameworks, and protocols for building the verifiable web.
-              Explore the ecosystem of agents, dApps, and critical infrastructure.
+              Tools, frameworks, services and protocols for building the verifiable web.
             </p>
           </div>
         </section>

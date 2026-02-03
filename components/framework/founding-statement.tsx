@@ -15,7 +15,7 @@ export function FoundingStatement() {
                     Manifesto_v1.0
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-serif italic font-bold text-white mb-12 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-12 tracking-tight">
                     "Founding Statement of the Integrity Web"
                 </h2>
 

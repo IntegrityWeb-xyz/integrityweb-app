@@ -4,207 +4,182 @@ import { Button } from "@/components/ui/button"
 import {
   Users,
   Handshake,
-  Zap,
   Network,
-  ShieldCheck,
-  Globe,
   Cpu,
-  Terminal,
-  ArrowRight
+  ArrowRight,
+  Vote,
+  FileText,
+  CheckCircle2,
+  Clock,
+  Activity
 } from "lucide-react"
 import Link from "next/link"
 import { AxiomsIntegrityWeb } from "@/components/framework/axioms-integrity-web"
-import { FoundingStatement } from "@/components/framework/founding-statement"
+import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
+
+// Mock Data for Governance
+const proposals = [
+  { id: "SIP-42", title: "Integrity SDK v2.0 Specification", status: "DO_VOTE", votes: "98% YES", end: "24h left" },
+  { id: "SIP-41", title: "Treasury Diversification (USDC/ETH)", status: "PASSED", votes: "100% YES", end: "Ended" },
+  { id: "SIP-40", title: "Grant Program: ZK-Agent Allocations", status: "EXECUTED", votes: "95% YES", end: "Executed" },
+]
+
+const members = [
+  { name: "StarkWare", type: "L2_SCALING", status: "VALIDATING", color: "text-cyan-400" },
+  { name: "Nethermind", type: "CORE_ENG", status: "SYNCED", color: "text-blue-400" },
+  { name: "Herodotus", type: "STORAGE_PROOFS", status: "INDEXING", color: "text-sky-400" },
+  { name: "Argent", type: "ACCOUNT_ABS", status: "ACTIVE", color: "text-indigo-400" },
+  { name: "Snapshot", type: "GOVERNANCE", status: "VOTING", color: "text-cyan-300" },
+  { name: "Chipipay", type: "INVISIBLE_WALLETS", status: "ACTIVE", color: "text-blue-300" },
+]
 
 export default function AlliancePage() {
   return (
-    <div className="min-h-screen bg-transparent flex flex-col pt-24">
+    <div className="min-h-screen pb-20 pt-24">
+      <div className="container mx-auto px-4 max-w-7xl">
 
-      <main className="flex-grow container mx-auto px-4 py-20">
+        {/* Header */}
+        <TerminalPageHeader
+          title="Integrity Alliance"
+          subtitle="A decentralized collective of protocols, rapid-response teams, and sovereign builders defining the axioms of the verified web."
+          command="./alliance_uplink"
+          status="CONNECTED"
+          statusColor="emerald"
+          stats={[
+            { label: "Active Members", value: "842" },
+            { label: "Treasury", value: "$4.2B" },
+            { label: "Proposals", value: "142" },
+          ]}
+        />
 
-        {/* HERO: The Network */}
-        <section className="relative px-4 py-20 overflow-hidden">
-          {/* Ambient Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950/80 to-slate-950 -z-10" />
-
-          <div className="container mx-auto max-w-6xl text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] font-mono tracking-widest uppercase text-muted-foreground mb-6">
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-              NETWORK_STATUS: ONLINE
+        {/* Governance Dashboard */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Vote className="w-5 h-5 text-purple-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Active Governance
+              </h2>
             </div>
+            <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Voting_Power: DETECTED
+            </div>
+          </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white uppercase mb-6">
-              The Integrity <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">Alliance Network</span>
-            </h1>
-
-            <p className="text-xl text-muted-foreground font-mono max-w-2xl mx-auto mb-12">
-              A decentralized collective of protocols, rapid-response teams, and sovereign builders defining the axioms of the verified web.
-            </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-white/10 pt-8">
-              {[
-                { label: "Active Nodes", value: "842" },
-                { label: "Total Value Secured", value: "$4.2B" },
-                { label: "Verified Proofs", value: "12.5M" },
-                { label: "Contributors", value: "2,100+" }
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-[10px] font-mono uppercase text-muted-foreground tracking-wider">{stat.label}</div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {proposals.map((prop, i) => (
+              <div key={i} className="group flex flex-col p-6 bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-xl hover:border-purple-500/30 transition-all duration-300">
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-[10px] font-mono text-white/40 bg-white/5 px-2 py-1 rounded border border-white/5">{prop.id}</span>
+                  <span className={`text-[10px] font-mono uppercase tracking-widest flex items-center gap-1.5 ${prop.status === 'DO_VOTE' ? 'text-purple-400' : 'text-emerald-400'}`}>
+                    {prop.status === 'DO_VOTE' && <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />}
+                    {prop.status}
+                  </span>
                 </div>
-              ))}
-            </div>
+                <h3 className="text-lg font-medium text-white mb-6 group-hover:text-purple-400 transition-colors">{prop.title}</h3>
+
+                <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
+                  <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                    <Activity className="w-3 h-3" />
+                    {prop.votes}
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                    <Clock className="w-3 h-3" />
+                    {prop.end}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* FOUNDING STATEMENT */}
-        <FoundingStatement />
-
-        {/* ACTIVE NODES GRID */}
-        <section className="px-4 py-24 bg-transparent">
-          <div className="container mx-auto max-w-6xl">
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl tracking-widest flex items-center gap-3">
-                <Network className="w-6 h-6 text-cyan-500" />
+        {/* Alliance Members */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Network className="w-5 h-5 text-cyan-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
                 Alliance Nodes
               </h2>
-              <div className="text-xs font-mono text-muted-foreground border border-white/10 px-3 py-1 rounded bg-white/5">
-                FILTER: ALL_SYSTEMS
-              </div>
             </div>
+            <Button variant="ghost" size="sm" className="text-xs font-mono text-muted-foreground hover:text-cyan-400">
+              VIEW_FULL_DIRECTORY <ArrowRight className="ml-2 w-3 h-3" />
+            </Button>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { name: "StarkWare", type: "L2_SCALING", status: "VALIDATING", color: "text-cyan-400" },
-                { name: "Nethermind", type: "CORE_ENG", status: "SYNCED", color: "text-blue-400" },
-                { name: "Herodotus", type: "STORAGE_PROOFS", status: "INDEXING", color: "text-sky-400" },
-                { name: "Argent", type: "ACCOUNT_ABS", status: "ACTIVE", color: "text-indigo-400" },
-                { name: "Snapshot", type: "GOVERNANCE", status: "VOTING", color: "text-cyan-300" },
-                { name: "Chipipay", type: "INVISIBLE_WALLETS", status: "ACTIVE", color: "text-blue-300" },
-              ].map((node, i) => (
-                <div key={i} className="group relative p-6 bg-slate-900/30 backdrop-blur-lg border border-white/10 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
-                  <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100">
-                    <Cpu className="w-4 h-4 text-white/20 group-hover:text-cyan-500 transition-colors" />
-                  </div>
-
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded bg-white/5 flex items-center justify-center border border-white/10 font-bold text-lg">
-                      {node.name.charAt(0)}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-white">{node.name}</h3>
-                      <div className="text-[10px] font-mono text-muted-foreground">{node.type}</div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-center pt-4 border-t border-white/5 mt-2">
-                    <span className="text-[10px] font-mono text-muted-foreground">latency: 12ms</span>
-                    <span className={`text-[10px] font-mono font-bold ${node.color} flex items-center gap-1.5`}>
-                      <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`} />
-                      {node.status}
-                    </span>
-                  </div>
-
-                  {/* Hover Effect */}
-                  <div className="absolute inset-0 bg-cyan-500/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none" />
+          <div className="grid md:grid-cols-3 gap-6">
+            {members.map((node, i) => (
+              <div key={i} className="group relative p-6 bg-slate-950/30 backdrop-blur-lg border border-white/10 rounded-xl hover:border-cyan-500/30 transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)]">
+                <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
+                  <Cpu className="w-5 h-5 text-white/20 group-hover:text-cyan-500 transition-colors" />
                 </div>
-              ))}
-            </div>
+
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 font-bold text-xl text-white/80 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                    {node.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white text-lg tracking-tight group-hover:text-cyan-400 transition-colors">{node.name}</h3>
+                    <div className="text-[10px] font-mono text-cyan-500/60 uppercase tracking-wider">{node.type}</div>
+                  </div>
+                </div>
+
+                <div className="flex justify-between items-center pt-4 border-t border-white/5">
+                  <span className="text-[10px] font-mono text-muted-foreground">LATENCY: 12ms</span>
+                  <span className={`text-[10px] font-mono font-bold ${node.color} flex items-center gap-1.5`}>
+                    <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`} />
+                    {node.status}
+                  </span>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            ))}
           </div>
         </section>
 
         {/* AXIOMS SHOWCASE */}
-        <div className="bg-transparent">
+        <section className="mb-24">
           <AxiomsIntegrityWeb />
-        </div>
+        </section>
 
-        {/* JOIN THE INTEGRITY WEB */}
-        <section className="px-4 py-24 bg-transparent">
-          <div className="container mx-auto max-w-5xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold uppercase mb-4">Join the Integrity Web</h2>
-              <p className="text-muted-foreground font-mono max-w-2xl mx-auto">
-                We are calling for projects with verifiable computation, transparent logic, and sovereign identity to join our initiative. Follow the principles. Build the future.
-              </p>
+        {/* Join CTA */}
+        <section className="mb-24 relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-xl p-8 md:p-16 text-center">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950 pointer-events-none" />
+
+          <div className="relative z-10 max-w-2xl mx-auto space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-4">
+              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+              Uplink_Ready
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 relative">
-              {/* Connecting Line */}
-              <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent border-t border-dashed border-white/20" />
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-white">
+              Join the Alliance
+            </h2>
 
-              {[
-                {
-                  step: "01",
-                  title: "Adopt the Axioms",
-                  desc: "Review the declaration. Commit to code as law and proof replacing trust.",
-                  cmd: "integrity sign --axioms"
-                },
-                {
-                  step: "02",
-                  title: "Build Verifiably",
-                  desc: "Use ZK-proofs and open standards to ensure your application is undeniable.",
-                  cmd: "integrity verify --build"
-                },
-                {
-                  step: "03",
-                  title: "Join the Alliance",
-                  desc: "Connect your project to the Integrity Web and access shared resources.",
-                  cmd: "integrity connect --mainnet"
-                }
-              ].map((item, i) => (
-                <div key={i} className="relative z-10 bg-slate-950 border border-white/10 p-8 text-center group hover:border-cyan-500/50 transition-colors">
-                  <div className="w-12 h-12 mx-auto bg-slate-900 rounded-full border border-white/10 flex items-center justify-center font-mono font-bold text-cyan-500 mb-6 group-hover:scale-110 transition-transform bg-black">
-                    {item.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-6 min-h-[40px]">{item.desc}</p>
-                  <div className="bg-black/50 border border-white/10 rounded px-3 py-2 font-mono text-xs text-cyan-400 text-left overflow-x-auto">
-                    $ {item.cmd}
-                  </div>
-                </div>
-              ))}
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              We are calling for projects with verifiable computation, transparent logic, and sovereign identity to join our initiative.
+            </p>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <Link href="/join">
+                <Button size="lg" className="h-12 px-8 bg-white text-black hover:bg-cyan-50 text-base font-bold tracking-wide transition-all">
+                  Initialize Sequence <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/docs">
+                <Button variant="outline" size="lg" className="h-12 px-8 border-white/10 hover:bg-white/5 text-base hover:text-white transition-all">
+                  Read Manifesto
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* TERMINAL CTA */}
-        <section className="px-4 py-32">
-          <div className="container mx-auto max-w-3xl">
-            <div className="bg-slate-900 border border-white/20 p-1 rounded-xl shadow-2xl">
-              <div className="bg-slate-950/50 border-b border-white/10 px-4 py-2 flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-slate-500/20 border border-slate-500/50" />
-                <div className="w-3 h-3 rounded-full bg-slate-500/20 border border-slate-500/50" />
-                <div className="w-3 h-3 rounded-full bg-slate-500/20 border border-slate-500/50" />
-                <div className="ml-2 font-mono text-[10px] text-muted-foreground">uplink_terminal — -zsh — 80x24</div>
-              </div>
-              <div className="p-8 md:p-12 text-center space-y-8">
-                <div className="space-y-2 font-mono text-sm text-cyan-400/80">
-                  <p>&gt; Establishing secure connection...</p>
-                  <p>&gt; Handshake verifying...</p>
-                  <p className="text-white">&gt; READY_TO_JOIN</p>
-                </div>
-
-                <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter text-white">
-                  Establish Uplink
-                </h2>
-                <p className="text-muted-foreground max-w-lg mx-auto">
-                  Join the alliance. Build the future of verifiable intelligence.
-                </p>
-
-                <div className="flex justify-center gap-4 pt-4">
-                  <Link href="/join">
-                    <Button size="lg" className="bg-white text-black hover:bg-cyan-400 font-mono font-bold tracking-widest uppercase">
-                      Initiate_Join_Sequence
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
+      </div>
     </div>
   )
 }

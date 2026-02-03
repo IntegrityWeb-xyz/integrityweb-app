@@ -26,7 +26,7 @@ export function TerminalPageHeader({
     return (
         <div className={cn("w-full mt-20 mb-20 relative", className)}>
             {/* Extended Height Container */}
-            <div className="bg-slate-950/20 backdrop-blur-2xl border border-white/8 rounded-lg overflow-hidden relative min-h-[320px] flex flex-col group">
+            <div className="bg-slate-950/60 backdrop-blur-2xl border border-white/8 rounded-lg overflow-hidden relative min-h-[320px] flex flex-col group">
 
                 {/* Background Effects */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -67,14 +67,14 @@ export function TerminalPageHeader({
                             <div className="h-px w-6 bg-primary/50" />
                             <span className="text-primary font-mono text-[10px] uppercase tracking-[0.2em]">System_Module</span>
                         </div>
-                        <h1 className="text-2xl sm:text-4xl md:text-6xl font-medium font-mono text-white tracking-tighter uppercase mb-5 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                        <h1 className="text-4xl font-medium font-mono text-white tracking-tighter uppercase mb-5 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                             {title.split(' ').map((word, i) => (
                                 <span key={i} className={cn("inline-block", i === 0 ? "mr-2 md:mr-3" : "text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/50")}>
                                     {word}
                                 </span>
                             ))}
                         </h1>
-                        <p className="text-sm md:text-xl text-muted-foreground font-mono leading-relaxed max-w-3xl border-l-2 border-primary/20 pl-5 py-1.5 bg-gradient-to-r from-primary/5 to-transparent">
+                        <p className="text-sm text-muted-foreground font-mono leading-relaxed max-w-3xl border-l-2 border-primary/20 pl-5 py-1.5 bg-gradient-to-r from-primary/5 to-transparent">
                             {subtitle}
                         </p>
                     </div>

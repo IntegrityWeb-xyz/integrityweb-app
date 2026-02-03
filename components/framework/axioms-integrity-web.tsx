@@ -140,7 +140,7 @@ export function AxiomsIntegrityWeb() {
 
 
                 <div className="text-center mb-12 space-y-3">
-                    <h2 className="text-2xl md:text-4xl font-medium font-serif italic tracking-tight text-white/90">
+                    <h2 className="text-2xl md:text-4xl font-medium font-serif tracking-tight text-white/90">
                         "Axioms of the Integrity Web"
                     </h2>
                     <p className="text-muted-foreground font-mono text-xs uppercase tracking-widest">

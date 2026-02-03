@@ -1,11 +1,29 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { ScanlineOverlay } from '@/components/ui/scanline-overlay'
+
+const googleSansCode = localFont({
+  src: [
+    {
+      path: '../fonts/GoogleSansCode-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/GoogleSansCode-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-google-sans',
+  display: 'swap',
+})
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -99,8 +117,6 @@ import { ScrollBackground } from '@/components/ui/scroll-background'
 import { OSFooter } from '@/components/ui/os-footer'
 import { Navigation } from '@/components/navigation'
 
-// ... (other imports)
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -109,7 +125,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning className="dark">
-        <body className={`font-sans antialiased text-foreground ${jetbrainsMono.variable}`}>
+        <body className={`font-sans antialiased text-foreground ${googleSansCode.variable} ${jetbrainsMono.variable}`}>
           <div className="fixed inset-0 -z-50">
             <GenerativeScene />
           </div>

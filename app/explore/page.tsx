@@ -1,16 +1,12 @@
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { Button } from "@/components/ui/button"
-import { Globe, Search, Filter, Database, Server, Shield } from "lucide-react"
+import { Globe, Search, Filter, Database, Server, Shield, Cpu, ExternalLink } from "lucide-react"
+import { getAllResources } from "@/lib/resources/data"
+import { RecentResourcesCarousel } from "@/components/resources/recent-resources-carousel"
+import Link from "next/link"
+import { ResourceCard } from "@/components/resources/resource-card"
 
-const categories = [
-  { id: "all", label: "ALL_NODES" },
-  { id: "defi", label: "DECENTRALIZED_FINANCE" },
-  { id: "infra", label: "INFRASTRUCTURE" },
-  { id: "dao", label: "GOVERNANCE" },
-  { id: "social", label: "SOCIAL_GRAPHS" },
-]
-
-const nodes = [
+const networkStats = [
   {
     title: "Verifiable Compute Grid",
     type: "INFRASTRUCTURE",
@@ -41,10 +37,16 @@ const nodes = [
   },
 ]
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+  const resources = await getAllResources();
+  const agentResources = resources.filter(r => r.type === 'agent').slice(0, 4);
+  const otherResources = resources.filter(r => r.type !== 'agent').slice(0, 4);
+
   return (
-    <div className="min-h-screen pb-20">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <div className="min-h-screen pb-20 pt-24">
+      <div className="container mx-auto px-4 max-w-7xl">
+
+        {/* Header */}
         <TerminalPageHeader
           title="Explore The Network"
           subtitle="Discover active nodes, applications, and protocols running on the Integrity Web."
@@ -52,78 +54,97 @@ export default function ExplorePage() {
           status="SCANNING"
           statusColor="cyan"
           stats={[
-            { label: "Active Nodes", value: "8,942" },
+            { label: "Active Nodes", value: String(resources.length + 842) },
             { label: "Global Hashrate", value: "4.2 EH/s" },
-            { label: "Total Protocols", value: "142" },
+            { label: "Total Protocols", value: String(resources.length) },
           ]}
         />
 
-        {/* Search & Filter Bar */}
-        <div className="mb-10 flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div className="relative w-full md:w-96 group">
-            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-              <Search className="h-4 w-4 text-muted-foreground group-focus-within:text-cyan-400 transition-colors" />
+        {/* Recent Resources Carousel */}
+        <section className="mb-24 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+          <RecentResourcesCarousel resources={resources} />
+        </section>
+
+        {/* Featured Agents Grid */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Cpu className="w-5 h-5 text-cyan-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Verified Agents
+              </h2>
             </div>
-            <input 
-              type="text" 
-              placeholder="SEARCH_PROTOCOLS..." 
-              className="w-full h-12 bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-lg pl-10 pr-4 font-mono text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-cyan-500/50 focus:bg-slate-900/60 transition-all uppercase tracking-wider"
-            />
+            <Link href="/resources">
+              <Button variant="ghost" size="sm" className="text-xs font-mono text-muted-foreground hover:text-cyan-400">
+                VIEW_ALL_AGENTS <ExternalLink className="ml-2 w-3 h-3" />
+              </Button>
+            </Link>
           </div>
-          
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
-            <Filter className="h-4 w-4 text-muted-foreground shrink-0 mr-2" />
-            {categories.map(cat => (
-              <button 
-                key={cat.id}
-                className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-500/30 text-[10px] font-mono text-muted-foreground hover:text-cyan-400 uppercase tracking-widest whitespace-nowrap transition-all"
-              >
-                {cat.label}
-              </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {agentResources.map((resource) => (
+              <div key={resource.name} className="h-[380px]">
+                <ResourceCard resource={resource} />
+              </div>
             ))}
+            {agentResources.length === 0 && (
+              <div className="col-span-full h-32 flex items-center justify-center border border-dashed border-white/10 rounded-xl bg-white/5">
+                <p className="font-mono text-sm text-muted-foreground">NO_AGENTS_DETECTED</p>
+              </div>
+            )}
           </div>
-        </div>
+        </section>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {nodes.map((node, i) => (
-            <div 
-              key={i} 
-              className="group relative bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]"
-            >
-              {/* Hover Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="p-6 relative z-10">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform duration-500">
-                    <node.icon className="h-6 w-6" />
-                  </div>
-                  <div className="px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/20 text-[10px] font-mono text-cyan-400 uppercase tracking-widest">
-                    {node.type}
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-medium text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                  {node.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  {node.desc}
-                </p>
+        {/* Network Infrastructure (Static/Hardcoded for now as placeholders) */}
+        <section className="mb-12">
+          <div className="flex items-center gap-3 mb-8 px-1 border-b border-white/5 pb-4">
+            <Server className="w-5 h-5 text-indigo-400" />
+            <h2 className="text-xl font-medium tracking-tight text-white">
+              Network Infrastructure
+            </h2>
+          </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest">PERFORMANCE</span>
-                    <span className="text-xs font-mono text-emerald-400">{node.stats}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {networkStats.map((node, i) => (
+              <div
+                key={i}
+                className="group relative bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]"
+              >
+                {/* Hover Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="p-6 relative z-10">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform duration-500">
+                      <node.icon className="h-6 w-6" />
+                    </div>
+                    <div className="px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/20 text-[10px] font-mono text-cyan-400 uppercase tracking-widest">
+                      {node.type}
+                    </div>
                   </div>
-                  <Button size="sm" variant="ghost" className="h-8 hover:bg-cyan-500/10 hover:text-cyan-400 font-mono text-xs uppercase tracking-wider group/btn">
-                    Details <span className="ml-1 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all">→</span>
-                  </Button>
+
+                  <h3 className="text-xl font-medium text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                    {node.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                    {node.desc}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                    <div className="flex flex-col">
+                      <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest">PERFORMANCE</span>
+                      <span className="text-xs font-mono text-emerald-400">{node.stats}</span>
+                    </div>
+                    <Button size="sm" variant="ghost" className="h-8 hover:bg-cyan-500/10 hover:text-cyan-400 font-mono text-xs uppercase tracking-wider group/btn">
+                      Details <span className="ml-1 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all">→</span>
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
+
       </div>
     </div>
   )
