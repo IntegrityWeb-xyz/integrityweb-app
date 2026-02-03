@@ -22,7 +22,7 @@ export function ScrollBackground() {
         <div
             className={cn(
                 "fixed inset-0 -z-40 transition-all duration-700 pointer-events-none",
-                scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"
+                scrolled ? "bg-background/60 backdrop-blur-2xl" : "bg-transparent"
             )}
         />
     )

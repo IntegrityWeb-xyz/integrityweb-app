@@ -71,7 +71,7 @@ function AnimatedCube() {
         color="#06b6d4"
         wireframe
         emissive="#06b6d4"
-        emissiveIntensity={0.3}
+        emissiveIntensity={0.2}
       />
     </mesh>
   )

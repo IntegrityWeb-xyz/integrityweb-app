@@ -214,7 +214,7 @@ export function Navigation() {
             </div>
 
             {/* Desktop: Full Nav */}
-            <div className="hidden md:flex items-stretch w-full justify-between">
+            <div className="hidden md:flex items-stretch w-full justify-between bg-slate-900/30 backdrop-blur-2xl">
               {/* Home */}
               <Link
                 href="/"
