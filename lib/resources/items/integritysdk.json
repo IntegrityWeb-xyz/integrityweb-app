@@ -1,0 +1,31 @@
+{
+    "name": "IntegritySDK",
+    "description": "The official SDK for building on IntegrityWeb. Includes libraries for proof generation, contract interaction, and agent communication.",
+    "type": "sdk",
+    "short_description": "Core Development Kit",
+    "tags": [
+        "DevTools",
+        "SDK",
+        "Typescript"
+    ],
+    "contracts": [],
+    "sepoliaContracts": [],
+    "audits": [],
+    "verified": true,
+    "dotm": false,
+    "links": {
+        "website": "https://docs.integrityweb.example.com",
+        "github": "https://github.com/integrityweb/sdk",
+        "website": "https://npm.im/@integrityweb/sdk"
+    },
+    "twitterName": "integrityweb",
+    "teamInfo": {
+        "founded": "2022",
+        "anonymous": false
+    },
+    "tokens": [],
+    "media": {
+        "logoUrl": "https://placehold.co/100x100/000000/ffffff?text=SDK",
+        "bannerUrl": "https://placehold.co/600x200/000000/ffffff?text=IntegritySDK"
+    }
+}

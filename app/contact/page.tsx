@@ -1,14 +1,12 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Mail, Slack, MessageSquare } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Mail, MapPin, Phone, Slack, MessageSquare } from "lucide-react"
 
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-transparent flex flex-col">
-      <Navigation />
-
-      <main className="flex-grow">
+    <div className="min-h-screen bg-transparent flex flex-col pt-24">
+      <main className="flex-grow container mx-auto px-4 py-20 max-w-4xl">
         <section className="px-4 py-20 md:py-32 border-b border-border">
           <div className="container mx-auto max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-center">
@@ -54,8 +52,6 @@ export default function Contact() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

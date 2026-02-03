@@ -147,8 +147,8 @@ export function Navigation() {
       </aside>
 
       {/* Bottom Navigation Bar */}
-      <header className="fixed bottom-0 left-0 right-0 z-50">
-        <div className="relative bg-black/90 backdrop-blur-2xl border-t border-white/10 group/nav">
+      <header className="fixed bottom-4 left-4 right-4 z-50 flex justify-center pointer-events-none">
+        <div className="w-full max-w-5xl bg-slate-950/50 backdrop-blur-2xl border border-white/10 group/nav rounded-2xl overflow-hidden shadow-2xl pointer-events-auto">
           {/* Subtle animated border gradient */}
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-500/50 to-transparent opacity-50 group-hover/nav:opacity-100 transition-opacity" />
           <div className="absolute -top-[1px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent w-1/2 animate-[shimmer_3s_infinite]" />
@@ -198,23 +198,23 @@ export function Navigation() {
             </div>
 
             {/* Desktop: Full Nav */}
-            <div className="hidden md:flex items-stretch flex-1">
+            <div className="hidden md:flex items-stretch w-full justify-between">
               {/* Home */}
               <Link
                 href="/"
                 className={cn(
-                  "flex items-center gap-2 px-5 py-3 border-r border-white/5 transition-colors",
+                  "flex items-center gap-2 px-6 py-3 border-r border-white/5 transition-colors hover:bg-white/5",
                   pathname === "/"
                     ? "bg-cyan-500/10 text-cyan-400"
-                    : "text-white/60 hover:text-cyan-400 hover:bg-cyan-500/5"
+                    : "text-white/60 hover:text-cyan-400"
                 )}
               >
                 <ShieldCheck className="h-5 w-5" />
                 <span className="font-mono text-[10px] uppercase tracking-widest">HOME</span>
               </Link>
 
-              {/* Nav Items */}
-              <nav className="flex-1 flex items-stretch">
+              {/* Nav Items - Centered */}
+              <nav className="flex-1 flex justify-center items-stretch">
                 {navItems.map((item) => {
                   const isActive = pathname === item.href || pathname.startsWith(item.href + "/")
                   return (
@@ -222,17 +222,17 @@ export function Navigation() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "relative flex items-center gap-2 px-4 py-3 font-mono text-[10px] uppercase tracking-widest border-r border-white/5 transition-all",
+                        "relative flex items-center gap-2 px-6 py-3 font-mono text-[10px] uppercase tracking-widest border-x border-white/0 hover:border-white/5 transition-all group",
                         isActive
-                          ? "bg-cyan-500/15 text-cyan-400"
-                          : "text-white/50 hover:text-cyan-400 hover:bg-cyan-500/5"
+                          ? "bg-cyan-500/5 text-cyan-400"
+                          : "text-white/50 hover:text-cyan-400 hover:bg-white/5"
                       )}
                     >
                       {isActive && (
-                        <div className="absolute left-0 top-1/4 bottom-1/4 w-[2px] bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+                        <div className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
                       )}
-                      <span className="text-[8px] text-cyan-600/60">{item.code}</span>
-                      <item.icon className="h-4 w-4" />
+                      <span className="text-[8px] text-cyan-600/40 group-hover:text-cyan-500/60 transition-colors">{item.code}</span>
+                      <item.icon className="h-4 w-4 opacity-70 group-hover:opacity-100" />
                       <span>{item.label}</span>
                     </Link>
                   )
@@ -240,15 +240,15 @@ export function Navigation() {
               </nav>
 
               {/* Auth */}
-              <div className="flex items-center border-l border-white/5">
+              <div className="flex items-center border-l border-white/5 bg-black/20">
                 <SignedOut>
-                  <Link href="/join" className="flex items-center gap-2 px-5 py-3 text-cyan-400 hover:bg-cyan-500/10 transition-colors">
+                  <Link href="/join" className="flex items-center gap-2 px-6 py-3 text-cyan-400 hover:bg-cyan-500/10 transition-colors">
                     <Zap className="h-4 w-4" />
                     <span className="font-mono text-[10px] uppercase tracking-widest">CONNECT</span>
                   </Link>
                 </SignedOut>
                 <SignedIn>
-                  <div className="px-4 py-2">
+                  <div className="px-5 py-2">
                     <UserButton afterSignOutUrl="/" />
                   </div>
                 </SignedIn>
@@ -257,10 +257,10 @@ export function Navigation() {
           </div>
 
           {/* Status line */}
-          <div className="h-5 bg-black/50 border-t border-white/5 flex items-center justify-between px-3 font-mono text-[8px] uppercase tracking-widest text-cyan-500/40">
+          <div className="h-4 bg-black/50 border-t border-white/5 flex items-center justify-between px-4 font-mono text-[6px] uppercase tracking-widest text-cyan-500/30">
             <span>PROOF_REPLACES_TRUST</span>
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/70 animate-pulse" />
+              <span className="w-1 H-1 rounded-full bg-emerald-500/70 animate-pulse" />
               ZK_VERIFIED
             </span>
           </div>

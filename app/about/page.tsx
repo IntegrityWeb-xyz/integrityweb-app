@@ -1,14 +1,11 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { ArrowRight, Globe, Shield, Zap } from "lucide-react"
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-transparent flex flex-col">
-      <Navigation />
-
-      <main className="flex-grow">
+    <div className="min-h-screen bg-transparent flex flex-col pt-24">
+      <main className="flex-grow container mx-auto px-4 py-20 max-w-4xl">
         <section className="px-4 py-20 md:py-32 border-b border-border">
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
@@ -42,8 +39,6 @@ export default function About() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

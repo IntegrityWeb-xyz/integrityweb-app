@@ -1,15 +1,11 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Code, Zap, Shield } from "lucide-react"
+import { ArrowRight, Code, Terminal, Boxes, Zap, Shield } from "lucide-react"
 
-export default function MCP() {
+export default function MCPPage() {
   return (
-    <div className="min-h-screen bg-transparent flex flex-col">
-      <Navigation />
-
-      <main className="flex-grow">
+    <div className="min-h-screen bg-transparent flex flex-col pt-24">
+      <main className="flex-grow container mx-auto px-4 py-20 max-w-4xl">
         {/* Hero */}
         <section className="px-4 py-20 md:py-32 border-b border-border">
           <div className="container mx-auto max-w-4xl text-center">
@@ -73,8 +69,6 @@ export default function MCP() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

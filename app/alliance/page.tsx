@@ -1,7 +1,5 @@
 "use client"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import {
   Users,
@@ -18,12 +16,11 @@ import Link from "next/link"
 import { AxiomsIntegrityWeb } from "@/components/framework/axioms-integrity-web"
 import { FoundingStatement } from "@/components/framework/founding-statement"
 
-export default function Alliance() {
+export default function AlliancePage() {
   return (
-    <div className="min-h-screen bg-transparent flex flex-col">
-      <Navigation />
+    <div className="min-h-screen bg-transparent flex flex-col pt-24">
 
-      <main className="flex-grow pt-24">
+      <main className="flex-grow container mx-auto px-4 py-20">
 
         {/* HERO: The Network */}
         <section className="relative px-4 py-20 overflow-hidden">
@@ -208,8 +205,6 @@ export default function Alliance() {
         </section>
 
       </main>
-
-      <Footer />
     </div>
   )
 }

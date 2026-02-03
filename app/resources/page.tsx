@@ -1,54 +1,33 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { getAllResources } from "@/lib/resources/data"
+import { ResourcesGrid } from "@/components/resources/resources-grid"
+import { Activity } from "lucide-react"
 
-export default function Resources() {
+export default async function ResourcesPage() {
+  const resources = await getAllResources();
+
   return (
-    <div className="min-h-screen bg-transparent flex flex-col">
-      <Navigation />
-      <main className="container mx-auto px-4 py-20 flex-grow">
-        <h1 className="text-4xl font-bold mb-4">Resources & Guides</h1>
-        <p className="text-muted-foreground mb-8 text-lg">Comprehensive collection of learning materials and guides</p>
+    <div className="min-h-screen bg-transparent flex flex-col pt-24">
+      <main className="flex-grow container mx-auto px-4 py-12">
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="p-6 border border-border rounded-lg hover:border-primary/50 transition-colors">
-            <h3 className="text-lg font-semibold mb-2">Written Guides</h3>
-            <p className="text-muted-foreground mb-4 text-sm">In-depth guides covering core concepts and best practices</p>
-            <Button size="sm" variant="outline">Read Guides</Button>
+        {/* Header Section */}
+        <section className="mb-16">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Integrity Resources
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Curated tools, frameworks, and protocols for building the verifiable web.
+              Explore the ecosystem of agents, dApps, and critical infrastructure.
+            </p>
           </div>
-          <div className="p-6 border border-border rounded-lg hover:border-primary/50 transition-colors">
-            <h3 className="text-lg font-semibold mb-2">Video Tutorials</h3>
-            <p className="text-muted-foreground mb-4 text-sm">Video walkthroughs of common development patterns</p>
-            <Button size="sm" variant="outline">Watch Videos</Button>
-          </div>
-          <div className="p-6 border border-border rounded-lg hover:border-primary/50 transition-colors">
-            <h3 className="text-lg font-semibold mb-2">API Reference</h3>
-            <p className="text-muted-foreground mb-4 text-sm">Complete API documentation and code examples</p>
-            <Button size="sm" variant="outline">View Reference</Button>
-          </div>
-          <div className="p-6 border border-border rounded-lg hover:border-primary/50 transition-colors">
-            <h3 className="text-lg font-semibold mb-2">Case Studies</h3>
-            <p className="text-muted-foreground mb-4 text-sm">Real-world examples of successful IntegrityWeb applications</p>
-            <Button size="sm" variant="outline">Explore Cases</Button>
-          </div>
-          <div className="p-6 border border-border rounded-lg hover:border-primary/50 transition-colors">
-            <h3 className="text-lg font-semibold mb-2">Security Best Practices</h3>
-            <p className="text-muted-foreground mb-4 text-sm">Guidelines for building secure and verifiable applications</p>
-            <Button size="sm" variant="outline">Learn Security</Button>
-          </div>
-          <div className="p-6 border border-border rounded-lg hover:border-primary/50 transition-colors">
-            <h3 className="text-lg font-semibold mb-2">Whitepaper</h3>
-            <p className="text-muted-foreground mb-4 text-sm">Technical whitepaper describing IntegrityWeb architecture</p>
-            <Button size="sm" variant="outline">Download PDF</Button>
-          </div>
-        </div>
+        </section>
 
-        <Link href="/dashboard" className="mt-8 inline-block">
-          <Button>Back to Dashboard</Button>
-        </Link>
+        {/* Resources Grid */}
+        <ResourcesGrid initialResources={resources} />
+
       </main>
-      <Footer />
     </div>
   )
 }

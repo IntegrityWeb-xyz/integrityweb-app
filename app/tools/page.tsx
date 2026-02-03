@@ -1,13 +1,11 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Wrench, Settings, Cpu } from "lucide-react"
 
-export default function Tools() {
+export default function ToolsPage() {
   return (
-    <div className="min-h-screen bg-transparent flex flex-col">
-      <Navigation />
-      <main className="container mx-auto px-4 py-20 flex-grow">
+    <div className="min-h-screen bg-transparent flex flex-col pt-24">
+      <main className="flex-grow container mx-auto px-4 py-20">
         <h1 className="text-4xl font-bold mb-4">IntegrityWeb Tools</h1>
         <p className="text-muted-foreground mb-8 text-lg">Essential tools for building verifiable applications</p>
 
@@ -25,7 +23,6 @@ export default function Tools() {
           <Button>Back to Dashboard</Button>
         </Link>
       </main>
-      <Footer />
     </div>
   )
 }
