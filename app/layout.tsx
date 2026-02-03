@@ -97,6 +97,7 @@ export const metadata: Metadata = {
 import { GenerativeScene } from '@/components/3d/generative-scene'
 import { ScrollBackground } from '@/components/ui/scroll-background'
 import { OSFooter } from '@/components/ui/os-footer'
+import { Navigation } from '@/components/navigation'
 
 // ... (other imports)
 
@@ -120,6 +121,7 @@ export default function RootLayout({
             storageKey="integrity-web-theme"
           >
             <ScanlineOverlay />
+            <Navigation />
             <main className="relative z-10 w-full min-h-screen flex flex-col">
               <div className="flex-1">
                 {children}

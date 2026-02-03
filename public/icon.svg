@@ -1,26 +1,31 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @media (prefers-color-scheme: light) {
-      .background { fill: black; }
-      .foreground { fill: white; }
-    }
-    @media (prefers-color-scheme: dark) {
-      .background { fill: white; }
-      .foreground { fill: black; }
-    }
-  </style>
-  <g clip-path="url(#clip0_7960_43945)">
-    <rect class="background" width="180" height="180" rx="37" />
-    <g style="transform: scale(95%); transform-origin: center">
-      <path class="foreground"
-        d="M101.141 53H136.632C151.023 53 162.689 64.6662 162.689 79.0573V112.904H148.112V79.0573C148.112 78.7105 148.098 78.3662 148.072 78.0251L112.581 112.898C112.701 112.902 112.821 112.904 112.941 112.904H148.112V126.672H112.941C98.5504 126.672 86.5638 114.891 86.5638 100.5V66.7434H101.141V100.5C101.141 101.15 101.191 101.792 101.289 102.422L137.56 66.7816C137.255 66.7563 136.945 66.7434 136.632 66.7434H101.141V53Z" />
-      <path class="foreground"
-        d="M65.2926 124.136L14 66.7372H34.6355L64.7495 100.436V66.7372H80.1365V118.47C80.1365 126.278 70.4953 129.958 65.2926 124.136Z" />
-    </g>
-  </g>
-  <defs>
-    <clipPath id="clip0_7960_43945">
-      <rect width="180" height="180" fill="white" />
-    </clipPath>
-  </defs>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2048 2048" style="enable-background:new 0 0 2048 2048;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#04BA86;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M1842.25,340.41C1487.38,307.52,1167.51,137.22,1055,58c-37.52-26.42-24.47-24.42-62,2
+			c-112.51,79.22-432.36,236.53-787.25,269.41c-55.87,5.18-68.75,7.73-68.75,63.84v429.99c0,777.76,692.48,1110,867.01,1181.77
+			c26.3,10.82,23.7,7.82,50-3c174.52-71.77,857.01-401.01,857.01-1178.77V403.24C1911.01,347.14,1898.12,345.58,1842.25,340.41z"/>
+	</g>
+	<g>
+		<polygon class="st1" points="768.03,632.96 512.06,600.85 768.03,568.75 1279.97,568.75 1535.94,600.85 1279.97,632.96 		"/>
+		<g>
+			<polyline class="st1" points="1780.69,799.49 1402.35,846.94 645.65,846.94 267.31,799.49 			"/>
+			<polyline class="st1" points="1535.94,600.85 1780.69,799.49 1024,1614 267.31,799.49 512.06,600.85 			"/>
+			<polyline class="st1" points="1279.97,632.96 1402.35,846.94 1024,1614 645.65,846.94 768.03,632.96 			"/>
+		</g>
+		<path class="st1" d="M320.41,600.85"/>
+	</g>
+	<path class="st2" d="M1497.33,741.51l24.05-74.29c4.89-15.11,16.81-26.87,31.98-31.5l74.65-22.96
+		c10.33-3.16,10.42-17.73,0.17-21.06l-74.32-24.05c-15.08-4.89-26.84-16.81-31.5-31.98l-22.93-74.65
+		c-3.16-10.3-17.73-10.42-21.06-0.14l-24.05,74.29c-4.89,15.08-16.81,26.84-31.98,31.5l-74.65,22.93
+		c-10.33,3.18-10.45,17.73-0.17,21.06l74.32,24.05c15.08,4.89,26.84,16.84,31.5,32.01l22.93,74.62
+		C1479.43,751.68,1494.01,751.79,1497.33,741.51z"/>
+</g>
 </svg>

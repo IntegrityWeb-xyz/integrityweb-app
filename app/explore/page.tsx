@@ -1,102 +1,130 @@
-
-import { Navigation } from "@/components/navigation"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Search, Filter, Globe, Cpu, User, Layers, Share2, Activity, Shield, Network } from "lucide-react"
-import { IntegrityCard } from "@/components/unique/integrity-card"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
-import { EventsCarousel } from "@/components/events/events-carousel"
+import { Button } from "@/components/ui/button"
+import { Globe, Search, Filter, Database, Server, Shield } from "lucide-react"
+
+const categories = [
+  { id: "all", label: "ALL_NODES" },
+  { id: "defi", label: "DECENTRALIZED_FINANCE" },
+  { id: "infra", label: "INFRASTRUCTURE" },
+  { id: "dao", label: "GOVERNANCE" },
+  { id: "social", label: "SOCIAL_GRAPHS" },
+]
+
+const nodes = [
+  {
+    title: "Verifiable Compute Grid",
+    type: "INFRASTRUCTURE",
+    desc: "Decentralized compute resources for ZK proof generation.",
+    stats: "99.9% UPTIME",
+    icon: Server
+  },
+  {
+    title: "Privacy Identity Layer",
+    type: "IDENTITY",
+    desc: "Self-sovereign identity protocol with selective disclosure.",
+    stats: "1.2M IDENTS",
+    icon: Shield
+  },
+  {
+    title: "Open Data Oracle",
+    type: "DATA",
+    desc: "Trustless data feeds for smart contracts and verifiable agents.",
+    stats: "450ms LATENCY",
+    icon: Database
+  },
+  {
+    title: "Global Mesh Network",
+    type: "NETWORK",
+    desc: "Peer-to-peer communication layer resistant to censorship.",
+    stats: "85TB/s",
+    icon: Globe
+  },
+]
 
 export default function ExplorePage() {
-    return (
-        <div className="min-h-screen">
-            <Navigation />
+  return (
+    <div className="min-h-screen pb-20">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <TerminalPageHeader
+          title="Explore The Network"
+          subtitle="Discover active nodes, applications, and protocols running on the Integrity Web."
+          command="./scan_network"
+          status="SCANNING"
+          statusColor="cyan"
+          stats={[
+            { label: "Active Nodes", value: "8,942" },
+            { label: "Global Hashrate", value: "4.2 EH/s" },
+            { label: "Total Protocols", value: "142" },
+          ]}
+        />
 
-            <main className="container mx-auto px-4 py-12">
-                <TerminalPageHeader
-                    title="Ecosystem Explorer"
-                    subtitle="Discover verified applications, autonomous agents, and protocols running on the Integrity Web."
-                    command="integrity scan --network"
-                    status="SCANNING_NODES"
-                    statusColor="cyan"
-                    stats={[
-                        { label: "Active Nodes", value: "24,591" },
-                        { label: "Block Height", value: "#8,992,102" },
-                        { label: "TPS", value: "14,500" }
-                    ]}
-                />
-
-                {/* Categories */}
-                <div className="flex flex-wrap gap-3 mb-12">
-                    {["All Categories", "DeFi Protocols", "Autonomous Agents", "Identity Layers", "Verifiable Compute"].map((cat, i) => (
-                        <button
-                            key={cat}
-                            className={`
-                                px-4 py-2 rounded-lg text-sm font-mono border transition-all duration-300
-                                ${i === 0
-                                    ? "bg-primary/20 border-primary/50 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                                    : "bg-transparent border-white/10 text-muted-foreground hover:border-primary/30 hover:text-white hover:bg-white/5"}
-                            `}
-                        >
-                            [{cat.toUpperCase()}]
-                        </button>
-                    ))}
-                </div>
-
-                {/* Network Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Mock Items */}
-                    {[
-                        { title: "VeriAuth", type: "Identity", icon: User, hash: "0x7a...9f2", status: "Active", desc: "Decentralized identity verification with ZK proofs." },
-                        { title: "AgentLink", type: "Protocol", icon: Cpu, hash: "0x3b...1c8", status: "Active", desc: "Inter-agent communication standard for swarm intelligence." },
-                        { title: "TrustBridge", type: "dApp", icon: Globe, hash: "0x9d...4e1", status: "Auditing", desc: "Cross-chain asset bridging with fraud proofs." },
-                        { title: "ComputeCore", type: "Network", icon: Activity, hash: "0xf4...8a2", status: "Active", desc: "Verifiable off-chain computation market." },
-                        { title: "SafeVault", type: "dApp", icon: Layers, hash: "0x2c...7b9", status: "Active", desc: "Multi-sig treasury management for DAOs." },
-                        { title: "OpenVote", type: "Governance", icon: Share2, hash: "0xe1...5d3", status: "Voting", desc: "Privacy-preserving governance voting mechanisms." },
-                        { title: "Sentience_01", type: "Agent", icon: Cpu, hash: "0x1a...2b3", status: "Running", desc: "Autonomous market making agent." },
-                        { title: "Guardian_X", type: "Agent", icon: Shield, hash: "0x8c...4d5", status: "Running", desc: "Automated smart contract security monitor." },
-                        { title: "DataWeave", type: "Network", icon: Network, hash: "0x5e...6f7", status: "Syncing", desc: "Permanent decentralized data storage mesh." }
-                    ].map((item, i) => (
-                        <IntegrityCard key={i} className="flex flex-col h-full bg-slate-950/40 backdrop-blur-xl hover:border-cyan-500/30 transition-all duration-300">
-                            <div className="flex justify-between items-start mb-6">
-                                <div className="h-10 w-10 rounded-sm border border-primary/20 bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                                    <item.icon className="h-5 w-5 text-primary" />
-                                </div>
-                                <div className="flex flex-col items-end">
-                                    <Badge variant="outline" className="bg-primary/5 border-primary/20 text-primary mb-1 font-mono text-[10px] tracking-wider uppercase">
-                                        {item.type}
-                                    </Badge>
-                                    <span className="text-[10px] font-mono text-muted-foreground/50">{item.hash}</span>
-                                </div>
-                            </div>
-
-                            <h3 className="font-mono font-semibold text-xl mb-2 text-white group-hover:text-primary transition-colors">
-                                {item.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground mb-6 flex-grow leading-relaxed">
-                                {item.desc}
-                            </p>
-
-                            <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                                <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
-                                    <div className={`w-1.5 h-1.5 rounded-full ${item.status === 'Active' || item.status === 'Running' ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-amber-500'}`} />
-                                    {item.status.toUpperCase()}
-                                </div>
-
-                                <Button variant="link" className="h-auto p-0 text-primary text-xs font-mono tracking-widest hover:text-cyan-400">
-                                    CONNECTION_REQUEST &rarr;
-                                </Button>
-                            </div>
-                        </IntegrityCard>
-                    ))}
-                </div>
-
-                {/* Events Section */}
-                <div className="mt-12 border-t border-white/10">
-                    <EventsCarousel />
-                </div>
-            </main>
+        {/* Search & Filter Bar */}
+        <div className="mb-10 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="relative w-full md:w-96 group">
+            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+              <Search className="h-4 w-4 text-muted-foreground group-focus-within:text-cyan-400 transition-colors" />
+            </div>
+            <input 
+              type="text" 
+              placeholder="SEARCH_PROTOCOLS..." 
+              className="w-full h-12 bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-lg pl-10 pr-4 font-mono text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-cyan-500/50 focus:bg-slate-900/60 transition-all uppercase tracking-wider"
+            />
+          </div>
+          
+          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
+            <Filter className="h-4 w-4 text-muted-foreground shrink-0 mr-2" />
+            {categories.map(cat => (
+              <button 
+                key={cat.id}
+                className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-500/30 text-[10px] font-mono text-muted-foreground hover:text-cyan-400 uppercase tracking-widest whitespace-nowrap transition-all"
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
-    )
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {nodes.map((node, i) => (
+            <div 
+              key={i} 
+              className="group relative bg-slate-950/30 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_0_30px_-10px_rgba(6,182,212,0.15)]"
+            >
+              {/* Hover Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="p-6 relative z-10">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform duration-500">
+                    <node.icon className="h-6 w-6" />
+                  </div>
+                  <div className="px-3 py-1 rounded bg-cyan-500/10 border border-cyan-500/20 text-[10px] font-mono text-cyan-400 uppercase tracking-widest">
+                    {node.type}
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-medium text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                  {node.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {node.desc}
+                </p>
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest">PERFORMANCE</span>
+                    <span className="text-xs font-mono text-emerald-400">{node.stats}</span>
+                  </div>
+                  <Button size="sm" variant="ghost" className="h-8 hover:bg-cyan-500/10 hover:text-cyan-400 font-mono text-xs uppercase tracking-wider group/btn">
+                    Details <span className="ml-1 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all">→</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }

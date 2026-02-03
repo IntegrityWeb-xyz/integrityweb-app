@@ -58,20 +58,20 @@ const axioms = [
 
 export function AxiomsTicker() {
     return (
-        <div className="w-full overflow-hidden bg-slate-950/50 border-y border-white/5 py-3 relative select-none">
-            {/* Gradient masks for fading edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
-
+        <div className="w-full overflow-hidden py-2 relative select-none">
+            {/* Gradient masks for fading edges 
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+            */}
             <div className="flex w-max animate-ticker hover:[animation-play-state:paused]">
                 {/* Double the list to create seamless loop */}
                 {[...axioms, ...axioms].map((axiom, i) => (
-                    <div key={i} className="flex items-center gap-3 px-8 border-r border-white/5 last:border-r-0">
-                        <span className="font-mono text-[10px] text-primary/50 font-bold">
+                    <div key={i} className="flex items-center gap-2.5 px-6 border-r border-white/8 last:border-r-0">
+                        <span className="font-mono text-[8px] text-primary/50 font-medium">
                             AXIOM_{axiom.number}
                         </span>
-                        <axiom.icon className="w-3 h-3 text-muted-foreground" />
-                        <span className="font-mono text-sm text-white/80 whitespace-nowrap">
+                        <axiom.icon className="w-2.5 h-2.5 text-muted-foreground" />
+                        <span className="font-mono text-xs text-white/80 whitespace-nowrap">
                             {axiom.text}
                         </span>
                     </div>

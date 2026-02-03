@@ -135,30 +135,29 @@ function NetworkIcon(props: any) {
 
 export function AxiomsIntegrityWeb() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-20 relative overflow-hidden bg-transparent">
             <div className="container mx-auto px-4 relative z-10">
 
-                <div className="text-center mb-16 space-y-4">
-                    <div className="inline-block border-b border-white/10 pb-2">
-                        <h2 className="text-3xl md:text-5xl font-bold font-serif italic tracking-tight text-white/90">
-                            "Axioms of the Integrity Web"
-                        </h2>
-                    </div>
-                    <p className="text-muted-foreground font-mono text-sm uppercase tracking-widest">
+
+                <div className="text-center mb-12 space-y-3">
+                    <h2 className="text-2xl md:text-4xl font-medium font-serif italic tracking-tight text-white/90">
+                        "Axioms of the Integrity Web"
+                    </h2>
+                    <p className="text-muted-foreground font-mono text-xs uppercase tracking-widest">
                         A Fine Art Declaration of Digital Freedom
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-16 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-12 max-w-6xl mx-auto">
                     {axioms.map((axiom, i) => (
-                        <div key={i} className="group relative pl-8 border-l border-white/10 hover:border-cyan-500/50 transition-colors duration-500">
-                            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-950 border border-white/20 group-hover:border-cyan-500 transition-colors flex items-center justify-center">
-                                <axiom.icon className="w-2 h-2 text-muted-foreground group-hover:text-cyan-400" />
+                        <div key={i} className="group relative pl-6 border-l border-white/10 hover:border-cyan-500/50 transition-colors duration-500">
+                            <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-slate-950 border border-white/20 group-hover:border-cyan-500 transition-colors flex items-center justify-center">
+                                <axiom.icon className="w-1.5 h-1.5 text-muted-foreground group-hover:text-cyan-400" />
                             </div>
 
-                            <div className="mb-4 flex items-baseline gap-3">
-                                <span className="font-mono text-xs text-cyan-500/50 font-bold">AXIOM_{axiom.number}</span>
-                                <h3 className="text-2xl font-bold text-white group-hover:text-cyan-100 transition-colors">
+                            <div className="mb-3 flex items-baseline gap-2.5">
+                                <span className="font-mono text-[10px] text-cyan-500/50 font-medium">AXIOM_{axiom.number}</span>
+                                <h3 className="text-xl font-medium text-white group-hover:text-cyan-100 transition-colors">
                                     {axiom.title}
                                 </h3>
                             </div>
@@ -174,15 +173,15 @@ export function AxiomsIntegrityWeb() {
                     ))}
                 </div>
 
-                {/* Decorative Signature */}
-                <div className="mt-24 text-center opacity-30 pointer-events-none select-none">
-                    <div className="font-serif text-6xl italic text-white/20 tracking-tighter">
+                {/* Decorative Signature
+                <div className="mt-20 text-center opacity-30 pointer-events-none select-none">
+                    <div className="font-serif text-5xl italic text-white/20 tracking-tighter">
                         Integrity Web Alliance
                     </div>
                     <div className="font-mono text-[10px] mt-4 tracking-[1em] uppercase">
                         Est. 2024 • Genesis Block
                     </div>
-                </div>
+                </div>*/}
 
             </div>
         </section>
