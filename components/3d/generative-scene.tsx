@@ -100,9 +100,9 @@ function BlockChain() {
   const blocks = [
     { pos: [-4, 0, 0], color: '#60a5fa' },
     { pos: [0, 0, 0], color: '#06b6d4' },
-    { pos: [4, 0, 0], color: '#a78bfa' },
-    { pos: [-2, 3, 0], color: '#ec4899' },
-    { pos: [2, 3, 0], color: '#f59e0b' },
+    { pos: [4, 0, 0], color: '#3b82f6' },
+    { pos: [-2, 3, 0], color: '#0ea5e9' },
+    { pos: [2, 3, 0], color: '#22d3ee' },
   ]
 
   return (

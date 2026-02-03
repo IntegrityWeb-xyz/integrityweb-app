@@ -5,7 +5,7 @@ import { Quote, Feather } from "lucide-react"
 
 export function FoundingStatement() {
     return (
-        <section className="py-24 relative overflow-hidden bg-slate-950/30 border-y border-white/5">
+        <section className="py-24 relative overflow-hidden bg-transparent">
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 pointer-events-none" />
 
             <div className="container mx-auto max-w-4xl px-4 relative z-10 text-center">
@@ -33,13 +33,13 @@ export function FoundingStatement() {
                     </p>
 
                     <p>
-                        The Integrity Web is not owned, not controlled, and not for sale. It is infrastructure offered as a <span className="text-purple-400">public good</span>. It is a framework where proofs replace trust, where privacy coexists with transparency, and where creativity and knowledge are preserved as commons.
+                        The Integrity Web is not owned, not controlled, and not for sale. It is infrastructure offered as a <span className="text-blue-400">public good</span>. It is a framework where proofs replace trust, where privacy coexists with transparency, and where creativity and knowledge are preserved as commons.
                     </p>
 
                     <div className="pt-8 space-y-2 font-serif text-2xl md:text-3xl text-white">
                         <p>It is intended as a trust backbone for society’s digital future.</p>
                         <p>It is for everyone.</p>
-                        <p className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-bold">It is our gift to the future.</p>
+                        <p className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-bold">It is our gift to the future.</p>
                     </div>
                 </div>
 

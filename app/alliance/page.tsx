@@ -26,13 +26,13 @@ export default function Alliance() {
       <main className="flex-grow pt-24">
 
         {/* HERO: The Network */}
-        <section className="relative px-4 py-20 overflow-hidden border-b border-white/5">
+        <section className="relative px-4 py-20 overflow-hidden">
           {/* Ambient Background */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950/80 to-slate-950 -z-10" />
 
           <div className="container mx-auto max-w-6xl text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] font-mono tracking-widest uppercase text-muted-foreground mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
               NETWORK_STATUS: ONLINE
             </div>
 
@@ -65,12 +65,12 @@ export default function Alliance() {
         <FoundingStatement />
 
         {/* ACTIVE NODES GRID */}
-        <section className="px-4 py-24 bg-slate-950/50">
+        <section className="px-4 py-24 bg-transparent">
           <div className="container mx-auto max-w-6xl">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold uppercase tracking-widest flex items-center gap-3">
+              <h2 className="text-2xl tracking-widest flex items-center gap-3">
                 <Network className="w-6 h-6 text-cyan-500" />
-                Network Nodes
+                Alliance Nodes
               </h2>
               <div className="text-xs font-mono text-muted-foreground border border-white/10 px-3 py-1 rounded bg-white/5">
                 FILTER: ALL_SYSTEMS
@@ -79,14 +79,14 @@ export default function Alliance() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { name: "StarkWare", type: "L2_SCALING", status: "VALIDATING", color: "text-red-400" },
-                { name: "Nethermind", type: "CORE_ENG", status: "SYNCED", color: "text-amber-400" },
-                { name: "Herodotus", type: "STORAGE_PROOFS", status: "INDEXING", color: "text-emerald-400" },
-                { name: "Argent", type: "ACCOUNT_ABS", status: "ACTIVE", color: "text-orange-400" },
-                { name: "Snapshot", type: "GOVERNANCE", status: "VOTING", color: "text-yellow-400" },
-                { name: "Topology", type: "ONCHAIN_REALITY", status: "COMPUTING", color: "text-purple-400" },
+                { name: "StarkWare", type: "L2_SCALING", status: "VALIDATING", color: "text-cyan-400" },
+                { name: "Nethermind", type: "CORE_ENG", status: "SYNCED", color: "text-blue-400" },
+                { name: "Herodotus", type: "STORAGE_PROOFS", status: "INDEXING", color: "text-sky-400" },
+                { name: "Argent", type: "ACCOUNT_ABS", status: "ACTIVE", color: "text-indigo-400" },
+                { name: "Snapshot", type: "GOVERNANCE", status: "VOTING", color: "text-cyan-300" },
+                { name: "Chipipay", type: "INVISIBLE_WALLETS", status: "ACTIVE", color: "text-blue-300" },
               ].map((node, i) => (
-                <div key={i} className="group relative p-6 bg-slate-900/40 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
+                <div key={i} className="group relative p-6 bg-slate-900/30 backdrop-blur-lg border border-white/10 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
                   <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100">
                     <Cpu className="w-4 h-4 text-white/20 group-hover:text-cyan-500 transition-colors" />
                   </div>
@@ -118,12 +118,12 @@ export default function Alliance() {
         </section>
 
         {/* AXIOMS SHOWCASE */}
-        <div className="border-t border-white/5 bg-black/20">
+        <div className="bg-transparent">
           <AxiomsIntegrityWeb />
         </div>
 
         {/* JOIN THE INTEGRITY WEB */}
-        <section className="px-4 py-24 border-y border-white/5 bg-black/40">
+        <section className="px-4 py-24 bg-transparent">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold uppercase mb-4">Join the Integrity Web</h2>
@@ -162,7 +162,7 @@ export default function Alliance() {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground mb-6 min-h-[40px]">{item.desc}</p>
-                  <div className="bg-black/50 border border-white/10 rounded px-3 py-2 font-mono text-xs text-emerald-400 text-left overflow-x-auto">
+                  <div className="bg-black/50 border border-white/10 rounded px-3 py-2 font-mono text-xs text-cyan-400 text-left overflow-x-auto">
                     $ {item.cmd}
                   </div>
                 </div>
@@ -174,15 +174,15 @@ export default function Alliance() {
         {/* TERMINAL CTA */}
         <section className="px-4 py-32">
           <div className="container mx-auto max-w-3xl">
-            <div className="bg-slate-950 border border-white/20 p-1 rounded-xl shadow-2xl">
-              <div className="bg-slate-900/50 border-b border-white/10 px-4 py-2 flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500/20 border border-emerald-500/50" />
+            <div className="bg-slate-900 border border-white/20 p-1 rounded-xl shadow-2xl">
+              <div className="bg-slate-950/50 border-b border-white/10 px-4 py-2 flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-slate-500/20 border border-slate-500/50" />
+                <div className="w-3 h-3 rounded-full bg-slate-500/20 border border-slate-500/50" />
+                <div className="w-3 h-3 rounded-full bg-slate-500/20 border border-slate-500/50" />
                 <div className="ml-2 font-mono text-[10px] text-muted-foreground">uplink_terminal — -zsh — 80x24</div>
               </div>
               <div className="p-8 md:p-12 text-center space-y-8">
-                <div className="space-y-2 font-mono text-sm text-emerald-400/80">
+                <div className="space-y-2 font-mono text-sm text-cyan-400/80">
                   <p>&gt; Establishing secure connection...</p>
                   <p>&gt; Handshake verifying...</p>
                   <p className="text-white">&gt; READY_TO_JOIN</p>

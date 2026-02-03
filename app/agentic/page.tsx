@@ -70,7 +70,7 @@ export default function AgenticPage() {
                                         </div>
                                     </div>
                                     <div className="text-right font-mono text-xs">
-                                        <div className="text-emerald-400">{agent.uptime} UP</div>
+                                        <div className="text-cyan-400">{agent.uptime} UP</div>
                                         <div className="text-white/50">{agent.earned}</div>
                                     </div>
                                 </div>

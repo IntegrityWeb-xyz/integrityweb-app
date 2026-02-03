@@ -20,19 +20,28 @@
   --secondary-foreground: #f8fafc;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #10b981;
-  /* Emerald */
+  --accent: #06b6d4;
+  /* Cyan */
   --accent-foreground: #000000;
+  --destructive: #334155;
+  /* Slate-700 (Muted Red for errors, or keep red if semantic? User asked for Blue/Slate theme. "remove inconsistent colors". I'll map destructive to a muted slate or keep it red but desaturated? "prefer the blue and slate". I'll use a deep slate-red or just slate for now to be safe, or maybe just Cyan/Blue for everything. Let's stick to semantic meaning but cooler. Actually, I'll map 'destructive' to a slate-800 with red border in components if needed, or just keep it standard but maybe less vibrant? layout plan says "Strictly use Blue/Cyan/Slate". I will map destructive to a dark slate red or just slate. Let's use Slate for 'accent' and 'chart'. */
+  --destructive: #7f1d1d;
+  /* Keeping semantic red but darker? Or maybe just use slate. Let's use a very desaturated red or just blue. Plan says "Map diverse colors to thematic variants". I'll map destructive to #ef4444 still for critical errors but maybe the UI won't use it much. For chart colors, I will definitely map them to blues. */
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #1e293b;
   --input: #1e293b;
   --ring: #06b6d4;
   --chart-1: #3b82f6;
+  /* Blue-500 */
   --chart-2: #06b6d4;
-  --chart-3: #8b5cf6;
-  --chart-4: #ec4899;
-  --chart-5: #f59e0b;
+  /* Cyan-500 */
+  --chart-3: #60a5fa;
+  /* Blue-400 */
+  --chart-4: #22d3ee;
+  /* Cyan-400 */
+  --chart-5: #94a3b8;
+  /* Slate-400 */
   --radius: 0.5rem;
   --sidebar: #ffffff;
   --sidebar-foreground: #0f0f0f;
@@ -64,11 +73,11 @@
   --border: #262626;
   --input: #1a1a1a;
   --ring: #60a5fa;
-  --chart-1: #60a5fa;
+  --chart-1: #3b82f6;
   --chart-2: #06b6d4;
-  --chart-3: #a78bfa;
-  --chart-4: #f472b6;
-  --chart-5: #fbbf24;
+  --chart-3: #60a5fa;
+  --chart-4: #22d3ee;
+  --chart-5: #94a3b8;
   --sidebar: #1a1a1a;
   --sidebar-foreground: #fafafa;
   --sidebar-primary: #60a5fa;

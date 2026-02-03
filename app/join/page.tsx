@@ -10,13 +10,13 @@ export default function JoinPage() {
     <div className="min-h-screen bg-transparent text-foreground selection:bg-cyan-500/20">
       <Navigation />
 
-      <main className="container mx-auto px-4 py-24 pb-48 flex flex-col items-center justify-center min-h-[80vh]">
+      <main className="container mx-auto px-4 py-16 md:py-24 pb-48 flex flex-col items-center justify-center min-h-[80vh] overflow-hidden w-full max-w-full">
         <TerminalPageHeader
           title="Access Gateway"
           subtitle="Establish a secure identity channel to interact with the Integrity Web."
           command="ssh -i identity_key user@gateway"
           status="SECURE_CONN"
-          statusColor="emerald"
+          statusColor="cyan"
           stats={[
             { label: "Encryption", value: "AES-256" },
             { label: "Handshake", value: "VERIFIED" },
@@ -50,18 +50,18 @@ export default function JoinPage() {
           </div>
 
           {/* Right Panel: Auth Terminal */}
-          <div className="relative">
-            {/* Decorative border elements */}
-            <div className="absolute -top-6 -left-6 w-12 h-12 border-t-2 border-l-2 border-cyan-500/30 rounded-tl-xl" />
-            <div className="absolute -bottom-6 -right-6 w-12 h-12 border-b-2 border-r-2 border-cyan-500/30 rounded-br-xl" />
+          <div className="relative w-full max-w-full">
+            {/* Decorative border elements - Mobile: Inside/Hidden, Desktop: Outside */}
+            <div className="absolute top-0 left-0 md:-top-6 md:-left-6 w-12 h-12 border-t-2 border-l-2 border-cyan-500/30 rounded-tl-xl z-0" />
+            <div className="absolute bottom-0 right-0 md:-bottom-6 md:-right-6 w-12 h-12 border-b-2 border-r-2 border-cyan-500/30 rounded-br-xl z-0" />
 
-            <div className="relative bg-slate-950/80 border border-white/10 backdrop-blur-xl p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col items-center">
+            <div className="relative bg-slate-950/80 border border-white/10 backdrop-blur-xl p-6 md:p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col items-center z-10 w-full overflow-hidden">
               <div className="w-full flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                <div className="font-mono text-xs text-muted-foreground">Term: ID-774A</div>
+                <div className="font-mono text-[10px] md:text-xs text-muted-foreground truncate max-w-[150px]">Term: ID-774A</div>
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80 animate-pulse" />
+                  <div className="w-3 h-3 rounded-full bg-slate-500/20" />
+                  <div className="w-3 h-3 rounded-full bg-slate-500/20" />
+                  <div className="w-3 h-3 rounded-full bg-cyan-500/80 animate-pulse" />
                 </div>
               </div>
 
