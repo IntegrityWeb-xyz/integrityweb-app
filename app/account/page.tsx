@@ -35,7 +35,7 @@ export default function AccountPage() {
                     <div className="lg:col-span-2 space-y-8">
 
                         {/* Identity Card */}
-                        <div className="bg-slate-950/40 border border-white/10 rounded-lg p-6 relative overflow-hidden group">
+                        <div className="bg-zinc-950/40 border border-white/10 rounded-lg p-6 relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-muted-foreground opacity-50">ID_MODULE</div>
                             <div className="flex items-start gap-6">
                                 <div className="w-20 h-20 rounded bg-white/5 border border-white/10 flex items-center justify-center relative">
@@ -61,7 +61,7 @@ export default function AccountPage() {
                         </div>
 
                         {/* API Keys Section */}
-                        <div className="bg-slate-950/40 border border-white/10 rounded-lg p-6 space-y-6">
+                        <div className="bg-zinc-950/40 border border-white/10 rounded-lg p-6 space-y-6">
                             <div className="flex justify-between items-center border-b border-white/5 pb-4">
                                 <h3 className="font-mono text-lg text-white font-bold flex items-center gap-2">
                                     <Key className="w-5 h-5 text-amber-400" />
@@ -100,7 +100,7 @@ export default function AccountPage() {
 
                     {/* Right Column: SDK & Resources */}
                     <div className="space-y-6">
-                        <div className="bg-slate-950/40 border border-white/10 rounded-lg p-6">
+                        <div className="bg-zinc-950/40 border border-white/10 rounded-lg p-6">
                             <h3 className="font-mono text-sm text-muted-foreground mb-4 uppercase tracking-widest">
                                 // DEV_RESOURCES
                             </h3>
@@ -121,7 +121,7 @@ export default function AccountPage() {
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-br from-cyan-900/20 to-slate-900 border border-cyan-500/20 rounded-lg p-6 text-center">
+                        <div className="bg-gradient-to-br from-cyan-900/20 to-zinc-900 border border-cyan-500/20 rounded-lg p-6 text-center">
                             <Shield className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
                             <h4 className="font-mono text-white text-sm font-bold mb-2">Upgrade Security</h4>
                             <p className="text-xs text-muted-foreground mb-4">Enable multi-signature verification for higher rate limits.</p>

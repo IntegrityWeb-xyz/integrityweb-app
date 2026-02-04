@@ -67,7 +67,7 @@ export default function DocsPage() {
           {/* Main Content: Man Page Style */}
           <div className="lg:col-span-3">
             <div className="prose prose-invert max-w-none">
-              <div className="border border-white/10 bg-slate-950/50 p-8 rounded-lg relative overflow-hidden">
+              <div className="border border-white/10 bg-zinc-950/50 p-8 rounded-lg relative overflow-hidden">
                 {/* Decorative Header */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-transparent opacity-50" />
                 <div className="flex justify-between font-mono text-xs text-muted-foreground mb-8">
@@ -115,7 +115,7 @@ export default function DocsPage() {
                       { title: "Agent Kit", icon: FileText, desc: "Autonomous Routines" },
                     ].map((item, i) => (
                       <Link key={i} href="#" className="flex items-center gap-4 p-4 border border-white/10 hover:border-primary/50 bg-white/5 hover:bg-white/10 transition-all group">
-                        <div className="p-2 bg-slate-900 rounded border border-white/5 group-hover:border-primary/50">
+                        <div className="p-2 bg-zinc-900 rounded border border-white/5 group-hover:border-primary/50">
                           <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                         </div>
                         <div>

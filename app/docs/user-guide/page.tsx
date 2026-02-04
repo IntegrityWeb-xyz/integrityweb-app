@@ -30,7 +30,7 @@ export default function UserGuidePage() {
                     {/* Sidebar Navigation */}
                     <div className="lg:col-span-1 hidden lg:block">
                         <div className="sticky top-24 space-y-8">
-                            <div className="border border-white/10 bg-slate-950/50 rounded-lg p-4">
+                            <div className="border border-white/10 bg-zinc-950/50 rounded-lg p-4">
                                 <div className="font-mono text-xs text-muted-foreground mb-4 uppercase tracking-wider">// TABLE_OF_CONTENTS</div>
                                 <nav className="space-y-2 font-mono text-sm">
                                     <a href="#getting-started" className="block text-cyan-400 hover:text-cyan-300 transition-colors">01. Getting Started</a>
@@ -41,7 +41,7 @@ export default function UserGuidePage() {
                                 </nav>
                             </div>
 
-                            <div className="border border-white/10 bg-slate-950/50 rounded-lg p-4">
+                            <div className="border border-white/10 bg-zinc-950/50 rounded-lg p-4">
                                 <div className="font-mono text-xs text-muted-foreground mb-4 uppercase tracking-wider">// SYSTEM_STATUS</div>
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between text-xs font-mono">
@@ -73,7 +73,7 @@ export default function UserGuidePage() {
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6">
-                                <Card className="bg-slate-950/50 border-white/10">
+                                <Card className="bg-zinc-950/50 border-white/10">
                                     <CardHeader>
                                         <div className="w-10 h-10 rounded-full bg-cyan-950/30 flex items-center justify-center mb-2 border border-cyan-500/20">
                                             <Wallet className="w-5 h-5 text-cyan-400" />
@@ -91,7 +91,7 @@ export default function UserGuidePage() {
                                     </CardContent>
                                 </Card>
 
-                                <Card className="bg-slate-950/50 border-white/10">
+                                <Card className="bg-zinc-950/50 border-white/10">
                                     <CardHeader>
                                         <div className="w-10 h-10 rounded-full bg-purple-950/30 flex items-center justify-center mb-2 border border-purple-500/20">
                                             <Shield className="w-5 h-5 text-purple-400" />
@@ -119,7 +119,7 @@ export default function UserGuidePage() {
                                 <div className="h-px bg-white/10 flex-1" />
                             </div>
 
-                            <div className="bg-slate-950/30 border border-white/10 rounded-xl p-6 md:p-8 relative overflow-hidden group">
+                            <div className="bg-zinc-950/30 border border-white/10 rounded-xl p-6 md:p-8 relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
@@ -141,7 +141,7 @@ export default function UserGuidePage() {
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="bg-slate-900 border border-white/10 rounded-lg p-4 font-mono text-xs">
+                                    <div className="bg-zinc-900 border border-white/10 rounded-lg p-4 font-mono text-xs">
                                         <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
                                             <LayoutDashboard className="w-4 h-4 text-cyan-400" />
                                             <span className="text-white">DASHBOARD_PREVIEW</span>
@@ -177,12 +177,12 @@ export default function UserGuidePage() {
                             </div>
 
                             <Tabs defaultValue="create" className="w-full">
-                                <TabsList className="grid w-full grid-cols-3 bg-slate-950/50 border border-white/10">
+                                <TabsList className="grid w-full grid-cols-3 bg-zinc-950/50 border border-white/10">
                                     <TabsTrigger value="create">Create</TabsTrigger>
                                     <TabsTrigger value="manage">Manage</TabsTrigger>
                                     <TabsTrigger value="trade">Trade</TabsTrigger>
                                 </TabsList>
-                                <TabsContent value="create" className="mt-6 border border-white/10 bg-slate-900/20 rounded-lg p-6">
+                                <TabsContent value="create" className="mt-6 border border-white/10 bg-zinc-900/20 rounded-lg p-6">
                                     <div className="flex flex-col md:flex-row gap-6 items-start">
                                         <div className="p-3 bg-cyan-950/30 rounded-lg border border-cyan-500/20">
                                             <Database className="w-6 h-6 text-cyan-400" />
@@ -198,7 +198,7 @@ export default function UserGuidePage() {
                                         </div>
                                     </div>
                                 </TabsContent>
-                                <TabsContent value="manage" className="mt-6 border border-white/10 bg-slate-900/20 rounded-lg p-6">
+                                <TabsContent value="manage" className="mt-6 border border-white/10 bg-zinc-900/20 rounded-lg p-6">
                                     <div className="flex flex-col md:flex-row gap-6 items-start">
                                         <div className="p-3 bg-cyan-950/30 rounded-lg border border-cyan-500/20">
                                             <FolderTree className="w-6 h-6 text-cyan-400" /> {/* Changed icon to FolderTree assuming import or similar */}
@@ -211,7 +211,7 @@ export default function UserGuidePage() {
                                         </div>
                                     </div>
                                 </TabsContent>
-                                <TabsContent value="trade" className="mt-6 border border-white/10 bg-slate-900/20 rounded-lg p-6">
+                                <TabsContent value="trade" className="mt-6 border border-white/10 bg-zinc-900/20 rounded-lg p-6">
                                     <div className="flex flex-col md:flex-row gap-6 items-start">
                                         <div className="p-3 bg-cyan-950/30 rounded-lg border border-cyan-500/20">
                                             <Network className="w-6 h-6 text-cyan-400" />

@@ -49,7 +49,7 @@ export function DeveloperResources() {
 
             <div className="grid md:grid-cols-2 gap-8">
                 {resources.map((section, i) => (
-                    <div key={i} className="bg-slate-950/30 backdrop-blur border border-white/5 rounded-lg overflow-hidden flex flex-col">
+                    <div key={i} className="bg-zinc-950/30 backdrop-blur border border-white/5 rounded-lg overflow-hidden flex flex-col">
                         <div className="px-6 py-4 border-b border-white/5 bg-white/5 flex items-center justify-between">
                             <span className="font-mono text-xs text-white/70 uppercase tracking-widest font-bold">
                                 {section.category}

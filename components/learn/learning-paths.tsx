@@ -73,7 +73,7 @@ export function LearningPaths() {
     return (
         <div className="py-12">
             <div className="mb-10">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent mb-4">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent mb-4">
                     Choose Your Path
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-2xl">
@@ -82,7 +82,7 @@ export function LearningPaths() {
             </div>
 
             <Tabs defaultValue="builder" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 bg-slate-950/50 border border-white/10 p-1 mb-8 h-auto">
+                <TabsList className="grid w-full grid-cols-3 bg-zinc-950/50 border border-white/10 p-1 mb-8 h-auto">
                     <TabsTrigger value="builder" className="data-[state=active]:bg-cyan-950/30 data-[state=active]:text-cyan-400 py-4 font-mono uppercase tracking-wider">
                         <span className="flex flex-col md:flex-row items-center gap-2">
                             <BookOpen className="w-4 h-4" />
@@ -106,7 +106,7 @@ export function LearningPaths() {
                 {Object.entries(paths).map(([key, modules]) => (
                     <TabsContent key={key} value={key} className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
                         {modules.map((module, i) => (
-                            <div key={i} className="group flex flex-col md:flex-row items-center gap-6 p-6 rounded-xl bg-slate-900/20 border border-white/5 hover:bg-slate-900/40 hover:border-white/20 transition-all cursor-pointer">
+                            <div key={i} className="group flex flex-col md:flex-row items-center gap-6 p-6 rounded-xl bg-zinc-900/20 border border-white/5 hover:bg-zinc-900/40 hover:border-white/20 transition-all cursor-pointer">
                                 <div className="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
                                     <Play className="w-5 h-5 text-white/70 group-hover:text-primary fill-current transition-colors ml-1" />
                                 </div>

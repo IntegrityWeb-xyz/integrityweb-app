@@ -151,7 +151,7 @@ export function AxiomsIntegrityWeb() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-12 max-w-6xl mx-auto">
                     {axioms.map((axiom, i) => (
                         <div key={i} className="group relative pl-6 border-l border-white/10 hover:border-cyan-500/50 transition-colors duration-500">
-                            <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-slate-950 border border-white/20 group-hover:border-cyan-500 transition-colors flex items-center justify-center">
+                            <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-zinc-950 border border-white/20 group-hover:border-cyan-500 transition-colors flex items-center justify-center">
                                 <axiom.icon className="w-1.5 h-1.5 text-muted-foreground group-hover:text-cyan-400" />
                             </div>
 

@@ -67,8 +67,8 @@ export function UseCaseTerminal() {
                             key={useCase.id}
                             onClick={() => setActiveCase(useCase)}
                             className={`w-full text-left px-4 py-3 rounded-lg font-mono text-sm border transition-all ${activeCase.id === useCase.id
-                                    ? "bg-slate-800 text-white border-cyan-500/50 shadow-[0_0_10px_rgba(6,182,212,0.2)]"
-                                    : "bg-slate-950/30 text-muted-foreground border-white/5 hover:bg-white/5 hover:text-white"
+                                ? "bg-zinc-800 text-white border-cyan-500/50 shadow-[0_0_10px_rgba(6,182,212,0.2)]"
+                                : "bg-zinc-950/30 text-muted-foreground border-white/5 hover:bg-white/5 hover:text-white"
                                 }`}
                         >
                             <span className="opacity-50 mr-2">&gt;</span>
@@ -76,7 +76,7 @@ export function UseCaseTerminal() {
                         </button>
                     ))}
 
-                    <div className="mt-8 p-4 bg-slate-950 rounded border border-white/5 text-xs text-muted-foreground font-mono">
+                    <div className="mt-8 p-4 bg-zinc-950 rounded border border-white/5 text-xs text-muted-foreground font-mono">
                         <p className="mb-2 uppercase text-[10px] tracking-widest opacity-50">System Note</p>
                         <p>
                             All agent logic is verifiable. The code you write is compiled into a ZK-circuit, ensuring the agent follows its programming perfectly.
@@ -85,9 +85,9 @@ export function UseCaseTerminal() {
                 </div>
 
                 {/* Terminal Window */}
-                <div className="lg:col-span-3 bg-slate-950 border border-white/10 rounded-lg overflow-hidden flex flex-col min-h-[400px]">
+                <div className="lg:col-span-3 bg-zinc-950 border border-white/10 rounded-lg overflow-hidden flex flex-col min-h-[400px]">
                     {/* Window Controls */}
-                    <div className="bg-slate-900 border-b border-white/5 px-4 py-2 flex items-center justify-between">
+                    <div className="bg-zinc-900 border-b border-white/5 px-4 py-2 flex items-center justify-between">
                         <div className="flex gap-1.5">
                             <div className="w-3 h-3 rounded-full bg-red-500/20" />
                             <div className="w-3 h-3 rounded-full bg-yellow-500/20" />
@@ -102,7 +102,7 @@ export function UseCaseTerminal() {
                     {/* Code Area */}
                     <div className="p-6 font-mono text-sm overflow-auto flex-1">
                         <div className="text-cyan-400 mb-4 text-xs opacity-50"># Integrity Agent Runtime v2.0</div>
-                        <pre className="text-slate-300 whitespace-pre-wrap">
+                        <pre className="text-zinc-300 whitespace-pre-wrap">
                             {activeCase.code}
                         </pre>
                     </div>

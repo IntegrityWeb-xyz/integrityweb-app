@@ -32,7 +32,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Card 1: Zero Knowledge */}
-            <div className="group relative bg-slate-950/30 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden p-8 hover:border-cyan-500/30 transition-all duration-500">
+            <div className="group relative bg-zinc-950/30 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden p-8 hover:border-cyan-500/30 transition-all duration-500">
               <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
                 <Shield className="w-8 h-8 text-white/20 group-hover:text-cyan-500 transition-colors" />
               </div>
@@ -42,14 +42,14 @@ export default function Home() {
               </p>
               <div className="mt-auto h-32 bg-black/40 rounded-lg border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-cyan-500/20 transition-colors">
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-                <div className="px-4 py-2 bg-slate-900 rounded border border-cyan-500/30 font-mono text-[10px] text-cyan-400">
+                <div className="px-4 py-2 bg-zinc-900 rounded border border-cyan-500/30 font-mono text-[10px] text-cyan-400">
                   proof.verify(x_witness)
                 </div>
               </div>
             </div>
 
             {/* Card 2: Validity Proofs */}
-            <div className="group relative bg-slate-950/30 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden p-8 hover:border-purple-500/30 transition-all duration-500">
+            <div className="group relative bg-zinc-950/30 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden p-8 hover:border-purple-500/30 transition-all duration-500">
               <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
                 <Scale className="w-8 h-8 text-white/20 group-hover:text-purple-500 transition-colors" />
               </div>
@@ -63,7 +63,7 @@ export default function Home() {
             </div>
 
             {/* Card 3: Permissionless */}
-            <div className="group relative bg-slate-950/30 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden p-8 hover:border-indigo-500/30 transition-all duration-500">
+            <div className="group relative bg-zinc-950/30 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden p-8 hover:border-indigo-500/30 transition-all duration-500">
               <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
                 <Network className="w-8 h-8 text-white/20 group-hover:text-indigo-500 transition-colors" />
               </div>
@@ -83,7 +83,7 @@ export default function Home() {
         </section>
 
         {/* Featured App / Public Goods */}
-        <section className="mb-24 py-12 px-6 md:px-12 bg-gradient-to-br from-slate-900/50 to-black border border-white/10 rounded-2xl relative overflow-hidden">
+        <section className="mb-24 py-12 px-6 md:px-12 bg-gradient-to-br from-zinc-900/50 to-black border border-white/10 rounded-2xl relative overflow-hidden">
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="space-y-6 max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase tracking-widest">
@@ -107,7 +107,7 @@ export default function Home() {
 
             {/* Protocol Visual */}
             <div className="w-full md:w-auto flex-1 max-w-md">
-              <div className="bg-slate-950/80 border border-white/10 rounded-xl p-6 relative">
+              <div className="bg-zinc-950/80 border border-white/10 rounded-xl p-6 relative">
                 <div className="flex items-center gap-3 mb-4 pb-4 border-b border-white/5">
                   <Layers className="w-5 h-5 text-emerald-400" />
                   <div className="text-sm font-bold text-white">Mediolano Protocol</div>

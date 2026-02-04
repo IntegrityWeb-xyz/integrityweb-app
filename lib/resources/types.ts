@@ -38,4 +38,5 @@ export interface ResourceItem {
     teamInfo: TeamInfo;
     tokens: string[];
     media: ResourceMedia;
+    slug: string;
 }

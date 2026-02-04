@@ -29,7 +29,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
             case 'LIMITED_CAPACITY': return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
             case 'EARLY_ACCESS': return 'bg-pink-500/10 text-pink-400 border-pink-500/20';
             case 'SOLD_OUT': return 'bg-red-500/10 text-red-400 border-red-500/20';
-            case 'COMPLETED': return 'bg-slate-500/10 text-slate-400 border-slate-500/20';
+            case 'COMPLETED': return 'bg-zinc-500/10 text-zinc-400 border-zinc-500/20';
             default: return 'bg-primary/10 text-primary border-primary/20';
         }
     };
@@ -88,7 +88,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
                         </div>
 
                         {/* Content Glass Card */}
-                        <div className="rounded-2xl border border-white/10 bg-slate-950/50 backdrop-blur-md p-8 md:p-12">
+                        <div className="rounded-2xl border border-white/10 bg-zinc-950/50 backdrop-blur-md p-8 md:p-12">
                             <h2 className="text-xs font-mono text-muted-foreground uppercase tracking-[0.2em] mb-8 flex items-center gap-4">
                                 <span className="w-8 h-px bg-white/20"></span>
                                 Transmission Content
@@ -183,9 +183,9 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="flex -space-x-2 overflow-hidden">
                                     {[...Array(4)].map((_, i) => (
-                                        <div key={i} className="inline-block h-8 w-8 rounded-full ring-2 ring-black bg-gradient-to-br from-slate-700 to-slate-900 border border-white/20" />
+                                        <div key={i} className="inline-block h-8 w-8 rounded-full ring-2 ring-black bg-gradient-to-br from-zinc-700 to-zinc-900 border border-white/20" />
                                     ))}
-                                    <div className="inline-block h-8 w-8 rounded-full ring-2 ring-black bg-slate-800 border border-white/10 flex items-center justify-center text-[10px] text-white font-mono">
+                                    <div className="inline-block h-8 w-8 rounded-full ring-2 ring-black bg-zinc-800 border border-white/10 flex items-center justify-center text-[10px] text-white font-mono">
                                         +42
                                     </div>
                                 </div>

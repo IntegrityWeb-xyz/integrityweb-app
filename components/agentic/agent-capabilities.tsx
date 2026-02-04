@@ -48,13 +48,13 @@ export function AgentCapabilities() {
                 {capabilities.map((cap, i) => (
                     <div
                         key={i}
-                        className="group relative p-6 bg-slate-950/30 backdrop-blur-lg border border-white/5 rounded-lg hover:border-cyan-500/30 transition-all duration-300"
+                        className="group relative p-6 bg-zinc-950/30 backdrop-blur-lg border border-white/5 rounded-lg hover:border-cyan-500/30 transition-all duration-300"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
                             <cap.icon className="w-12 h-12 text-cyan-500/20" />
                         </div>
 
-                        <div className="mb-4 p-3 bg-slate-900/50 rounded-lg w-fit border border-white/5 group-hover:border-white/10">
+                        <div className="mb-4 p-3 bg-zinc-900/50 rounded-lg w-fit border border-white/5 group-hover:border-white/10">
                             <cap.icon className="w-5 h-5 text-cyan-400" />
                         </div>
 

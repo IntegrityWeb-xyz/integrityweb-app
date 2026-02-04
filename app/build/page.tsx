@@ -48,7 +48,7 @@ export default function BuildPage() {
                                     // CONTRIBUTE
                                 </h2>
                             </div>
-                            <div className="bg-gradient-to-br from-slate-900/50 to-slate-950/50 border border-white/10 rounded-lg p-6 flex flex-col h-fit">
+                            <div className="bg-gradient-to-br from-zinc-900/50 to-zinc-950/50 border border-white/10 rounded-lg p-6 flex flex-col h-fit">
                                 <div className="p-3 bg-white/5 rounded-full w-fit mb-4">
                                     <PlusCircle className="w-6 h-6 text-cyan-400" />
                                 </div>

@@ -46,7 +46,7 @@ export function EventsCarousel({ initialEvents }: EventsCarouselProps) {
                         <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                             <div className="p-1">
                                 <Link href={`/events/${event.slug}`}>
-                                    <Card className="bg-slate-950/40 backdrop-blur-sm border-white/10 hover:border-primary/30 transition-all group overflow-hidden h-full">
+                                    <Card className="bg-zinc-950/40 backdrop-blur-sm border-white/10 hover:border-primary/30 transition-all group overflow-hidden h-full">
                                         <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100 transition-opacity">
                                             <span className="text-[10px] font-mono border border-white/10 px-2 py-1 rounded text-muted-foreground group-hover:text-primary group-hover:border-primary/30">
                                                 {event.type}

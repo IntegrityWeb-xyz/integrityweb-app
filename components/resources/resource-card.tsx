@@ -12,7 +12,7 @@ const getTypeConfig = (type: string) => {
         case 'wallet': return { icon: Key, color: "text-amber-400", border: "border-amber-500/30", bg: "bg-amber-500/10" };
         case 'sdk': return { icon: Box, color: "text-blue-400", border: "border-blue-500/30", bg: "bg-blue-500/10" };
         case 'project': return { icon: Database, color: "text-rose-400", border: "border-rose-500/30", bg: "bg-rose-500/10" };
-        default: return { icon: Box, color: "text-slate-400", border: "border-slate-500/30", bg: "bg-slate-500/10" };
+        default: return { icon: Box, color: "text-zinc-400", border: "border-zinc-500/30", bg: "bg-zinc-500/10" };
     }
 };
 
@@ -95,7 +95,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
 
                 {/* Action Button */}
                 <div className="pt-4 border-t border-white/5 flex gap-2">
-                    <Link href={`#resource-${resource.name.toLowerCase().replace(/\s+/g, '-')}`} className="flex-1">
+                    <Link href={`/resources/${resource.slug}`} className="flex-1">
                         <Button variant="outline" size="sm" className="w-full h-8 text-[10px] uppercase tracking-widest bg-transparent border-white/20 hover:bg-white/5 hover:text-cyan-400 hover:border-cyan-500/50 rounded-sm">
                             Access_Data
                         </Button>

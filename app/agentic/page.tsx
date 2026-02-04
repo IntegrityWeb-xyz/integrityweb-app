@@ -59,7 +59,7 @@ export default function AgenticPage() {
                                 { name: "ArbBot_X", task: "DEX Arbitrage", uptime: "98.2%", earned: "450 ETH" },
                                 { name: "GovDelegate", task: "DAO Voting", uptime: "100%", earned: "0 ETH" }
                             ].map((agent, i) => (
-                                <div key={i} className="flex items-center justify-between p-4 bg-slate-950/30 border border-white/5 rounded-lg hover:border-white/20 transition-all">
+                                <div key={i} className="flex items-center justify-between p-4 bg-zinc-950/30 border border-white/5 rounded-lg hover:border-white/20 transition-all">
                                     <div className="flex items-center gap-4">
                                         <div className="p-2 bg-white/5 rounded">
                                             <Bot className="w-4 h-4 text-white" />

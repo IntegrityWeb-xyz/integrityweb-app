@@ -19,6 +19,8 @@ export function getAllResources(): ResourceItem[] {
         // Parse JSON
         try {
             const resource: ResourceItem = JSON.parse(fileContents);
+            // Inject slug from filename
+            resource.slug = fileName.replace('.json', '');
             return resource;
         } catch (e) {
             console.error(`Error parsing ${fileName}:`, e);
@@ -34,4 +36,9 @@ export function getResourcesByCategory(category: string): ResourceItem[] {
     const allResources = getAllResources();
     if (category === 'all') return allResources;
     return allResources.filter(resource => resource.type === category);
+}
+
+export async function getResourceBySlug(slug: string): Promise<ResourceItem | null> {
+    const allResources = getAllResources();
+    return allResources.find(resource => resource.slug === slug) || null;
 }

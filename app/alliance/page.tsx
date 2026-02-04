@@ -69,7 +69,7 @@ export default function AlliancePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {proposals.map((prop, i) => (
-              <div key={i} className="group flex flex-col p-6 bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-xl hover:border-purple-500/30 transition-all duration-300">
+              <div key={i} className="group flex flex-col p-6 bg-zinc-950/40 backdrop-blur-xl border border-white/10 rounded-xl hover:border-purple-500/30 transition-all duration-300">
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-[10px] font-mono text-white/40 bg-white/5 px-2 py-1 rounded border border-white/5">{prop.id}</span>
                   <span className={`text-[10px] font-mono uppercase tracking-widest flex items-center gap-1.5 ${prop.status === 'DO_VOTE' ? 'text-purple-400' : 'text-emerald-400'}`}>
@@ -110,7 +110,7 @@ export default function AlliancePage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {members.map((node, i) => (
-              <div key={i} className="group relative p-6 bg-slate-950/30 backdrop-blur-lg border border-white/10 rounded-xl hover:border-cyan-500/30 transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)]">
+              <div key={i} className="group relative p-6 bg-zinc-950/30 backdrop-blur-lg border border-white/10 rounded-xl hover:border-cyan-500/30 transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)]">
                 <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
                   <Cpu className="w-5 h-5 text-white/20 group-hover:text-cyan-500 transition-colors" />
                 </div>
@@ -146,9 +146,9 @@ export default function AlliancePage() {
         </section>
 
         {/* Join CTA */}
-        <section className="mb-24 relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-xl p-8 md:p-16 text-center">
+        <section className="mb-24 relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/80 backdrop-blur-xl p-8 md:p-16 text-center">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/50 to-zinc-950 pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-4">

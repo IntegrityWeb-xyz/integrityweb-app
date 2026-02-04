@@ -63,7 +63,7 @@ export function TechStackViewer() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {stackItems.map((item, i) => (
-                    <Card key={i} className="bg-slate-950/40 border-white/10 hover:border-primary/50 transition-all duration-300 group overflow-hidden relative">
+                    <Card key={i} className="bg-zinc-950/40 border-white/10 hover:border-primary/50 transition-all duration-300 group overflow-hidden relative">
                         {/* Background tech pattern overlay */}
                         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
@@ -84,7 +84,7 @@ export function TechStackViewer() {
                             </p>
                             <div className="flex flex-wrap gap-2 mt-auto">
                                 {item.tags.map((tag, j) => (
-                                    <span key={j} className="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/5 text-slate-400 group-hover:border-primary/20 group-hover:text-primary/80 transition-colors">
+                                    <span key={j} className="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/5 text-zinc-400 group-hover:border-primary/20 group-hover:text-primary/80 transition-colors">
                                         {tag}
                                     </span>
                                 ))}

@@ -67,7 +67,7 @@ export default async function LearnPage() {
                                 { title: "State Channels Explained", duration: "08:15", views: "3.4k" }
                             ].map((vid, i) => (
                                 <div key={i} className="group cursor-pointer">
-                                    <div className="relative aspect-video bg-slate-900 border border-white/10 rounded-lg overflow-hidden mb-3 group-hover:border-primary/50 transition-colors">
+                                    <div className="relative aspect-video bg-zinc-900 border border-white/10 rounded-lg overflow-hidden mb-3 group-hover:border-primary/50 transition-colors">
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/0 transition-colors">
                                             <PlayCircle className="w-12 h-12 text-white/70 group-hover:text-primary transition-colors group-hover:scale-110 duration-300" />
                                         </div>

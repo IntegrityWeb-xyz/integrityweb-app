@@ -50,9 +50,9 @@ export default async function EventsPage() {
               return (
                 <div key={i} className="relative group ml-8 md:ml-0">
                   {/* Timeline Node */}
-                  <div className="absolute -left-[45px] md:-left-[61px] top-6 w-3 h-3 rounded-full bg-slate-950 border border-white/30 group-hover:border-primary group-hover:scale-125 transition-all z-10" />
+                  <div className="absolute -left-[45px] md:-left-[61px] top-6 w-3 h-3 rounded-full bg-zinc-950 border border-white/30 group-hover:border-primary group-hover:scale-125 transition-all z-10" />
 
-                  <Link href={`/events/${event.slug}`} className="block relative bg-slate-950/40 backdrop-blur-md border border-white/10 hover:border-primary/50 transition-all duration-300 rounded-lg p-6 lg:p-8 overflow-hidden group-hover:bg-white/[0.02]">
+                  <Link href={`/events/${event.slug}`} className="block relative bg-zinc-950/40 backdrop-blur-md border border-white/10 hover:border-primary/50 transition-all duration-300 rounded-lg p-6 lg:p-8 overflow-hidden group-hover:bg-white/[0.02]">
                     <div className="grid md:grid-cols-4 gap-6">
 
                       {/* Time/Date Block */}

@@ -69,11 +69,11 @@ export function Navigation() {
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         {/* Animated Border Gradient */}
-        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-slate-500/50 to-transparent opacity-50" />
+        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-zinc-500/50 to-transparent opacity-50" />
 
         {/* Sidebar Header */}
         <div className="h-14 border-b border-white/5 flex items-center justify-between px-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/0 via-slate-900/50 to-slate-900/0 animate-shimmer pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0 animate-shimmer pointer-events-none" />
 
 
           <div className="flex items-center gap-2 relative z-10">
@@ -158,9 +158,9 @@ export function Navigation() {
 
       {/* Bottom Navigation Bar */}
       <header className="fixed bottom-4 left-4 right-4 z-50 flex justify-center pointer-events-none">
-        <div className="w-full max-w-5xl bg-slate-950/50 backdrop-blur-2xl border border-white/10 group/nav rounded-2xl overflow-hidden shadow-2xl pointer-events-auto">
+        <div className="w-full max-w-5xl bg-zinc-950/50 backdrop-blur-2xl border border-white/10 group/nav rounded-2xl overflow-hidden shadow-2xl pointer-events-auto">
           {/* Subtle animated border gradient */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-500/50 to-transparent opacity-50 group-hover/nav:opacity-100 transition-opacity" />
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent opacity-50 group-hover/nav:opacity-100 transition-opacity" />
           <div className="absolute -top-[1px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent w-1/2 animate-[shimmer_3s_infinite]" />
 
           <div className="flex items-stretch">
@@ -194,8 +194,7 @@ export function Navigation() {
                 onClick={() => setSidebarOpen(true)}
                 className="flex items-center gap-2 px-4 h-14 text-white/60 hover:text-cyan-400 transition-colors border-l border-white/5 hover:bg-white/5 group relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-500/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
-                <span className="font-mono text-[10px] uppercase tracking-widest">Start</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-500/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
                 <Menu className="h-4 w-4" />
               </button>
 
@@ -214,7 +213,7 @@ export function Navigation() {
             </div>
 
             {/* Desktop: Full Nav */}
-            <div className="hidden md:flex items-stretch w-full justify-between bg-slate-900/30 backdrop-blur-2xl">
+            <div className="hidden md:flex items-stretch w-full justify-between bg-zinc-900/30 backdrop-blur-2xl">
               {/* Home */}
               <Link
                 href="/"

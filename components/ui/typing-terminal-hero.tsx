@@ -68,7 +68,7 @@ export function TypingTerminalHero() {
     return (
         <section className="min-h-[85vh] flex flex-col justify-center items-center px-4 relative">
             {/* Terminal Window */}
-            <div className="w-full max-w-4xl bg-slate-950/70 backdrop-blur-2xl border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/5">
+            <div className="w-full max-w-4xl bg-zinc-950/70 backdrop-blur-2xl border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/5">
 
                 {/* Window Title Bar */}
                 <div className="h-10 border-b border-white/5 bg-black/40 flex items-center justify-between px-4">

@@ -26,7 +26,7 @@ export function TerminalPageHeader({
     return (
         <div className={cn("w-full mt-20 mb-20 relative", className)}>
             {/* Extended Height Container */}
-            <div className="bg-slate-950/60 backdrop-blur-2xl border border-white/8 rounded-lg overflow-hidden relative min-h-[320px] flex flex-col group">
+            <div className="bg-zinc-950/60 backdrop-blur-2xl border border-white/8 rounded-lg overflow-hidden relative min-h-[320px] flex flex-col group">
 
                 {/* Background Effects */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -40,9 +40,9 @@ export function TerminalPageHeader({
                 {/* Top Bar */}
                 <div className="h-8 bg-white/5 border-b border-white/8 flex items-center px-5 justify-between z-20">
                     <div className="flex gap-3">
-                        <div className="w-2.5 h-2.5 rounded-full bg-slate-500/20 border border-slate-500/50" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-slate-500/20 border border-slate-500/50" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-slate-500/20 border border-slate-500/50" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-zinc-500/20 border border-zinc-500/50" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-zinc-500/20 border border-zinc-500/50" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-zinc-500/20 border border-zinc-500/50" />
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="text-[8px] font-mono text-muted-foreground uppercase opacity-70 tracking-widest hidden md:block">

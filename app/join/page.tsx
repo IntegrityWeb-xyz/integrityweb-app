@@ -25,7 +25,7 @@ export default function JoinPage() {
                 { icon: Fingerprint, title: "Sovereign Ownership", desc: "You own your data and keys." },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 border border-white/5 bg-white/5 rounded-lg">
-                  <div className="p-2 bg-slate-900 rounded border border-white/10 text-cyan-400">
+                  <div className="p-2 bg-zinc-900 rounded border border-white/10 text-cyan-400">
                     <item.icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -43,12 +43,12 @@ export default function JoinPage() {
             <div className="absolute top-0 left-0 md:-top-6 md:-left-6 w-12 h-12 border-t-2 border-l-2 border-cyan-500/30 rounded-tl-xl z-0" />
             <div className="absolute bottom-0 right-0 md:-bottom-6 md:-right-6 w-12 h-12 border-b-2 border-r-2 border-cyan-500/30 rounded-br-xl z-0" />
 
-            <div className="relative bg-slate-950/80 border border-white/10 backdrop-blur-xl p-6 md:p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col items-center z-10 w-full overflow-hidden">
+            <div className="relative bg-zinc-950/80 border border-white/10 backdrop-blur-xl p-6 md:p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col items-center z-10 w-full overflow-hidden">
               <div className="w-full flex justify-between items-center mb-8 border-b border-white/10 pb-4">
                 <div className="font-mono text-[10px] md:text-xs text-muted-foreground truncate max-w-[150px]">Term: ID-774A</div>
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-slate-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-slate-500/20" />
+                  <div className="w-3 h-3 rounded-full bg-zinc-500/20" />
+                  <div className="w-3 h-3 rounded-full bg-zinc-500/20" />
                   <div className="w-3 h-3 rounded-full bg-cyan-500/80 animate-pulse" />
                 </div>
               </div>
