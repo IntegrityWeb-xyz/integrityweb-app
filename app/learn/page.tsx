@@ -13,7 +13,11 @@ export const metadata: Metadata = {
     description: 'Master the concepts of verifiable AI, zero-knowledge proofs, and the integrity stack. Tutorials, guides, and deep dives.',
 }
 
-export default function LearnPage() {
+import { getAllEvents } from "@/lib/events/data"
+
+export default async function LearnPage() {
+    const events = await getAllEvents();
+
     return (
         <div className="min-h-screen bg-transparent text-foreground">
             <Navigation />
@@ -83,7 +87,7 @@ export default function LearnPage() {
 
                     {/* Events Section */}
                     <div className="border-t border-white/5 pt-12">
-                        <EventsCarousel />
+                        <EventsCarousel initialEvents={events} />
                     </div>
 
                     {/* Recent Updates Feed */}

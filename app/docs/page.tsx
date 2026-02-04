@@ -35,6 +35,9 @@ export default function DocsPage() {
                 </div>
                 <div className="pl-6 space-y-2 border-l border-white/10 ml-2">
                   <div className="text-cyan-400">README.md</div>
+                  <Link href="/docs/user-guide">
+                    <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors block">user_guide.md</div>
+                  </Link>
                   <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors">quick_start.sh</div>
                   <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors">architecture.pdf</div>
                 </div>
@@ -106,6 +109,7 @@ export default function DocsPage() {
                   <div className="grid md:grid-cols-2 gap-4 pt-4">
                     {[
                       { title: "Core Concepts", icon: BookOpen, desc: "Fundamental Theorems" },
+                      { title: "User Manual", icon: Folder, desc: "Operator Guide & Usage", href: "/docs/user-guide" },
                       { title: "API Reference", icon: Terminal, desc: "System Calls & Methods" },
                       { title: "Smart Contracts", icon: FileCode, desc: "Logic Gates" },
                       { title: "Agent Kit", icon: FileText, desc: "Autonomous Routines" },

@@ -3,8 +3,19 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, MapPin, Users, Zap, Video, Terminal, Radio } from "lucide-react"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
+import { getAllEvents } from "@/lib/events/data"
+import { EventItem } from "@/lib/events/types"
 
-export default function EventsPage() {
+const iconMap = {
+  Video: Video,
+  Users: Users,
+  Calendar: Calendar,
+  Zap: Zap,
+}
+
+export default async function EventsPage() {
+  const events = await getAllEvents();
+
   return (
     <div className="min-h-screen bg-transparent text-foreground">
       <Navigation />
@@ -17,7 +28,7 @@ export default function EventsPage() {
           status="TIMELINE_SYNCED"
           statusColor="rose"
           stats={[
-            { label: "Upcoming", value: "4" },
+            { label: "Upcoming", value: String(events.length) },
             { label: "Community", value: "24k+" },
             { label: "Next Sync", value: "T-48H" }
           ]}
@@ -33,115 +44,66 @@ export default function EventsPage() {
           </div>
 
           <div className="space-y-6 pt-8">
-            {[
-              {
-                type: "WORKSHOP_MODULE",
-                title: "Building Your First ZK Application",
-                date: "2026.03.15",
-                time: "10:00 - 13:00 UTC",
-                format: "ONLINE_UPLINK",
-                location: "REMOTE",
-                description: "Initialize your understanding of zero-knowledge proofs. Build a verifiable dApp from scratch.",
-                attendees: "250+ NODES",
-                icon: Video,
-                status: "REGISTRATION_OPEN",
-                color: "text-blue-400"
-              },
-              {
-                type: "PHYSICAL_SYNC",
-                title: "Bay Area Developer Meetup",
-                date: "2026.03.22",
-                time: "18:00 - 20:30 PST",
-                format: "IN_REAL_LIFE",
-                location: "SAN_FRANCISCO_CA",
-                description: "Connect with local sub-routines (developers). Discuss best practices and network optimization.",
-                attendees: "80+ ATTENDING",
-                icon: Users,
-                status: "LIMITED_CAPACITY",
-                color: "text-purple-400"
-              },
-              {
-                type: "GLOBAL_SUMMIT",
-                title: "Verifiable Computing Summit",
-                date: "2026.04.05",
-                time: "09:00 EST START",
-                format: "HYBRID_RELAY",
-                location: "NEW_YORK_NY",
-                description: "Three days of high-bandwidth knowledge transfer with lead researchers and core developers.",
-                attendees: "1000+ EXPECTED",
-                icon: Calendar,
-                status: "EARLY_ACCESS",
-                color: "text-pink-400"
-              },
-              {
-                type: "AI_ALIGNMENT",
-                title: "Verifiable Agent Architectures",
-                date: "2026.04.20",
-                time: "14:00 - 17:00 UTC",
-                format: "ONLINE_UPLINK",
-                location: "REMOTE",
-                description: "Deep dive into autonomous agent alignment using cryptographic constraints.",
-                attendees: "450+ NODES",
-                icon: Zap,
-                status: "REGISTRATION_OPEN",
-                color: "text-amber-400"
-              }
-            ].map((event, i) => (
-              <div key={i} className="relative group ml-8 md:ml-0">
-                {/* Timeline Node */}
-                <div className="absolute -left-[45px] md:-left-[61px] top-6 w-3 h-3 rounded-full bg-slate-950 border border-white/30 group-hover:border-primary group-hover:scale-125 transition-all z-10" />
+            {events.map((event, i) => {
+              const Icon = iconMap[event.iconName] || Calendar;
 
-                <div className="relative bg-slate-950/40 backdrop-blur-md border border-white/10 hover:border-primary/50 transition-all duration-300 rounded-lg p-6 lg:p-8 overflow-hidden group-hover:bg-white/[0.02]">
-                  <div className="grid md:grid-cols-4 gap-6">
+              return (
+                <div key={i} className="relative group ml-8 md:ml-0">
+                  {/* Timeline Node */}
+                  <div className="absolute -left-[45px] md:-left-[61px] top-6 w-3 h-3 rounded-full bg-slate-950 border border-white/30 group-hover:border-primary group-hover:scale-125 transition-all z-10" />
 
-                    {/* Time/Date Block */}
-                    <div className="md:col-span-1 space-y-2 border-b md:border-b-0 md:border-r border-white/5 pb-4 md:pb-0 font-mono">
-                      <div className="text-xl md:text-2xl font-bold text-white tracking-tight">{event.date}</div>
-                      <div className="text-xs text-muted-foreground flex items-center gap-2">
-                        <Terminal className="w-3 h-3" />
-                        {event.time}
-                      </div>
-                      <div className={`inline-flex items-center gap-1 text-[10px] px-2 py-1 rounded bg-white/5 border border-white/5 ${event.color} mt-2`}>
-                        <Radio className="w-3 h-3 animate-pulse" />
-                        {event.format}
-                      </div>
-                    </div>
+                  <Link href={`/events/${event.slug}`} className="block relative bg-slate-950/40 backdrop-blur-md border border-white/10 hover:border-primary/50 transition-all duration-300 rounded-lg p-6 lg:p-8 overflow-hidden group-hover:bg-white/[0.02]">
+                    <div className="grid md:grid-cols-4 gap-6">
 
-                    {/* Info Block */}
-                    <div className="md:col-span-2 space-y-4">
-                      <div>
-                        <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1 opacity-70">{event.type}</div>
-                        <h3 className="text-xl md:text-2xl font-bold font-mono text-white group-hover:text-primary transition-colors">{event.title}</h3>
-                      </div>
-                      <p className="text-sm font-mono text-muted-foreground leading-relaxed">
-                        {event.description}
-                      </p>
-                      <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-3 h-3" />
-                          {event.location}
+                      {/* Time/Date Block */}
+                      <div className="md:col-span-1 space-y-2 border-b md:border-b-0 md:border-r border-white/5 pb-4 md:pb-0 font-mono">
+                        <div className="text-xl md:text-2xl font-bold text-white tracking-tight">{event.date}</div>
+                        <div className="text-xs text-muted-foreground flex items-center gap-2">
+                          <Terminal className="w-3 h-3" />
+                          {event.time}
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Users className="w-3 h-3" />
-                          {event.attendees}
+                        <div className={`inline-flex items-center gap-1 text-[10px] px-2 py-1 rounded bg-white/5 border border-white/5 ${event.color} mt-2`}>
+                          <Radio className="w-3 h-3 animate-pulse" />
+                          {event.format}
                         </div>
                       </div>
-                    </div>
 
-                    {/* Action Block */}
-                    <div className="md:col-span-1 flex flex-col justify-between items-start md:items-end gap-4">
-                      <div className="text-[10px] font-mono px-2 py-1 rounded border border-white/10 text-white/50 bg-black/50 uppercase">
-                        STATUS: {event.status}
+                      {/* Info Block */}
+                      <div className="md:col-span-2 space-y-4">
+                        <div>
+                          <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1 opacity-70">{event.type}</div>
+                          <h3 className="text-xl md:text-2xl font-bold font-mono text-white group-hover:text-primary transition-colors">{event.title}</h3>
+                        </div>
+                        <p className="text-sm font-mono text-muted-foreground leading-relaxed">
+                          {event.description}
+                        </p>
+                        <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-3 h-3" />
+                            {event.location}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Icon className="w-3 h-3" />
+                            {event.attendees}
+                          </div>
+                        </div>
                       </div>
-                      <Button size="sm" className="w-full md:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/10 font-mono tracking-wider hover:border-primary/50 transition-all">
-                        [ RSVP ]
-                      </Button>
-                    </div>
 
-                  </div>
+                      {/* Action Block */}
+                      <div className="md:col-span-1 flex flex-col justify-between items-start md:items-end gap-4">
+                        <div className="text-[10px] font-mono px-2 py-1 rounded border border-white/10 text-white/50 bg-black/50 uppercase">
+                          STATUS: {event.status}
+                        </div>
+                        <Button size="sm" className="w-full md:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/10 font-mono tracking-wider hover:border-primary/50 transition-all">
+                          [ INFO ]
+                        </Button>
+                      </div>
+
+                    </div>
+                  </Link>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 

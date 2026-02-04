@@ -12,39 +12,13 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ArrowRight } from "lucide-react"
+import { EventItem } from "@/lib/events/types"
 
-const events = [
-    {
-        title: "ZK Summit 2026",
-        date: "March 15-18, 2026",
-        location: "Lisbon, Portugal",
-        description: "The premier gathering for zero-knowledge researchers and builders.",
-        category: "CONFERENCE"
-    },
-    {
-        title: "Agentic Hackathon",
-        date: "April 02-04, 2026",
-        location: "Global Online",
-        description: "Build the next generation of autonomous agents on Starknet.",
-        category: "HACKATHON"
-    },
-    {
-        title: "Integrity World Tour",
-        date: "May 2026",
-        location: "Multiple Cities",
-        description: "Meet the core team and learn about the future of verifiable AI.",
-        category: "COMMUNITY"
-    },
-    {
-        title: "Starknet CC",
-        date: "July 2026",
-        location: "Paris, France",
-        description: "The biggest community conference for the Starknet ecosystem.",
-        category: "CONFERENCE"
-    }
-]
+interface EventsCarouselProps {
+    initialEvents: EventItem[];
+}
 
-export function EventsCarousel() {
+export function EventsCarousel({ initialEvents }: EventsCarouselProps) {
     return (
         <div className="w-full py-12">
             <div className="flex items-center justify-between mb-8">
@@ -68,37 +42,39 @@ export function EventsCarousel() {
                 className="w-full"
             >
                 <CarouselContent className="-ml-4">
-                    {events.map((event, index) => (
+                    {initialEvents.map((event, index) => (
                         <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                             <div className="p-1">
-                                <Card className="bg-slate-950/40 backdrop-blur-sm border-white/10 hover:border-primary/30 transition-all group overflow-hidden">
-                                    <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100 transition-opacity">
-                                        <span className="text-[10px] font-mono border border-white/10 px-2 py-1 rounded text-muted-foreground group-hover:text-primary group-hover:border-primary/30">
-                                            {event.category}
-                                        </span>
-                                    </div>
-                                    <CardContent className="p-6">
-                                        <div className="mb-4 pt-2">
-                                            <h3 className="font-mono text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-1">
-                                                {event.title}
-                                            </h3>
-                                            <p className="text-sm text-muted-foreground line-clamp-2 min-h-[40px]">
-                                                {event.description}
-                                            </p>
+                                <Link href={`/events/${event.slug}`}>
+                                    <Card className="bg-slate-950/40 backdrop-blur-sm border-white/10 hover:border-primary/30 transition-all group overflow-hidden h-full">
+                                        <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100 transition-opacity">
+                                            <span className="text-[10px] font-mono border border-white/10 px-2 py-1 rounded text-muted-foreground group-hover:text-primary group-hover:border-primary/30">
+                                                {event.type}
+                                            </span>
                                         </div>
+                                        <CardContent className="p-6">
+                                            <div className="mb-4 pt-2">
+                                                <h3 className="font-mono text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-1">
+                                                    {event.title}
+                                                </h3>
+                                                <p className="text-sm text-muted-foreground line-clamp-2 min-h-[40px]">
+                                                    {event.description}
+                                                </p>
+                                            </div>
 
-                                        <div className="space-y-2 pt-4 border-t border-white/5">
-                                            <div className="flex items-center text-xs text-muted-foreground font-mono">
-                                                <Calendar className="mr-2 h-3 w-3 text-primary/70" />
-                                                {event.date}
+                                            <div className="space-y-2 pt-4 border-t border-white/5">
+                                                <div className="flex items-center text-xs text-muted-foreground font-mono">
+                                                    <Calendar className="mr-2 h-3 w-3 text-primary/70" />
+                                                    {event.date}
+                                                </div>
+                                                <div className="flex items-center text-xs text-muted-foreground font-mono">
+                                                    <MapPin className="mr-2 h-3 w-3 text-primary/70" />
+                                                    {event.location}
+                                                </div>
                                             </div>
-                                            <div className="flex items-center text-xs text-muted-foreground font-mono">
-                                                <MapPin className="mr-2 h-3 w-3 text-primary/70" />
-                                                {event.location}
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
                             </div>
                         </CarouselItem>
                     ))}
