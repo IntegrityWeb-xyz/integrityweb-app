@@ -1,0 +1,20 @@
+{
+    "name": "RISC-V",
+    "type": "COMPUTE",
+    "status": "STABLE",
+    "description": "Open-standard instruction set architecture (ISA) enabling sovereign hardware design.",
+    "version": "v20191213",
+    "docsUrl": "https://riscv.org/",
+    "repoUrl": "https://github.com/riscv",
+    "features": [
+        "Open Source ISA",
+        "No Royalties",
+        "Hardware Sovereignty"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "Growing"
+    },
+    "installCommand": "N/A"
+}

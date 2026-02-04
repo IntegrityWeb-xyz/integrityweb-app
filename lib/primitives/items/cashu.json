@@ -1,0 +1,20 @@
+{
+    "name": "Cashu",
+    "type": "COMPUTE",
+    "status": "BETA",
+    "description": "Open-source Chaumian Ecash protocol built on Bitcoin for near-perfect transaction privacy.",
+    "version": "1.0.0",
+    "docsUrl": "https://cashu.space/",
+    "repoUrl": "https://github.com/cashubtc/cashu",
+    "features": [
+        "Chaumian Blind Signatures",
+        "Instant Settlement",
+        "No Lightning Channel Mgmt"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "1.2k",
+        "dependents": "Growing"
+    },
+    "installCommand": "pip install cashu"
+}

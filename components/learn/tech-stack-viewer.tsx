@@ -2,50 +2,50 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Server, Database, Shield, Lock, Layers, Code, Cpu, Globe } from "lucide-react"
+import { Server, Database, Shield, Lock, Layers, Cpu, Globe, CircleDollarSign } from "lucide-react"
 
 const stackItems = [
     {
-        category: "Framework",
-        title: "Next.js 14",
-        desc: "App Router & Server Components for high-performance React applications.",
+        category: "Hard Asset",
+        title: "Bitcoin",
+        desc: "The only decentralized hard asset for sovereign AI agents and treasury.",
+        icon: CircleDollarSign,
+        tags: ["PoW", "Sovereignty", "Money"]
+    },
+    {
+        category: "Compute",
+        title: "Verifiable Resources",
+        desc: "Mathematical proofs ensuring integrity of computation across the web.",
+        icon: Cpu,
+        tags: ["ZK-STARKs", "Validity", "Math"]
+    },
+    {
+        category: "Infrastructure",
+        title: "Multichain",
+        desc: "A universal settlement layer spanning Ethereum, Bitcoin, and L2s.",
         icon: Globe,
-        tags: ["React", "Typescript", "Tailwind"]
+        tags: ["Interoperability", "Scale", "Layers"]
     },
     {
-        category: "Settlement Layer",
-        title: "Starknet",
-        desc: "Validity Rollup (L2) securing transactions with STARK proofs.",
+        category: "The Nexus",
+        title: "Alliance",
+        desc: "A collective of projects offering verifiable protocols and tools.",
         icon: Layers,
-        tags: ["L2", "Ethereum", "Scale"]
-    },
-    {
-        category: "Cryptography",
-        title: "ZK-STARKs",
-        desc: "Zero-Knowledge Scalable Transparent Argument of Knowledge.",
-        icon: Shield,
-        tags: ["Math", "Privacy", "Verifiable"]
+        tags: ["Collaboration", "Resources", "DAO"]
     },
     {
         category: "Identity",
-        title: "Clerk Auth",
-        desc: "Sovereign identity management and authentication infrastructure.",
+        title: "Sovereign DID",
+        desc: "Permissionless identity systems for humans and machines.",
         icon: Lock,
-        tags: ["Auth", "User", "Security"]
+        tags: ["Self-Custody", "Privacy", "Control"]
     },
     {
-        category: "Styling",
-        title: "Glassmorphism UI",
-        desc: "Modern aesthetic using Tailwind CSS for transparency and depth.",
-        icon: Code,
-        tags: ["CSS", "Design", "UX"]
-    },
-    {
-        category: "Data Availability",
-        title: "Celestia / Blobstream",
-        desc: "High-throughput data availability layer for scaling execution.",
-        icon: Database,
-        tags: ["DA", "Scaling", "Modular"]
+        category: "Security",
+        title: "Proof Systems",
+        desc: "Trust is replaced by cryptographic verification of all state.",
+        icon: Shield,
+        tags: ["Math-Verified", "Immutable", "Truth"]
     }
 ]
 

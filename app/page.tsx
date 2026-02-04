@@ -88,18 +88,18 @@ export default function Home() {
             <div className="space-y-6 max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase tracking-widest">
                 <Globe className="w-3 h-3" />
-                Featured_Protocol
+                INITIATIVE_ACTIVE
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Public Goods are <br />The Foundation
+                Building the <br />Digital Civilization
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Open proof standards, data availability networks, and decentralized identity. We build the soil for the next generation of internet civilization.
+                We are incorporating sovereign primitives—Bitcoin, ZCash, Nostr, and localized AI—to construct the Integrity Web. A civilization built on proof, privacy, and permanence.
               </p>
               <div className="pt-2">
-                <Link href="/explore">
+                <Link href="/join">
                   <Button variant="link" className="text-emerald-400 p-0 text-sm hover:text-emerald-300 font-mono tracking-wider">
-                    EXPLORE_PROTOCOLS -&gt;
+                    JOIN_THE_INITIATIVE -&gt;
                   </Button>
                 </Link>
               </div>

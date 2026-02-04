@@ -1,0 +1,20 @@
+{
+    "name": "ZCash",
+    "type": "COMPUTE",
+    "status": "STABLE",
+    "description": "Encrypted electronic cash using zero-knowledge proofs for private, peer-to-peer payments.",
+    "version": "5.6.0",
+    "docsUrl": "https://z.cash/technology/",
+    "repoUrl": "https://github.com/zcash/zcash",
+    "features": [
+        "zk-SNARKs",
+        "Shielded Pools",
+        "Selective Disclosure"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "5.4k",
+        "dependents": "High"
+    },
+    "installCommand": "apt-get install zcash"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Tor Protocol",
+    "type": "MESSAGING",
+    "status": "STABLE",
+    "description": "The Onion Router network for enabling anonymous communication and censorship resistance.",
+    "version": "0.4.8",
+    "docsUrl": "https://www.torproject.org/",
+    "repoUrl": "https://gitweb.torproject.org/",
+    "features": [
+        "Onion Routing",
+        "Traffic Analysis Resistance",
+        "Hidden Services"
+    ],
+    "stats": {
+        "downloads": "Millions",
+        "stars": "N/A",
+        "dependents": "Vital"
+    },
+    "installCommand": "apt install tor"
+}

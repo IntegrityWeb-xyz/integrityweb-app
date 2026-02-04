@@ -62,9 +62,9 @@ export default async function LearnPage() {
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             {[
-                                { title: "Intro to ZK-STARKs", duration: "12:04", views: "1.2k" },
-                                { title: "Building Autonomous Agents", duration: "45:20", views: "890" },
-                                { title: "State Channels Explained", duration: "08:15", views: "3.4k" }
+                                { title: "Bitcoin: The Hard Asset", duration: "12:04", views: "1.2k" },
+                                { title: "Nostr: Uncensorable Speech", duration: "45:20", views: "890" },
+                                { title: "Running Local LLMs", duration: "08:15", views: "3.4k" }
                             ].map((vid, i) => (
                                 <div key={i} className="group cursor-pointer">
                                     <div className="relative aspect-video bg-zinc-900 border border-white/10 rounded-lg overflow-hidden mb-3 group-hover:border-primary/50 transition-colors">
@@ -105,10 +105,18 @@ export default async function LearnPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-mono text-white font-bold text-sm mb-1 group-hover:text-cyan-400 transition-colors">
-                                            Protocol Update: v2.4.{i} Released
+                                            {[
+                                                "Protocol Update: Cashu Integration Live",
+                                                "Spec Release: RISC-V Sovereign Extensions",
+                                                "Network Upgrade: Tor Bridge Support"
+                                            ][i]}
                                         </h3>
                                         <p className="font-mono text-xs text-muted-foreground">
-                                            Optimized verification circuits and reduced proof generation time by 15%.
+                                            {[
+                                                "Enable near-instant, private ecash settlements on the Integrity Web.",
+                                                "New ISA instructions for hardware-enforced zero-knowledge proof generation.",
+                                                "Enhanced censorship resistance traversal for node operators in restricted regions."
+                                            ][i]}
                                         </p>
                                     </div>
                                 </div>

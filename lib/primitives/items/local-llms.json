@@ -1,0 +1,20 @@
+{
+    "name": "Local LLMs",
+    "type": "COMPUTE",
+    "status": "BETA",
+    "description": "Running powerful AI models (Llama 3, Mistral) on sovereign hardware for privacy and control.",
+    "version": "Various",
+    "docsUrl": "https://github.com/ollama/ollama",
+    "repoUrl": "https://github.com/ollama/ollama",
+    "features": [
+        "No Data Leaks",
+        "Offline Capability",
+        "Uncensored Models"
+    ],
+    "stats": {
+        "downloads": "High",
+        "stars": "50k+",
+        "dependents": "Growing"
+    },
+    "installCommand": "ollama run llama3"
+}

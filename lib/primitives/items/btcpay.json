@@ -1,0 +1,20 @@
+{
+    "name": "BTCPay Server",
+    "type": "COMPUTE",
+    "status": "STABLE",
+    "description": "Self-hosted, open-source cryptocurrency payment processor for sovereign merchant payments.",
+    "version": "1.13.0",
+    "docsUrl": "https://docs.btcpayserver.org/",
+    "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+    "features": [
+        "Self-Hosted",
+        "No Middleman",
+        "Lightning Network Support"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "6.8k",
+        "dependents": "High"
+    },
+    "installCommand": "docker-compose up -d"
+}

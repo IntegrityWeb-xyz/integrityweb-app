@@ -28,7 +28,7 @@ export default async function BuildPage() {
 
                 <TerminalPageHeader
                     title="Builder Studio"
-                    subtitle="Compose verified, authentic, and sovereign applications. Select from a growing ecosystem of compliant primitives."
+                    subtitle="Compose the Digital Civilization. Build verified, authentic, and sovereign applications using our primitives."
                     command="integrity list --tools"
                     status="OPEN_REGISTRY"
                     statusColor="cyan"
@@ -61,11 +61,11 @@ export default async function BuildPage() {
                                 <div className="p-3 bg-white/5 rounded-full w-fit mb-4">
                                     <PlusCircle className="w-6 h-6 text-cyan-400" />
                                 </div>
-                                <h3 className="text-lg font-bold text-white mb-2">Join the Alliance</h3>
+                                <h3 className="text-lg font-bold text-white mb-2">Join the Nexus</h3>
                                 <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                                     Are you building a tool that adheres to the Integrity Axioms? Submit your primitive to the registry.
                                 </p>
-                                <Link href="/alliance" className="mt-auto">
+                                <Link href="/nexus" className="mt-auto">
                                     <Button variant="outline" className="w-full border-white/10 hover:bg-white/5 hover:text-cyan-400">
                                         APPLY_FOR_INDEX <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>

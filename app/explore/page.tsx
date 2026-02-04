@@ -8,31 +8,31 @@ import { ResourceCard } from "@/components/resources/resource-card"
 
 const networkStats = [
   {
-    title: "Verifiable Compute Grid",
-    type: "INFRASTRUCTURE",
-    desc: "Decentralized compute resources for ZK proof generation.",
-    stats: "99.9% UPTIME",
-    icon: Server
-  },
-  {
-    title: "Privacy Identity Layer",
-    type: "IDENTITY",
-    desc: "Self-sovereign identity protocol with selective disclosure.",
-    stats: "1.2M IDENTS",
-    icon: Shield
-  },
-  {
-    title: "Open Data Oracle",
-    type: "DATA",
-    desc: "Trustless data feeds for smart contracts and verifiable agents.",
-    stats: "450ms LATENCY",
+    title: "Sovereign Money Layer",
+    type: "BITCOIN",
+    desc: "The decentralized hard asset foundation for the global economy.",
+    stats: "650 EH/s HASHRATE",
     icon: Database
   },
   {
-    title: "Global Mesh Network",
-    type: "NETWORK",
-    desc: "Peer-to-peer communication layer resistant to censorship.",
-    stats: "85TB/s",
+    title: "Sovereign Identity",
+    type: "NOSTR / DID",
+    desc: "Censorship-resistant profiles and social graphs owned by users.",
+    stats: "2M+ IDENTITIES",
+    icon: Shield
+  },
+  {
+    title: "Verifiable Compute",
+    type: "ZK-STARKS",
+    desc: "Trustless execution verification for AI agents and smart contracts.",
+    stats: "PROOFS: VALID",
+    icon: Cpu
+  },
+  {
+    title: "Freedom Network",
+    type: "TOR / P2P",
+    desc: "Anonymity layer preventing surveillance and traffic analysis.",
+    stats: "7,000+ RELAYS",
     icon: Globe
   },
 ]

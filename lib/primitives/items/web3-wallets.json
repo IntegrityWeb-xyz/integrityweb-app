@@ -1,0 +1,20 @@
+{
+    "name": "Web3 Wallets",
+    "type": "IDENTITY",
+    "status": "STABLE",
+    "description": "Sovereign key managers allowing passwordless, cryptographic sign-in to applications.",
+    "version": "Standard",
+    "docsUrl": "https://ethereum.org/en/wallets/",
+    "repoUrl": "https://github.com/WalletConnect",
+    "features": [
+        "Key Management",
+        "Transaction Signing",
+        "Asset Custody"
+    ],
+    "stats": {
+        "downloads": "Multi-Million",
+        "stars": "N/A",
+        "dependents": "Critical"
+    },
+    "installCommand": "N/A"
+}
