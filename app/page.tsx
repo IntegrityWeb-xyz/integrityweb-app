@@ -1,13 +1,26 @@
-"use client"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Shield, Network, Scale, Globe, Layers, Cpu } from "lucide-react"
+import { Shield, Network, Scale, Globe, Layers, Cpu, Radio } from "lucide-react"
 import { AxiomsIntegrityWeb } from "@/components/framework/axioms-integrity-web"
 import { HolographicHero } from "@/components/ui/holographic-hero"
+import { getAllQuotes } from "@/lib/quotes/data"
+import { getAllVideos } from "@/lib/videos/data"
+import { getAllEvents } from "@/lib/events/data"
+import { getAllResources } from "@/lib/resources/data"
+import { getAllPrimitives } from "@/lib/primitives/data"
+import { QuoteCard } from "@/components/quotes/quote-card"
+import { VideosCarousel } from "@/components/videos/videos-carousel"
+import { EventsCarousel } from "@/components/events/events-carousel"
+import { RecentResourcesShowcase } from "@/components/resources/recent-resources-showcase"
+import { PrimitivesShowcase } from "@/components/primitives/primitives-showcase"
 
+export default async function Home() {
+  const quotes = getAllQuotes();
+  const videos = getAllVideos();
+  const events = await getAllEvents();
+  const resources = getAllResources();
+  const primitives = await getAllPrimitives();
 
-export default function Home() {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden selection:bg-cyan-500/30 pt-16 pb-20">
 
@@ -82,6 +95,47 @@ export default function Home() {
           </div>
         </section>
 
+        {/* System Architecture (Primitives) */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Layers className="w-5 h-5 text-emerald-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Infrastructure Primitives
+              </h2>
+            </div>
+            <Link href="/primitives">
+              <span className="text-[10px] font-mono text-emerald-500/70 hover:text-emerald-400 uppercase tracking-widest cursor-pointer transition-colors hidden md:block border border-emerald-500/20 px-2 py-0.5 rounded">
+                [VIEW_PRIMITIVES]
+              </span>
+            </Link>
+          </div>
+          <PrimitivesShowcase primitives={primitives} />
+        </section>
+
+        {/* Community Signals (Quotes) */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Radio className="w-5 h-5 text-cyan-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Community Signals
+              </h2>
+            </div>
+            <Link href="/quotes">
+              <span className="text-[10px] font-mono text-cyan-500/70 hover:text-cyan-400 uppercase tracking-widest cursor-pointer transition-colors hidden md:block border border-cyan-500/20 px-2 py-0.5 rounded">
+                [VIEW_ALL_TRANSMISSIONS]
+              </span>
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {quotes.slice(0, 3).map((quote, i) => (
+              <QuoteCard key={i} quote={quote} />
+            ))}
+          </div>
+        </section>
+
+
         {/* Featured App / Public Goods */}
         <section className="mb-24 py-12 px-6 md:px-12 bg-gradient-to-br from-zinc-900/50 to-black border border-white/10 rounded-2xl relative overflow-hidden">
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
@@ -120,6 +174,27 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Recent Resources */}
+        <RecentResourcesShowcase resources={resources.slice(0, 3)} />
+
+        {/* Upcoming Events */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Globe className="w-5 h-5 text-amber-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Upcoming Events
+              </h2>
+            </div>
+            <Link href="/events">
+              <span className="text-[10px] font-mono text-amber-500/70 hover:text-amber-400 uppercase tracking-widest cursor-pointer transition-colors hidden md:block border border-amber-500/20 px-2 py-0.5 rounded">
+                [SYNC_CALENDAR]
+              </span>
+            </Link>
+          </div>
+          <EventsCarousel initialEvents={events} />
         </section>
 
         {/* AXIOMS SHOWCASE */}

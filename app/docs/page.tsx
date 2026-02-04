@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
-import { Search, FolderTree, FileCode, ChevronRight, BookOpen, Terminal, FileText, Folder } from "lucide-react"
+import { Search, FolderTree, FileCode, ChevronRight, BookOpen, Terminal, FileText, Folder, Shield, Database, Network, Cpu } from "lucide-react"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 
 export default function DocsPage() {
@@ -12,14 +12,14 @@ export default function DocsPage() {
       <main className="container mx-auto px-4 py-24 pb-48">
         <TerminalPageHeader
           title="Protocol Manual"
-          subtitle="Comprehensive documentation for the Integrity Web Operating System."
-          command="man integrity_os"
+          subtitle="Comprehensive documentation for the Sovereign Digital Civilization."
+          command="man digital_civilization"
           status="INDEX_LOADED"
-          statusColor="amber"
+          statusColor="emerald"
           stats={[
             { label: "Pages", value: "342" },
-            { label: "Last Update", value: "02.02.26" },
-            { label: "Version", value: "1.0.0-alpha" }
+            { label: "Last Update", value: "04.02.26" },
+            { label: "Version", value: "2.1.0-beta" }
           ]}
         />
 
@@ -34,12 +34,10 @@ export default function DocsPage() {
                   <span>introduction</span>
                 </div>
                 <div className="pl-6 space-y-2 border-l border-white/10 ml-2">
-                  <div className="text-cyan-400">README.md</div>
+                  <div className="text-cyan-400">READ_ME.md</div>
                   <Link href="/docs/user-guide">
-                    <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors block">user_guide.md</div>
+                    <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors block">digital_civilization.md</div>
                   </Link>
-                  <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors">quick_start.sh</div>
-                  <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors">architecture.pdf</div>
                 </div>
               </div>
 
@@ -48,17 +46,23 @@ export default function DocsPage() {
                   <Folder className="w-4 h-4" />
                   <span>core_protocols</span>
                 </div>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 text-white/70 mb-2">
-                  <Folder className="w-4 h-4" />
-                  <span>zk_circuits</span>
+                <div className="pl-6 space-y-2 border-l border-white/10 ml-2">
+                  <Link href="/nexus">
+                    <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors block">nexus_nodes.md</div>
+                  </Link>
+                  <Link href="/primitives">
+                    <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors block">integrity_primitives.md</div>
+                  </Link>
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-2 text-white/70 mb-2">
                   <Folder className="w-4 h-4" />
-                  <span>api_reference</span>
+                  <span>system</span>
+                </div>
+                <div className="pl-6 space-y-2 border-l border-white/10 ml-2">
+                  <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors">verification.zk</div>
+                  <div className="text-muted-foreground hover:text-white cursor-pointer transition-colors">consensus.btc</div>
                 </div>
               </div>
             </div>
@@ -69,22 +73,22 @@ export default function DocsPage() {
             <div className="prose prose-invert max-w-none">
               <div className="border border-white/10 bg-zinc-950/50 p-8 rounded-lg relative overflow-hidden">
                 {/* Decorative Header */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-transparent opacity-50" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-transparent opacity-50" />
                 <div className="flex justify-between font-mono text-xs text-muted-foreground mb-8">
                   <span>MANUAL PAGE NO. 1</span>
                   <span>INTEGRITY(1)</span>
                 </div>
 
-                <h1 className="font-mono text-4xl font-bold text-white mb-6 uppercase tracking-tight">
-                  INTEGRITY_WEB MANUAL
+                <h1 className="font-mono text-3xl md:text-4xl font-bold text-white mb-6 uppercase tracking-tight">
+                  DIGITAL_CIVILIZATION MANUAL
                 </h1>
 
                 <div className="mb-6 flex gap-4 border-b border-white/10">
-                  <button className="px-4 py-2 text-sm font-mono text-cyan-400 border-b-2 border-cyan-400">
-                    [ OPERATOR_MANUAL ]
+                  <button className="px-4 py-2 text-sm font-mono text-emerald-400 border-b-2 border-emerald-400">
+                    [ SYNOPSIS ]
                   </button>
                   <button className="px-4 py-2 text-sm font-mono text-muted-foreground hover:text-white transition-colors">
-                    [ PROTOCOL_SPEC ]
+                    [ TOPOLOGY ]
                   </button>
                 </div>
 
@@ -92,37 +96,36 @@ export default function DocsPage() {
                   <div>
                     <h3 className="text-primary text-sm uppercase tracking-widest mb-2 border-b border-white/10 pb-1 w-fit">Synopsis</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      The Integrity Web is a decentralized operating system for verifiable computation. It enables the creation of autonomous agents, privacy-preserving applications, and immutable state machines using zero-knowledge proofs.
+                      The Integrity Web is the operating system for a Sovereign Digital Civilization. It replaces trust in institutions with cryptographic truth, establishing a network based on Hard Assets (Bitcoin), Censorship-Resistance (Nostr/Tor), and Verifiable Compute (ZK/RisC-V).
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-primary text-sm uppercase tracking-widest mb-2 border-b border-white/10 pb-1 w-fit">Quick_Start</h3>
                     <div className="bg-black/50 border border-white/10 p-4 rounded text-sm text-gray-300">
-                      <span className="text-cyan-500">$</span> integrity init my-verifiable-app<br />
-                      <span className="text-gray-500">Initializing project structure... [OK]</span><br />
-                      <span className="text-cyan-500">$</span> cd my-verifiable-app && integrity dev<br />
-                      <span className="text-gray-500">Starting development node on port 3000...</span>
+                      <span className="text-emerald-500">$</span> connect --network=nexus<br />
+                      <span className="text-gray-500">Establishing uplink to 8,942 active nodes... [OK]</span><br />
+                      <span className="text-emerald-500">$</span> verify --primitive=bitcoin<br />
+                      <span className="text-gray-500">Genesis block confirmed. Hard asset truth established.</span>
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4 pt-4">
                     {[
-                      { title: "Core Concepts", icon: BookOpen, desc: "Fundamental Theorems" },
-                      { title: "User Manual", icon: Folder, desc: "Operator Guide & Usage", href: "/docs/user-guide" },
-                      { title: "API Reference", icon: Terminal, desc: "System Calls & Methods" },
-                      { title: "Smart Contracts", icon: FileCode, desc: "Logic Gates" },
-                      { title: "Agent Kit", icon: FileText, desc: "Autonomous Routines" },
+                      { title: "Primitives Registry", icon: Database, desc: "Supported Integrity Assets", href: "/primitives" },
+                      { title: "Nexus Dashboard", icon: Network, desc: "Active Node Topology", href: "/nexus" },
+                      { title: "User Guide", icon: Folder, desc: "Operator Manual", href: "/docs/user-guide" },
+                      { title: "Visual Archives", icon: FileCode, desc: "Technical Deep Dives", href: "/videos" },
                     ].map((item, i) => (
-                      <Link key={i} href="#" className="flex items-center gap-4 p-4 border border-white/10 hover:border-primary/50 bg-white/5 hover:bg-white/10 transition-all group">
-                        <div className="p-2 bg-zinc-900 rounded border border-white/5 group-hover:border-primary/50">
-                          <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      <Link key={i} href={item.href} className="flex items-center gap-4 p-4 border border-white/10 hover:border-emerald-500/50 bg-white/5 hover:bg-emerald-500/10 transition-all group">
+                        <div className="p-2 bg-zinc-900 rounded border border-white/5 group-hover:border-emerald-500/50">
+                          <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-emerald-400 transition-colors" />
                         </div>
                         <div>
-                          <div className="font-bold text-white text-sm group-hover:text-primary transition-colors uppercase">{item.title}</div>
+                          <div className="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors uppercase">{item.title}</div>
                           <div className="text-xs text-muted-foreground">{item.desc}</div>
                         </div>
-                        <ChevronRight className="w-4 h-4 ml-auto text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all" />
+                        <ChevronRight className="w-4 h-4 ml-auto text-muted-foreground group-hover:text-emerald-400 opacity-0 group-hover:opacity-100 transition-all" />
                       </Link>
                     ))}
                   </div>

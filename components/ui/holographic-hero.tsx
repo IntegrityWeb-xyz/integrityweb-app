@@ -136,16 +136,11 @@ export function HolographicHero() {
                 </div>
 
                 {/* Action Grid */}
-                <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-lg transition-all duration-[1000ms] delay-200 ${subComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                <div className={`grid grid-cols-1 gap-6 transition-all duration-[1000ms] delay-200 ${subComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                     <Link href="/join" className="w-full">
                         <Button className="w-full h-16 glass-panel hover:bg-cyan-500/20 hover:border-cyan-400/50 text-white font-sans font-bold text-lg tracking-wide uppercase transition-all duration-300 group shadow-none hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]">
-                            Initialize
+                            JOIN
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform text-cyan-400" />
-                        </Button>
-                    </Link>
-                    <Link href="/docs" className="w-full">
-                        <Button variant="outline" className="w-full h-16 glass-panel hover:bg-white/10 hover:border-white/30 text-white/80 hover:text-white font-sans text-sm tracking-widest uppercase transition-all duration-300 border-white/5 bg-black/20">
-                            Documentation
                         </Button>
                     </Link>
                 </div>
