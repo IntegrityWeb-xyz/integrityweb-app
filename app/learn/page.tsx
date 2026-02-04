@@ -7,6 +7,7 @@ import { AxiomsTicker } from "@/components/learn/axioms-ticker"
 import { LearningPaths } from "@/components/learn/learning-paths"
 import { TechStackViewer } from "@/components/learn/tech-stack-viewer"
 import { PlayCircle } from "lucide-react"
+import Link from "next/link"
 
 export const metadata: Metadata = {
     title: 'Learn Integrity Web | Protocols & Axioms',
@@ -14,9 +15,12 @@ export const metadata: Metadata = {
 }
 
 import { getAllEvents } from "@/lib/events/data"
+import { getAllVideos } from "@/lib/videos/data"
+import { VideosCarousel } from "@/components/videos/videos-carousel"
 
 export default async function LearnPage() {
     const events = await getAllEvents();
+    const videos = getAllVideos();
 
     return (
         <div className="min-h-screen bg-transparent text-foreground">
@@ -56,33 +60,14 @@ export default async function LearnPage() {
                             <h2 className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
                                 // VISUAL_ARCHIVES
                             </h2>
-                            <span className="font-mono text-xs text-primary/50">
-                                [STREAM_ACTIVE]
-                            </span>
+                            <Link href="/videos">
+                                <span className="font-mono text-xs text-primary/50 hover:text-cyan-400 cursor-pointer transition-colors">
+                                    [VIEW_ALL_ARCHIVES]
+                                </span>
+                            </Link>
                         </div>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            {[
-                                { title: "Bitcoin: The Hard Asset", duration: "12:04", views: "1.2k" },
-                                { title: "Nostr: Uncensorable Speech", duration: "45:20", views: "890" },
-                                { title: "Running Local LLMs", duration: "08:15", views: "3.4k" }
-                            ].map((vid, i) => (
-                                <div key={i} className="group cursor-pointer">
-                                    <div className="relative aspect-video bg-zinc-900 border border-white/10 rounded-lg overflow-hidden mb-3 group-hover:border-primary/50 transition-colors">
-                                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/0 transition-colors">
-                                            <PlayCircle className="w-12 h-12 text-white/70 group-hover:text-primary transition-colors group-hover:scale-110 duration-300" />
-                                        </div>
-                                        <div className="absolute bottom-2 right-2 px-1 py-0.5 bg-black/80 text-[10px] font-mono text-white rounded border border-white/10">
-                                            {vid.duration}
-                                        </div>
-                                    </div>
-                                    <h3 className="font-mono text-white font-bold text-sm mb-1 group-hover:text-primary transition-colors line-clamp-1">{vid.title}</h3>
-                                    <div className="flex gap-2 text-[10px] font-mono text-muted-foreground">
-                                        <span>Views: {vid.views}</span>
-                                        <span>[ARCHIVED]</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+
+                        <VideosCarousel videos={videos} />
                     </div>
 
                     {/* Events Section */}

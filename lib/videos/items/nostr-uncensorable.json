@@ -1,0 +1,16 @@
+{
+    "title": "Nostr: Uncensorable Speech",
+    "slug": "nostr-uncensorable",
+    "description": "A deep dive into the Nostr protocol. How relays, keys, and events create a censorship-resistant global social network.",
+    "youtubeId": "H6M9815WwQY",
+    "thumbnail": "https://img.youtube.com/vi/H6M9815WwQY/maxresdefault.jpg",
+    "duration": "45:20",
+    "views": "890",
+    "category": "Identity",
+    "date": "2024-11-02",
+    "tags": [
+        "Nostr",
+        "Social",
+        "Protocol"
+    ]
+}

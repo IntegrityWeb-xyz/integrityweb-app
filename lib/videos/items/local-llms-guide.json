@@ -1,0 +1,16 @@
+{
+    "title": "Running Local LLMs",
+    "slug": "local-llms-guide",
+    "description": "Step-by-step guide to running Llama 3 and Mistral on your own hardware using Ollama. sovereign AI starts here.",
+    "youtubeId": "Wjrdr0NU4Sk",
+    "thumbnail": "https://img.youtube.com/vi/Wjrdr0NU4Sk/maxresdefault.jpg",
+    "duration": "08:15",
+    "views": "3.4k",
+    "category": "Compute",
+    "date": "2024-12-10",
+    "tags": [
+        "AI",
+        "Local",
+        "Llama"
+    ]
+}

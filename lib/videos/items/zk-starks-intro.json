@@ -1,0 +1,16 @@
+{
+    "title": "Intro to ZK-STARKs",
+    "slug": "zk-starks-intro",
+    "description": "The math behind Scalable Transparent Arguments of Knowledge. How validity proofs scale Ethereum and verified computation.",
+    "youtubeId": "X7dF5j1kZt0",
+    "thumbnail": "https://img.youtube.com/vi/X7dF5j1kZt0/maxresdefault.jpg",
+    "duration": "15:30",
+    "views": "5.6k",
+    "category": "Cryptography",
+    "date": "2024-09-20",
+    "tags": [
+        "ZK",
+        "Math",
+        "Scaling"
+    ]
+}
