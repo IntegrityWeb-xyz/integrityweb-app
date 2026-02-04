@@ -1,11 +1,11 @@
-export interface AllianceStats {
+export interface NodeStats {
     latency?: string;
     uptime?: string;
     tvl?: string;
     proposals?: number;
 }
 
-export interface AllianceMember {
+export interface NetworkNode {
     name: string;
     slug: string;
     type: string; // e.g., "L2_SCALING", "CORE_ENG"
@@ -16,6 +16,6 @@ export interface AllianceMember {
     website?: string;
     twitter?: string;
     github?: string;
-    stats: AllianceStats;
+    stats: NodeStats;
     logoUrl?: string; // Optional custom logo
 }

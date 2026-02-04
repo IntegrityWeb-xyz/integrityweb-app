@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, Globe, BookOpen, Cpu, Bot, Lock, Handshake, Menu, X, ChevronRight, Zap } from "lucide-react"
+import { ShieldCheck, Globe, BookOpen, Cpu, Bot, Lock, Handshake, Menu, X, ChevronRight, Zap, Network } from "lucide-react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
@@ -15,7 +15,7 @@ const navItems = [
   { href: "/build", label: "BUILD", icon: Cpu, code: "03", desc: "Create & deploy" },
   { href: "/agentic", label: "AGENTIC", icon: Bot, code: "04", desc: "Autonomous agents" },
   { href: "/docs", label: "DOCS", icon: Lock, code: "05", desc: "Protocol specs" },
-  { href: "/alliance", label: "ALLIANCE", icon: Handshake, code: "06", desc: "Join the DAO" },
+  { href: "/nexus", label: "NEXUS", icon: Network, code: "06", desc: "Network State" },
 ]
 
 export function Navigation() {
