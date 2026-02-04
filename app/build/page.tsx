@@ -12,7 +12,14 @@ export const metadata: Metadata = {
     description: 'The open ecosystem for building verifiable, autonomous AI agents.',
 }
 
-export default function BuildPage() {
+import { getAllResources } from "@/lib/resources/data"
+import { RecentResourcesShowcase } from "@/components/resources/recent-resources-showcase"
+
+export default async function BuildPage() {
+    const resources = await getAllResources();
+    // Sort by something relevant if possible, for now just take first 3, or maybe verified ones
+    const recentResources = resources.filter(r => r.verified).slice(0, 3);
+
     return (
         <div className="min-h-screen bg-transparent text-foreground selection:bg-cyan-500/20">
             <Navigation />
@@ -33,6 +40,8 @@ export default function BuildPage() {
                 />
 
                 <div className="max-w-6xl mx-auto">
+
+                    <RecentResourcesShowcase resources={recentResources} />
 
                     <AllianceGrid />
 

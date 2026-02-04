@@ -1,0 +1,15 @@
+{
+    "name": "Nethermind",
+    "type": "CORE_ENG",
+    "status": "SYNCED",
+    "color": "text-blue-400",
+    "description": "Nethermind provides industry-leading Ethereum infrastructure, including the fastest Ethereum client. We empower enterprises and developers to build upon the decentralized web.",
+    "founded": "2017",
+    "website": "https://nethermind.io",
+    "twitter": "https://twitter.com/NethermindEth",
+    "github": "https://github.com/NethermindEth",
+    "stats": {
+        "latency": "8ms",
+        "uptime": "99.95%"
+    }
+}

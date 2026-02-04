@@ -1,0 +1,16 @@
+{
+    "name": "StarkWare",
+    "type": "L2_SCALING",
+    "status": "VALIDATING",
+    "color": "text-cyan-400",
+    "description": "StarkWare develops STARK-based solutions for the blockchain industry. Our products utilize zero-knowledge proofs to solve the two most pressing problems of permissionless blockchains: scalability and privacy.",
+    "founded": "2018",
+    "website": "https://starkware.co",
+    "twitter": "https://twitter.com/StarkWareLtd",
+    "github": "https://github.com/starkware-libs",
+    "stats": {
+        "latency": "12ms",
+        "uptime": "99.99%",
+        "tvl": "$850M"
+    }
+}

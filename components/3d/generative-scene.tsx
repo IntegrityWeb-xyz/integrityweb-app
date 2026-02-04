@@ -127,22 +127,7 @@ function BlockChain() {
       ))}
 
       {/* Connection lines between blocks */}
-      <line position={[0, 0, 0]}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={8}
-            array={new Float32Array([
-              -4, 0, 0, 0, 0, 0,
-              0, 0, 0, 4, 0, 0,
-              -2, 3, 0, 0, 0, 0,
-              2, 3, 0, 0, 0, 0,
-            ])}
-            itemSize={3}
-          />
-        </bufferGeometry>
-        <lineBasicMaterial color="#60a5fa" opacity={0.3} transparent linewidth={2} />
-      </line>
+
     </group>
   )
 }

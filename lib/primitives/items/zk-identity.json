@@ -1,0 +1,21 @@
+{
+    "name": "ZK Identity",
+    "type": "IDENTITY",
+    "status": "STABLE",
+    "description": "A privacy-preserving identity primitive allowing users to verify attributes without revealing the underlying data. Compatible with semaphore and other ZK-proof standards.",
+    "version": "1.4.2",
+    "docsUrl": "/docs/zk-identity",
+    "repoUrl": "https://github.com/integrity-web/zk-identity",
+    "features": [
+        "Selective Disclosure",
+        "On-chain Verification",
+        "Sybil Resistance",
+        "Cross-chain Signals"
+    ],
+    "stats": {
+        "downloads": "12k/mo",
+        "stars": "3.4k",
+        "dependents": "42"
+    },
+    "installCommand": "npm install @integrity/zk-identity"
+}

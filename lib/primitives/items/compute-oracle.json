@@ -1,0 +1,21 @@
+{
+    "name": "Compute Oracle",
+    "type": "COMPUTE",
+    "status": "EXPERIMENTAL",
+    "description": "Verifiable off-chain computation oracle. Allows smart contracts to request complex computations that are executed off-chain and proven via zk-SNARKs or optimistic assertions.",
+    "version": "0.4.1",
+    "docsUrl": "/docs/compute-oracle",
+    "repoUrl": "https://github.com/integrity-web/compute-oracle",
+    "features": [
+        "Arbitrary Logic Execution",
+        "zkVM Support",
+        "Optimistic Rollup Mode",
+        "Callback Integration"
+    ],
+    "stats": {
+        "downloads": "2.1k/mo",
+        "stars": "950",
+        "dependents": "8"
+    },
+    "installCommand": "cargo add integrity-compute-oracle"
+}

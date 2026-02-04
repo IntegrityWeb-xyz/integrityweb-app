@@ -227,12 +227,12 @@ export function Navigation() {
                 <div className="relative w-5 h-5">
                   <Image
                     src="/icon.svg"
-                    alt="Home"
+                    alt="Start"
                     fill
                     className="object-contain"
                   />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest">HOME</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest">Start</span>
               </Link>
 
               {/* Nav Items - Centered */}

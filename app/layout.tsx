@@ -112,7 +112,7 @@ export const metadata: Metadata = {
   },
 }
 
-import { GenerativeScene } from '@/components/3d/generative-scene'
+import { IntegrityNexus } from '@/components/3d/integrity-nexus'
 import { ScrollBackground } from '@/components/ui/scroll-background'
 import { OSFooter } from '@/components/ui/os-footer'
 import { Navigation } from '@/components/navigation'
@@ -127,16 +127,15 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning className="dark">
         <body className={`font-sans antialiased text-foreground ${googleSansCode.variable} ${jetbrainsMono.variable}`}>
           <div className="fixed inset-0 -z-50">
-            <GenerativeScene />
+            <IntegrityNexus />
           </div>
-          <ScrollBackground />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             storageKey="integrity-web-theme"
           >
-            <ScanlineOverlay />
+
             <Navigation />
             <main className="relative z-10 w-full min-h-screen flex flex-col">
               <div className="flex-1">

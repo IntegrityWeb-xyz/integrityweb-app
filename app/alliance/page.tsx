@@ -1,4 +1,3 @@
-"use client"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -17,6 +16,8 @@ import Link from "next/link"
 import { AxiomsIntegrityWeb } from "@/components/framework/axioms-integrity-web"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 
+import { getAllAllianceMembers } from "@/lib/alliance/data"
+
 // Mock Data for Governance
 const proposals = [
   { id: "SIP-42", title: "Integrity SDK v2.0 Specification", status: "DO_VOTE", votes: "98% YES", end: "24h left" },
@@ -24,16 +25,9 @@ const proposals = [
   { id: "SIP-40", title: "Grant Program: ZK-Agent Allocations", status: "EXECUTED", votes: "95% YES", end: "Executed" },
 ]
 
-const members = [
-  { name: "StarkWare", type: "L2_SCALING", status: "VALIDATING", color: "text-cyan-400" },
-  { name: "Nethermind", type: "CORE_ENG", status: "SYNCED", color: "text-blue-400" },
-  { name: "Herodotus", type: "STORAGE_PROOFS", status: "INDEXING", color: "text-sky-400" },
-  { name: "Argent", type: "ACCOUNT_ABS", status: "ACTIVE", color: "text-indigo-400" },
-  { name: "Snapshot", type: "GOVERNANCE", status: "VOTING", color: "text-cyan-300" },
-  { name: "Chipipay", type: "INVISIBLE_WALLETS", status: "ACTIVE", color: "text-blue-300" },
-]
+export default async function AlliancePage() {
+  const members = await getAllAllianceMembers();
 
-export default function AlliancePage() {
   return (
     <div className="min-h-screen pb-20 pt-24">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -46,7 +40,7 @@ export default function AlliancePage() {
           status="CONNECTED"
           statusColor="emerald"
           stats={[
-            { label: "Active Members", value: "842" },
+            { label: "Active Members", value: String(members.length) },
             { label: "Treasury", value: "$4.2B" },
             { label: "Proposals", value: "142" },
           ]}
@@ -110,32 +104,34 @@ export default function AlliancePage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {members.map((node, i) => (
-              <div key={i} className="group relative p-6 bg-zinc-950/30 backdrop-blur-lg border border-white/10 rounded-xl hover:border-cyan-500/30 transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)]">
-                <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
-                  <Cpu className="w-5 h-5 text-white/20 group-hover:text-cyan-500 transition-colors" />
-                </div>
-
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 font-bold text-xl text-white/80 group-hover:text-white group-hover:bg-white/10 transition-colors">
-                    {node.name.charAt(0)}
+              <Link href={`/alliance/${node.slug}`} key={i} className="block h-full">
+                <div className="group relative p-6 h-full bg-zinc-950/30 backdrop-blur-lg border border-white/10 rounded-xl hover:border-cyan-500/30 transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)]">
+                  <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:opacity-100 transition-opacity">
+                    <Cpu className="w-5 h-5 text-white/20 group-hover:text-cyan-500 transition-colors" />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-white text-lg tracking-tight group-hover:text-cyan-400 transition-colors">{node.name}</h3>
-                    <div className="text-[10px] font-mono text-cyan-500/60 uppercase tracking-wider">{node.type}</div>
+
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 font-bold text-xl text-white/80 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                      {node.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white text-lg tracking-tight group-hover:text-cyan-400 transition-colors">{node.name}</h3>
+                      <div className="text-[10px] font-mono text-cyan-500/60 uppercase tracking-wider">{node.type}</div>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex justify-between items-center pt-4 border-t border-white/5">
-                  <span className="text-[10px] font-mono text-muted-foreground">LATENCY: 12ms</span>
-                  <span className={`text-[10px] font-mono font-bold ${node.color} flex items-center gap-1.5`}>
-                    <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`} />
-                    {node.status}
-                  </span>
-                </div>
+                  <div className="flex justify-between items-center pt-4 border-t border-white/5">
+                    <span className="text-[10px] font-mono text-muted-foreground">LATENCY: {node.stats.latency || 'N/A'}</span>
+                    <span className={`text-[10px] font-mono font-bold ${node.color} flex items-center gap-1.5`}>
+                      <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`} />
+                      {node.status}
+                    </span>
+                  </div>
 
-                {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              </div>
+                  {/* Hover Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                </div>
+              </Link>
             ))}
           </div>
         </section>

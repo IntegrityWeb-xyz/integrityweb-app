@@ -1,0 +1,21 @@
+{
+    "name": "Verifiable Storage",
+    "type": "STORAGE",
+    "status": "BETA",
+    "description": "Decentralized storage layer with built-in Merkle proofs for data integrity. Ensures that any data retrieved is cryptographically verified against a root hash stored on-chain.",
+    "version": "0.9.5",
+    "docsUrl": "/docs/verifiable-storage",
+    "repoUrl": "https://github.com/integrity-web/verifiable-storage",
+    "features": [
+        "Content Addressing",
+        "Merkle Proof Generation",
+        "Data Availability Sampling",
+        "Erasure Coding"
+    ],
+    "stats": {
+        "downloads": "5.6k/mo",
+        "stars": "1.8k",
+        "dependents": "18"
+    },
+    "installCommand": "npm install @integrity/verifiable-storage"
+}
