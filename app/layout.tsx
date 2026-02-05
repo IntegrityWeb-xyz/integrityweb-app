@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://integritywebxyz'),
+  metadataBase: new URL('https://integrityweb.xyz'),
   title: {
     default: 'IntegrityWeb - Verifiable AI Framework',
     template: '%s | IntegrityWeb'
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://integritywebxyz',
+    url: 'https://integrityweb.xyz',
     siteName: 'IntegrityWeb',
     title: 'IntegrityWeb - The Trust Layer for AI',
     description: 'Build validated, sovereign agents on the Integrity Web. The essential framework for verifiable AI applications.',
@@ -112,23 +112,38 @@ export const metadata: Metadata = {
   },
 }
 
-import { IntegrityNexus } from '@/components/3d/integrity-nexus'
 import { ScrollBackground } from '@/components/ui/scroll-background'
 import { OSFooter } from '@/components/ui/os-footer'
 import { Navigation } from '@/components/navigation'
+import { BackgroundCanvas } from '@/components/3d/background-canvas'
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'IntegrityWeb',
+    url: 'https://integrityweb.xyz',
+    logo: 'https://integrityweb.xyz/icon.svg',
+    sameAs: [
+      'https://twitter.com/integrityweb',
+      'https://github.com/integrityweb'
+    ],
+    description: 'The Integrity Web provides the cryptographic primitives and tools you need to build the next generation of verifiable, autonomous AI applications.'
+  }
+
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning className="dark">
         <body className={`font-sans antialiased text-foreground ${googleSansCode.variable} ${jetbrainsMono.variable}`}>
-          <div className="fixed inset-0 -z-50">
-            <IntegrityNexus />
-          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <BackgroundCanvas />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
