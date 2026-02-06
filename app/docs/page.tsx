@@ -16,11 +16,6 @@ export default function DocsPage() {
           command="man digital_civilization"
           status="INDEX_LOADED"
           statusColor="emerald"
-          stats={[
-            { label: "Pages", value: "342" },
-            { label: "Last Update", value: "04.02.26" },
-            { label: "Version", value: "2.1.0-beta" }
-          ]}
         />
 
         <div className="grid lg:grid-cols-4 gap-8">

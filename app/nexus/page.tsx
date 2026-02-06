@@ -18,10 +18,6 @@ export default function NexusPage() {
                     command="./nexus_insight"
                     status="ONLINE"
                     statusColor="cyan"
-                    stats={[
-                        { label: "Network State", value: "HEALTHY" },
-                        { label: "Consensus", value: "99.9%" },
-                    ]}
                 />
 
                 {/* Mission / Intro Section */}

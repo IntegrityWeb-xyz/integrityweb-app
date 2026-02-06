@@ -17,12 +17,7 @@ export default async function PrimitivesPage() {
                     subtitle="Fundamental building blocks for the verifiable web. Cryptographically audited, open-source, and ready for deployment."
                     command="npm install @integrity/core"
                     status="STABLE_V1"
-                    statusColor="purple"
-                    stats={[
-                        { label: "Modules", value: String(primitives.length) },
-                        { label: "Downloads", value: "24k/mo" },
-                        { label: "License", value: "MIT" }
-                    ]}
+                    statusColor="cyan"
                 />
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

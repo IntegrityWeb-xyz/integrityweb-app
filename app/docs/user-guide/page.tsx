@@ -19,11 +19,6 @@ export default function UserGuidePage() {
                     command="man user_guide"
                     status="READY"
                     statusColor="emerald"
-                    stats={[
-                        { label: "Revision", value: "2.4.1" },
-                        { label: "Access Level", value: "PUBLIC" },
-                        { label: "Encryption", value: "ENABLED" }
-                    ]}
                 />
 
                 <div className="grid lg:grid-cols-4 gap-8">

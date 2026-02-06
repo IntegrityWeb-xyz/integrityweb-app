@@ -27,11 +27,6 @@ export default async function EventsPage() {
           command="./sync_events --global"
           status="TIMELINE_SYNCED"
           statusColor="rose"
-          stats={[
-            { label: "Upcoming", value: String(events.length) },
-            { label: "Community", value: "24k+" },
-            { label: "Next Sync", value: "T-48H" }
-          ]}
         />
 
         {/* Timeline View */}

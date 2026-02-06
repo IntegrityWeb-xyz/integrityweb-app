@@ -39,11 +39,6 @@ export default async function LearnPage() {
                         command="./query --deep-scan"
                         status="UPLINK_STABLE"
                         statusColor="cyan"
-                        stats={[
-                            { label: "Data Nodes", value: "8,942" },
-                            { label: "Bandwidth", value: "12 TB/s" },
-                            { label: "Encryption", value: "ZK-STARK" }
-                        ]}
                     />
                 </div>
 

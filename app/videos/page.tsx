@@ -17,10 +17,6 @@ export default function VideosPage() {
                     command="./stream_archives"
                     status="BROADCASTING"
                     statusColor="cyan"
-                    stats={[
-                        { label: "Total Archives", value: String(videos.length) },
-                        { label: "Storage", value: "Decentralized" },
-                    ]}
                 />
 
                 <VideosGrid videos={videos} />

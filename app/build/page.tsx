@@ -1,8 +1,7 @@
 import { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
-import { AllianceGrid } from "@/components/build/alliance-grid"
-import { DeveloperResources } from "@/components/build/developer-resources"
+import { PrimitivesGrid } from "@/components/build/primitives-grid"
 import { ArrowRight, PlusCircle } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -13,10 +12,12 @@ export const metadata: Metadata = {
 }
 
 import { getAllResources } from "@/lib/resources/data"
+import { getAllPrimitives } from "@/lib/primitives/data"
 import { RecentResourcesShowcase } from "@/components/resources/recent-resources-showcase"
 
 export default async function BuildPage() {
     const resources = await getAllResources();
+    const primitives = getAllPrimitives();
     // Sort by something relevant if possible, for now just take first 3, or maybe verified ones
     const recentResources = resources.filter(r => r.verified).slice(0, 3);
 
@@ -32,42 +33,28 @@ export default async function BuildPage() {
                     command="integrity list --tools"
                     status="OPEN_REGISTRY"
                     statusColor="cyan"
-                    stats={[
-                        { label: "Primitives", value: "3" },
-                        { label: "Ecosystem", value: "Expanding" },
-                        { label: "Access", value: "Permissionless" }
-                    ]}
                 />
 
                 <div className="max-w-6xl mx-auto">
 
                     <RecentResourcesShowcase resources={recentResources} />
 
-                    <AllianceGrid />
+                    <PrimitivesGrid items={primitives} />
 
-                    <div className="grid md:grid-cols-3 gap-8 mb-24">
-                        <div className="md:col-span-2">
-                            <DeveloperResources />
-                        </div>
-
-                        {/* Call to Action: Join Ecosystem */}
-                        <div className="md:col-span-1">
-                            <div className="flex items-center justify-between mb-8">
-                                <h2 className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
-                                    // CONTRIBUTE
-                                </h2>
-                            </div>
-                            <div className="bg-gradient-to-br from-zinc-900/50 to-zinc-950/50 border border-white/10 rounded-lg p-6 flex flex-col h-fit">
-                                <div className="p-3 bg-white/5 rounded-full w-fit mb-4">
-                                    <PlusCircle className="w-6 h-6 text-cyan-400" />
+                    <div className="max-w-4xl mx-auto mb-32 mt-16">
+                        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-zinc-900/50 p-12 text-center">
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 opacity-50" />
+                            <div className="relative z-10 flex flex-col items-center">
+                                <div className="p-4 bg-white/5 rounded-full mb-6 border border-white/5 shadow-2xl shadow-cyan-500/10">
+                                    <PlusCircle className="w-8 h-8 text-cyan-400" />
                                 </div>
-                                <h3 className="text-lg font-bold text-white mb-2">Join the Nexus</h3>
-                                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                                    Are you building a tool that adheres to the Integrity Axioms? Submit your primitive to the registry.
+                                <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Join the Nexus</h2>
+                                <p className="text-muted-foreground max-w-lg mx-auto mb-8 text-lg">
+                                    Are you building a tool that adheres to the Integrity Axioms? Submit your primitive to the registry and join the autonomous ecosystem.
                                 </p>
-                                <Link href="/nexus" className="mt-auto">
-                                    <Button variant="outline" className="w-full border-white/10 hover:bg-white/5 hover:text-cyan-400">
-                                        APPLY_FOR_INDEX <ArrowRight className="w-4 h-4 ml-2" />
+                                <Link href="/nexus">
+                                    <Button size="lg" className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8">
+                                        APPLY_FOR_INDEX <ArrowRight className="w-5 h-5 ml-2" />
                                     </Button>
                                 </Link>
                             </div>

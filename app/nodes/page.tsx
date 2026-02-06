@@ -14,10 +14,6 @@ export default function NodesPage() {
                     command="./list_nodes"
                     status="SCANNING"
                     statusColor="cyan"
-                    stats={[
-                        { label: "Total Nodes", value: String(nodes.length) },
-                        { label: "Active", value: String(nodes.length) }, // Mock for now
-                    ]}
                 />
 
                 <NodesGrid nodes={nodes} />

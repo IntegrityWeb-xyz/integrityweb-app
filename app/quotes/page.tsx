@@ -17,10 +17,6 @@ export default function QuotesPage() {
                     command="./listen_signals"
                     status="RECEIVING"
                     statusColor="cyan"
-                    stats={[
-                        { label: "Signals", value: String(quotes.length) },
-                        { label: "Frequency", value: "High" },
-                    ]}
                 />
 
                 <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">

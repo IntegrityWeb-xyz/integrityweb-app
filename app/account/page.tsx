@@ -22,11 +22,6 @@ export default function AccountPage() {
                     command="./whoami --verbose"
                     status="IDENTITY_VERIFIED"
                     statusColor="emerald"
-                    stats={[
-                        { label: "Access Level", value: "L3_OPERATOR" },
-                        { label: "Reputation", value: "98.4%" },
-                        { label: "Credits", value: "4,500" }
-                    ]}
                 />
 
                 <div className="grid lg:grid-cols-3 gap-8">
@@ -37,26 +32,8 @@ export default function AccountPage() {
                         {/* Identity Card */}
                         <div className="bg-zinc-950/40 border border-white/10 rounded-lg p-6 relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-muted-foreground opacity-50">ID_MODULE</div>
-                            <div className="flex items-start gap-6">
-                                <div className="w-20 h-20 rounded bg-white/5 border border-white/10 flex items-center justify-center relative">
-                                    <User className="w-8 h-8 text-muted-foreground" />
-                                    <div className="absolute bottom-1 right-1 w-3 h-3 bg-emerald-500 rounded-full border border-black shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-                                </div>
-                                <div className="space-y-1">
-                                    <h3 className="font-mono text-xl text-white font-bold">Operator_0x4a...92f</h3>
-                                    <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
-                                        <span>UID: 8492-4912-9102</span>
-                                        <Copy className="w-3 h-3 cursor-pointer hover:text-white" />
-                                    </div>
-                                    <div className="pt-2 flex gap-2">
-                                        <Badge variant="outline" className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 font-mono text-[10px]">
-                                            VERIFIED_HUMAN
-                                        </Badge>
-                                        <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/20 font-mono text-[10px]">
-                                            EARLY_ADOPTER
-                                        </Badge>
-                                    </div>
-                                </div>
+                            <div className="flex items-center justify-center py-8 text-muted-foreground font-mono text-sm">
+                                [ IDENTITY_MODULE_NOT_CONNECTED ]
                             </div>
                         </div>
 
@@ -72,27 +49,9 @@ export default function AccountPage() {
                                 </Button>
                             </div>
 
-                            <div className="space-y-4">
-                                {[
-                                    { label: "Production Key", scope: "read/write", created: "2026-01-15" },
-                                    { label: "Testnet Key", scope: "read-only", created: "2026-02-01" }
-                                ].map((key, i) => (
-                                    <div key={i} className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-black/40 border border-white/5 rounded">
-                                        <div>
-                                            <div className="font-mono text-sm text-white mb-1">{key.label}</div>
-                                            <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
-                                                <span>{apiKey}</span>
-                                                <Copy className="w-3 h-3 hover:text-white cursor-pointer" />
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center gap-4 text-xs font-mono">
-                                            <span className="text-muted-foreground">SCOPE: {key.scope}</span>
-                                            <Button size="sm" variant="ghost" className="h-6 w-6 p-0 hover:text-red-400">
-                                                <RefreshCw className="w-3 h-3" />
-                                            </Button>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="flex flex-col items-center justify-center py-8 text-muted-foreground space-y-2">
+                                <div className="font-mono text-sm">NO_ACTIVE_KEYS</div>
+                                <div className="text-xs opacity-50">Generate a new key to access the network.</div>
                             </div>
                         </div>
 

@@ -1,12 +1,10 @@
-import Link from "next/link"
 import { Metadata } from "next"
 
 import { Navigation } from "@/components/navigation"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { AgentCapabilities } from "@/components/agentic/agent-capabilities"
-import { UseCaseTerminal } from "@/components/agentic/use-case-terminal"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Bot } from "lucide-react"
+import { SovereignStack } from "@/components/agentic/sovereign-stack"
+import { SovereignValues } from "@/components/agentic/sovereign-values"
 
 export const metadata: Metadata = {
     title: 'Agentic Runtime | Integrity Web',
@@ -26,61 +24,31 @@ export default function AgenticPage() {
                     command="integrity run --agent"
                     status="DAEMON_ACTIVE"
                     statusColor="cyan"
-                    stats={[
-                        { label: "Active Agents", value: "14,204" },
-                        { label: "Verifications", value: "240/sec" },
-                        { label: "Protocol", value: "ERC-7579" }
-                    ]}
                 />
 
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-5xl mx-auto mb-20 text-center space-y-6">
+                    <h2 className="text-3xl font-bold text-white tracking-tight">
+                        From "Tool" to "Economic Peer"
+                    </h2>
+                    <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                        The shift toward a <span className="text-cyan-400 font-bold">Sovereign Agent</span> architecture marks a fundamental transition.
+                        In the Integrity Web, your agent isn't just a bot running on a server; it is a verifiable extension of your intent,
+                        operating with its own financial and legal agency while remaining anchored to your control.
+                    </p>
+                </div>
+
+                <div className="max-w-6xl mx-auto space-y-32">
+                    {/* Infrastructure Stack */}
+                    <SovereignStack />
+
+                    {/* Values & Manifesto */}
+                    <SovereignValues />
+
                     {/* Capabilities Grid */}
                     <AgentCapabilities />
-
-                    {/* Code Simulation */}
-                    <UseCaseTerminal />
-
-                    {/* Active Agents List Reuse (Simple version) */}
-                    <div className="mt-24 border-t border-white/5 pt-12">
-                        <div className="flex items-center justify-between mb-8">
-                            <h2 className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
-                                // LIVE_AGENTS
-                            </h2>
-                            <Link href="/explore">
-                                <Button variant="link" className="text-xs font-mono text-primary">
-                                    VIEW_ALL <ArrowRight className="w-3 h-3 ml-2" />
-                                </Button>
-                            </Link>
-                        </div>
-
-                        <div className="space-y-4">
-                            {[
-                                { name: "Sentinel_01", task: "Security Monitoring", uptime: "99.99%", earned: "124 ETH" },
-                                { name: "ArbBot_X", task: "DEX Arbitrage", uptime: "98.2%", earned: "450 ETH" },
-                                { name: "GovDelegate", task: "DAO Voting", uptime: "100%", earned: "0 ETH" }
-                            ].map((agent, i) => (
-                                <div key={i} className="flex items-center justify-between p-4 bg-zinc-950/30 border border-white/5 rounded-lg hover:border-white/20 transition-all">
-                                    <div className="flex items-center gap-4">
-                                        <div className="p-2 bg-white/5 rounded">
-                                            <Bot className="w-4 h-4 text-white" />
-                                        </div>
-                                        <div>
-                                            <div className="font-mono text-sm font-bold text-white">{agent.name}</div>
-                                            <div className="font-mono text-[10px] text-muted-foreground">{agent.task}</div>
-                                        </div>
-                                    </div>
-                                    <div className="text-right font-mono text-xs">
-                                        <div className="text-cyan-400">{agent.uptime} UP</div>
-                                        <div className="text-white/50">{agent.earned}</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                 </div>
 
             </main>
         </div>
     )
 }
-
