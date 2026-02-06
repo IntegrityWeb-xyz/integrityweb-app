@@ -1,0 +1,28 @@
+{
+  "short_description": "MIST.cash focuses on 'Private-by-Default' transactions. It removes the link between a public iden...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "MIST.cash",
+  "description": "MIST.cash focuses on 'Private-by-Default' transactions. It removes the link between a public identity (an email or npub) and a financial balance, ensuring that information belongs solely to the creator.",
+  "type": "dapp",
+  "tags": [
+    "privacy",
+    "payments"
+  ],
+  "slug": "mist-cash"
+}

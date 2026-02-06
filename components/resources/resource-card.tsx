@@ -36,7 +36,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
     return (
         <div className={`
       relative group h-full flex flex-col
-      bg-black/20 backdrop-blur-sm border border-white/10 rounded-sm
+      bg-black/60 backdrop-blur-xl border border-white/10 rounded-sm
       hover:border-white/20 transition-all duration-300
     `}>
 

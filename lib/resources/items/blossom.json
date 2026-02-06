@@ -1,0 +1,28 @@
+{
+  "short_description": "A decentralized data storage project (part of the Sovereign Engineering program) that allows user...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Blossom",
+  "description": "A decentralized data storage project (part of the Sovereign Engineering program) that allows users to store personal data on public servers without giving up ownership.",
+  "type": "project",
+  "tags": [
+    "storage",
+    "decentralization"
+  ],
+  "slug": "blossom"
+}

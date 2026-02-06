@@ -1,0 +1,29 @@
+{
+  "short_description": "A decentralized app store built on Nostr. Instead of relying on Apple or Google, developers can d...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Zapstore",
+  "description": "A decentralized app store built on Nostr. Instead of relying on Apple or Google, developers can distribute software that 'dictators cannot delete.'",
+  "type": "dapp",
+  "tags": [
+    "nostr",
+    "app-store",
+    "censorship-resistant"
+  ],
+  "slug": "zapstore"
+}

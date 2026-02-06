@@ -1,0 +1,29 @@
+{
+  "short_description": "The next-generation STARK prover. It is significantly faster and designed to make verification ac...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "S-two",
+  "description": "The next-generation STARK prover. It is significantly faster and designed to make verification accessible even on low-power devices.",
+  "type": "protocol",
+  "tags": [
+    "starknet",
+    "zk",
+    "prover"
+  ],
+  "slug": "s-two"
+}

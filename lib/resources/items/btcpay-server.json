@@ -1,0 +1,29 @@
+{
+  "short_description": "BTCPay Server is a self-hosted, open-source cryptocurrency payment processor. It's secure, privat...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "BTCPay Server",
+  "description": "BTCPay Server is a self-hosted, open-source cryptocurrency payment processor. It's secure, private, censorship-resistant and free.",
+  "type": "dapp",
+  "tags": [
+    "payments",
+    "open-source",
+    "bitcoin"
+  ],
+  "slug": "btcpay-server"
+}

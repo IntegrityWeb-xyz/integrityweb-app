@@ -1,0 +1,29 @@
+{
+  "short_description": "handles the 'heavy lifting' of relay management, event signing, and caching. It even includes AI ...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "NDK",
+  "description": "handles the 'heavy lifting' of relay management, event signing, and caching. It even includes AI Guardrails to help developers avoid common cryptographic mistakes",
+  "type": "sdk",
+  "tags": [
+    "nostr",
+    "dev-tool",
+    "relays"
+  ],
+  "slug": "ndk"
+}

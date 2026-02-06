@@ -1,0 +1,29 @@
+{
+  "short_description": "An open-source project that allows individuals to share internet access via their WiFi routers in...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "TollGate",
+  "description": "An open-source project that allows individuals to share internet access via their WiFi routers in exchange for Bitcoin, creating a decentralized ISP network",
+  "type": "project",
+  "tags": [
+    "internet",
+    "wifi",
+    "bitcoin"
+  ],
+  "slug": "tollgate"
+}

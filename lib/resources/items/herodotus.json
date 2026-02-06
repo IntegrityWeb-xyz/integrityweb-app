@@ -1,0 +1,29 @@
+{
+  "short_description": "Herodotus provides Storage Proofs (specifically using Merkle Mountain Ranges). This allows any sm...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Herodotus",
+  "description": "Herodotus provides Storage Proofs (specifically using Merkle Mountain Ranges). This allows any smart contract on one chain (like Starknet) to trustlessly 'reach back in time' and verify the state of another chain (like Ethereum) without relying on a centralized oracle or human bridge",
+  "type": "protocol",
+  "tags": [
+    "storage-proofs",
+    "cross-chain",
+    "starknet"
+  ],
+  "slug": "herodotus"
+}

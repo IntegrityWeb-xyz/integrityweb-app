@@ -1,0 +1,29 @@
+{
+  "short_description": "A live protocol that allows users to deposit assets and withdraw them to fresh addresses. For AI ...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Privacy Pool",
+  "description": "A live protocol that allows users to deposit assets and withdraw them to fresh addresses. For AI agents, this is a 'Privacy SDK' that allows them to operate with financial autonomy without exposing their entire history",
+  "type": "protocol",
+  "tags": [
+    "starknet",
+    "privacy",
+    "mixnet"
+  ],
+  "slug": "privacy-pool"
+}

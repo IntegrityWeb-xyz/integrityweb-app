@@ -1,0 +1,29 @@
+{
+  "short_description": "By using the Stone Prover (which is now fully open-source), a developer can generate a STARK proo...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Stone Prover",
+  "description": "By using the Stone Prover (which is now fully open-source), a developer can generate a STARK proof on their own machine. This allows an app to prove it performed a calculation correctly without the user having to 'trust' the server.",
+  "type": "sdk",
+  "tags": [
+    "starknet",
+    "zk",
+    "prover"
+  ],
+  "slug": "stone-prover"
+}

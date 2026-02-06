@@ -1,0 +1,28 @@
+{
+  "short_description": "A Bitcoin protocol enhancement that allows for private, static donation addresses—essential for d...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Silent Payments",
+  "description": "A Bitcoin protocol enhancement that allows for private, static donation addresses—essential for dissidents and independent creators.",
+  "type": "protocol",
+  "tags": [
+    "privacy",
+    "bitcoin"
+  ],
+  "slug": "silent-payments"
+}

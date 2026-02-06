@@ -1,0 +1,29 @@
+{
+  "short_description": "A collection of tools that makes it easy to build Bitcoin wallets with advanced features like Des...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "BDK",
+  "description": "A collection of tools that makes it easy to build Bitcoin wallets with advanced features like Descriptor Wallets and Miniscript. This allows developers to write complex 'spending rules' (e.g., 'AI agent can spend X, but owner must sign for Y') that are cryptographically enforced",
+  "type": "sdk",
+  "tags": [
+    "bitcoin",
+    "dev-tool",
+    "wallets"
+  ],
+  "slug": "bdk"
+}

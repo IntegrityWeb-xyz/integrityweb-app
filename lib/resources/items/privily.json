@@ -1,0 +1,29 @@
+{
+  "short_description": "A privacy-first 'neobank' built as a Starknet L3 (appchain). It’s a perfect example of how a spec...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Privily",
+  "description": "A privacy-first 'neobank' built as a Starknet L3 (appchain). It’s a perfect example of how a specialized sub-network can enforce high-integrity privacy rules while settling on a public proof layer.",
+  "type": "dapp",
+  "tags": [
+    "privacy",
+    "banking",
+    "starknet"
+  ],
+  "slug": "privily"
+}

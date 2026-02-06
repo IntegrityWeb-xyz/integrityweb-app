@@ -1,0 +1,29 @@
+{
+  "short_description": "It allows users to keep their Nostr private keys in a remote, secure 'bunker,' signing transactio...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "nsecBunker",
+  "description": "It allows users to keep their Nostr private keys in a remote, secure 'bunker,' signing transactions and messages without ever exposing the key to a potentially compromised device",
+  "type": "wallet",
+  "tags": [
+    "nostr",
+    "security",
+    "keys"
+  ],
+  "slug": "nsecbunker"
+}

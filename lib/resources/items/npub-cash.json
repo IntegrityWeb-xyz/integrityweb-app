@@ -1,0 +1,29 @@
+{
+  "short_description": "A Nostr-native Lightning address provider. It bridges social identity (Nostr) with financial rail...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "npub.cash",
+  "description": "A Nostr-native Lightning address provider. It bridges social identity (Nostr) with financial rails (Bitcoin) seamlessly, creating a 'Sovereign Account' experience",
+  "type": "wallet",
+  "tags": [
+    "nostr",
+    "lightning",
+    "payments"
+  ],
+  "slug": "npub-cash"
+}

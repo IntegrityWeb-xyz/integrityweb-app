@@ -1,0 +1,29 @@
+{
+  "short_description": "zero fees tokenization and Programmable IP licensing primitives with full NFT ERC-721 standarts.",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Mediolano Protocol",
+  "description": "zero fees tokenization and Programmable IP licensing primitives with full NFT ERC-721 standarts.",
+  "type": "protocol",
+  "tags": [
+    "ip",
+    "nft",
+    "tokenization"
+  ],
+  "slug": "mediolano-protocol"
+}

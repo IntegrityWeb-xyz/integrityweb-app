@@ -1,0 +1,29 @@
+{
+  "short_description": "Fedimint is an open-source protocol to custody and transact bitcoin in a community context, built...",
+  "contracts": [],
+  "sepoliaContracts": [],
+  "audits": [],
+  "verified": true,
+  "dotm": false,
+  "links": {
+    "website": "https://example.com"
+  },
+  "teamInfo": {
+    "founded": "2024",
+    "anonymous": false
+  },
+  "tokens": [],
+  "media": {
+    "logoUrl": "/placeholder.jpg",
+    "bannerUrl": "/placeholder.jpg"
+  },
+  "name": "Fedimint",
+  "description": "Fedimint is an open-source protocol to custody and transact bitcoin in a community context, built on a strong foundation of privacy.",
+  "type": "protocol",
+  "tags": [
+    "privacy",
+    "bitcoin",
+    "custody"
+  ],
+  "slug": "fedimint"
+}
