@@ -52,21 +52,19 @@ export function Navigation() {
   return (
     <>
       {/* Top Status Bar - HUD Style */}
-      <div className="fixed top-0 left-0 right-0 z-40 h-7 bg-black/80 backdrop-blur-2xl border-b border-cyan-500/10 flex items-center justify-between px-4 font-mono pointer-events-none select-none">
+      <div className="top-0 left-0 right-0 z-40 h-7 bg-black/40 backdrop-blur-2xl border-b border-cyan-500/10 flex items-center justify-between px-4 font-mono pointer-events-none select-none">
         <div className="flex items-center gap-3 text-[9px] uppercase tracking-[0.25em]">
           <span className="relative flex items-center justify-center w-3 h-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400/40" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
           </span>
-          <span className="text-cyan-400/90 font-medium">INTEGRITY_WEB</span>
-          <span className="text-white/20">|</span>
-          <span className="text-emerald-400/70 hidden sm:inline flex items-center gap-1">
-            <Sparkles className="h-2.5 w-2.5" />
-            VERIFIED
+          <span className="text-cyan-400/90 font-medium">
+            INTEGRITY_WEB
           </span>
+
         </div>
         <div className="flex items-center gap-4 text-[9px] uppercase tracking-wider text-white/50">
-          <span className="hidden sm:inline text-cyan-500/40">NODE::ACTIVE</span>
+          <span className="text-green-500">XYZ</span>
           <span className="text-cyan-400/60 tabular-nums">{new Date().toISOString().split('T')[0]}</span>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { getAllPrimitives } from "@/lib/primitives/data"
 import Link from "next/link"
@@ -9,7 +9,7 @@ export default async function PrimitivesPage() {
 
     return (
         <div className="min-h-screen pb-20 pt-24 text-foreground bg-transparent selection:bg-purple-500/20 selection:text-purple-400">
-            <Navigation />
+
 
             <div className="container mx-auto px-4 max-w-7xl">
                 <TerminalPageHeader

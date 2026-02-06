@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Navigation } from "@/components/navigation"
+
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ShieldCheck, Lock, Fingerprint } from "lucide-react"
 import { SignUp } from "@clerk/nextjs"
@@ -8,7 +8,7 @@ import { SignUp } from "@clerk/nextjs"
 export default function JoinPage() {
   return (
     <div className="min-h-screen bg-transparent text-foreground selection:bg-cyan-500/20">
-      <Navigation />
+
 
       <main className="container mx-auto px-4 pt-24 pb-12 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] overflow-hidden w-full max-w-full">
 

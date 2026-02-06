@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { Metadata } from "next"
 
@@ -29,7 +29,7 @@ export default async function LearnPage() {
 
     return (
         <div className="min-h-screen bg-transparent text-foreground">
-            <Navigation />
+
 
             <main className="pt-24 pb-48">
                 <div className="container mx-auto px-4 mb-2">

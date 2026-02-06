@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Calendar, MapPin, Users, Zap, Video, Terminal, Radio, ExternalLink, Share2, Clock } from "lucide-react"
 import { getEventBySlug } from "@/lib/events/data"
@@ -36,7 +36,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
 
     return (
         <div className="min-h-screen text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary">
-            <Navigation />
+
 
             {/* Ambient Background Glows */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">

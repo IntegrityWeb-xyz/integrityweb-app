@@ -1,6 +1,6 @@
 "use client"
 
-import { Navigation } from "@/components/navigation"
+
 import { Button } from "@/components/ui/button"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { User, Key, Shield, Download, Copy, RefreshCw } from "lucide-react"
@@ -13,7 +13,7 @@ export default function AccountPage() {
 
     return (
         <div className="min-h-screen bg-transparent text-foreground">
-            <Navigation />
+
 
             <main className="container mx-auto px-4 py-24 pb-48">
                 <TerminalPageHeader

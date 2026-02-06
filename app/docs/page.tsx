@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Navigation } from "@/components/navigation"
+
 import { Button } from "@/components/ui/button"
 import { Search, FolderTree, FileCode, ChevronRight, BookOpen, Terminal, FileText, Folder, Shield, Database, Network, Cpu } from "lucide-react"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
@@ -7,7 +7,7 @@ import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-transparent text-foreground selection:bg-cyan-500/20">
-      <Navigation />
+
 
       <main className="container mx-auto px-4 py-24 pb-48">
         <TerminalPageHeader

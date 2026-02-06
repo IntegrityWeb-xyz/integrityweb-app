@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 
-import { Navigation } from "@/components/navigation"
+
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { AgentCapabilities } from "@/components/agentic/agent-capabilities"
 import { SovereignStack } from "@/components/agentic/sovereign-stack"
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AgenticPage() {
     return (
         <div className="min-h-screen bg-transparent text-foreground selection:bg-cyan-500/20">
-            <Navigation />
+
 
             <main className="container mx-auto px-4 py-24 pb-48">
 

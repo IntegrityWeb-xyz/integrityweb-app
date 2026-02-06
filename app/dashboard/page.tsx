@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+
 import { MetricCard } from "@/components/dashboard/metric-card"
 import { ActivityFeed } from "@/components/dashboard/activity-feed"
 import { NetworkChart } from "@/components/dashboard/network-chart"
@@ -18,7 +18,7 @@ import {
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-transparent">
-      <Navigation />
+
 
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}

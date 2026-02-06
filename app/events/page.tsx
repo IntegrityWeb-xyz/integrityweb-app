@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, MapPin, Users, Zap, Video, Terminal, Radio } from "lucide-react"
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
@@ -18,7 +17,6 @@ export default async function EventsPage() {
 
   return (
     <div className="min-h-screen bg-transparent text-foreground">
-      <Navigation />
 
       <main className="container mx-auto px-4 py-24 pb-48">
         <TerminalPageHeader

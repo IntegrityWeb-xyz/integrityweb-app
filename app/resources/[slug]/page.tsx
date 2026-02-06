@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ExternalLink, ShieldCheck, Tag, Globe, Github, Twitter, Layers } from "lucide-react"
 import { getResourceBySlug } from "@/lib/resources/data"
@@ -16,7 +16,7 @@ export default async function ResourcePage({ params }: { params: Promise<{ slug:
 
     return (
         <div className="min-h-screen text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-primary">
-            <Navigation />
+
 
             {/* Ambient Background Glows */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">

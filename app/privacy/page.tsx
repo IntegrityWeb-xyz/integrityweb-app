@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Navigation } from "@/components/navigation"
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
 
   return (
     <div className="min-h-screen bg-transparent">
-      <Navigation />
+
 
       <main className="container mx-auto px-4 py-8">
         {/* Header */}

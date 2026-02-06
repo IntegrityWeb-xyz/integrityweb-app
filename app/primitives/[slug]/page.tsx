@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/navigation"
+
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ExternalLink, Github, Terminal, CheckCircle2, Copy } from "lucide-react"
 import { getPrimitiveBySlug } from "@/lib/primitives/data"
@@ -15,7 +15,7 @@ export default async function PrimitivePage({ params }: { params: Promise<{ slug
 
     return (
         <div className="min-h-screen text-foreground overflow-x-hidden selection:bg-purple-500/20 selection:text-purple-400">
-            <Navigation />
+
 
             {/* Ambient Blueprint Grid */}
             <div className="fixed inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
