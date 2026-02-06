@@ -1,0 +1,20 @@
+{
+    "name": "Stone Prover",
+    "type": "COMPUTE",
+    "status": "STABLE",
+    "description": "Now fully open-source, it allows a developer to generate a STARK proof on their own machine. This allows an app to prove it performed a calculation correctly without the user having to 'trust' the server.",
+    "version": "N/A",
+    "docsUrl": "https://github.com/starkware-libs/stone-prover",
+    "repoUrl": "https://github.com/starkware-libs/stone-prover",
+    "features": [
+        "STARK Proof Generation",
+        "Trustless Calculation",
+        "Open Source"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "docker pull starkware/stone-prover"
+}

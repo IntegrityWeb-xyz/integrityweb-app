@@ -1,0 +1,20 @@
+{
+    "name": "Herodotus",
+    "type": "STORAGE",
+    "status": "BETA",
+    "description": "Provides Storage Proofs (specifically using Merkle Mountain Ranges). This allows any smart contract on one chain (like Starknet) to trustlessly 'reach back in time' and verify the state of another chain (like Ethereum).",
+    "version": "N/A",
+    "docsUrl": "https://docs.herodotus.dev",
+    "repoUrl": "https://github.com/HerodotusDev",
+    "features": [
+        "Storage Proofs",
+        "Cross-Chain Verification",
+        "Merkle Mountain Ranges"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "N/A"
+}

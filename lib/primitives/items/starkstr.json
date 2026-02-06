@@ -1,0 +1,20 @@
+{
+    "name": "Starkstr",
+    "type": "MESSAGING",
+    "status": "EXPERIMENTAL",
+    "description": "A specialized library (Nostr x STARKs) that allows you to verify Nostr event signatures inside a ZK-proof.",
+    "version": "N/A",
+    "docsUrl": "N/A",
+    "repoUrl": "N/A",
+    "features": [
+        "Nostr Verification",
+        "ZK-Proof",
+        "Signature Verification"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "N/A"
+}

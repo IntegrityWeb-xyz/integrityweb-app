@@ -1,0 +1,20 @@
+{
+    "name": "Zapstore",
+    "type": "GOVERNANCE",
+    "status": "BETA",
+    "description": "A decentralized app store built on Nostr. Instead of relying on Apple or Google, developers can distribute software that 'dictators cannot delete'.",
+    "version": "N/A",
+    "docsUrl": "https://zap.store",
+    "repoUrl": "https://github.com/zapstore",
+    "features": [
+        "Decentralized App Store",
+        "Nostr-based",
+        "Censorship Resistant"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "N/A"
+}

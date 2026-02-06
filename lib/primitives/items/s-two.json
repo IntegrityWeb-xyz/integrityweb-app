@@ -1,0 +1,20 @@
+{
+    "name": "S-two",
+    "type": "COMPUTE",
+    "status": "EXPERIMENTAL",
+    "description": "The next-generation STARK prover by StarkWare. It is significantly faster and designed to make verification accessible even on low-power devices.",
+    "version": "N/A",
+    "docsUrl": "https://github.com/starkware-libs/s-two",
+    "repoUrl": "https://github.com/starkware-libs/s-two",
+    "features": [
+        "STARK Prover",
+        "High Performance",
+        "Low-Power Verification"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "cargo install s-two"
+}

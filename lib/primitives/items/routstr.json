@@ -1,0 +1,20 @@
+{
+    "name": "Routstr",
+    "type": "COMPUTE",
+    "status": "BETA",
+    "description": "Start building with Routstr today. Join the decentralized AI revolution. Connect your models, earn Bitcoin, or build censorship-resistant AI apps.",
+    "version": "N/A",
+    "docsUrl": "https://routstr.org",
+    "repoUrl": "N/A",
+    "features": [
+        "Decentralized AI",
+        "Bitcoin Payments",
+        "Censorship Resistant"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "npm install routstr"
+}

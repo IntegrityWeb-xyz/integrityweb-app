@@ -1,0 +1,20 @@
+{
+    "name": "Privily",
+    "type": "IDENTITY",
+    "status": "BETA",
+    "description": "A privacy-first 'neobank' built as a Starknet L3 (appchain). It’s a perfect example of how a specialized sub-network can enforce high-integrity privacy rules while settling on a public proof layer.",
+    "version": "N/A",
+    "docsUrl": "https://privily.io",
+    "repoUrl": "N/A",
+    "features": [
+        "Privacy Neobank",
+        "Starknet L3",
+        "High-Integrity Privacy"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "N/A"
+}

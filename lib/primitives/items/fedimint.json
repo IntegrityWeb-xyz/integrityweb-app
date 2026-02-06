@@ -1,0 +1,20 @@
+{
+    "name": "Fedimint",
+    "type": "GOVERNANCE",
+    "status": "BETA",
+    "description": "Fedimint is an open-source protocol to custody and transact bitcoin in a community context, built on a strong foundation of privacy.",
+    "version": "N/A",
+    "docsUrl": "https://fedimint.org/docs/intro",
+    "repoUrl": "https://github.com/fedimint/fedimint",
+    "features": [
+        "Community Custody",
+        "Privacy",
+        "Chaumian Ecash"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "cargo install fedimint-cli"
+}

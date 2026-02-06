@@ -1,0 +1,20 @@
+{
+    "name": "TollGate",
+    "type": "MESSAGING",
+    "status": "EXPERIMENTAL",
+    "description": "An open-source project that allows individuals to share internet access via their WiFi routers in exchange for Bitcoin, creating a decentralized ISP network.",
+    "version": "N/A",
+    "docsUrl": "https://github.com/tollgate-protocol",
+    "repoUrl": "https://github.com/tollgate-protocol",
+    "features": [
+        "Decentralized ISP",
+        "Bitcoin Payments",
+        "WiFi Sharing"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "N/A"
+}

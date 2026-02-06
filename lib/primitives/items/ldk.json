@@ -1,0 +1,20 @@
+{
+    "name": "LDK",
+    "type": "MESSAGING",
+    "status": "STABLE",
+    "description": "LDK (Lightning Development Kit) is a modular library that allows you to build a full Lightning node into your mobile or web app. It doesn't rely on a central provider like Stripe.",
+    "version": "N/A",
+    "docsUrl": "https://lightningdevkit.org",
+    "repoUrl": "https://github.com/lightningdevkit",
+    "features": [
+        "Lightning Node Library",
+        "Modular",
+        "Non-Custodial"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "cargo install lightning"
+}

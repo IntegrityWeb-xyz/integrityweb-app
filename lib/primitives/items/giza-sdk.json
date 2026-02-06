@@ -1,0 +1,20 @@
+{
+    "name": "Giza SDK",
+    "type": "COMPUTE",
+    "status": "BETA",
+    "description": "For developers building Verifiable AI. It allows you to take a machine learning model and 'compile' it into Cairo, so that an AI agent’s decision-making process is mathematically proven to be honest.",
+    "version": "N/A",
+    "docsUrl": "https://docs.gizatech.xyz",
+    "repoUrl": "https://github.com/gizatechxyz",
+    "features": [
+        "Verifiable AI",
+        "Model Compilation",
+        "Cairo Integration"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "pip install giza-actions"
+}

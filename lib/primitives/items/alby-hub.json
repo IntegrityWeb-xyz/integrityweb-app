@@ -1,0 +1,20 @@
+{
+    "name": "Alby (Hub)",
+    "type": "IDENTITY",
+    "status": "STABLE",
+    "description": "A 'personal sovereign server' that manages both Lightning nodes and Nostr identities.",
+    "version": "N/A",
+    "docsUrl": "https://getalby.com/hub",
+    "repoUrl": "https://github.com/getAlby/hub",
+    "features": [
+        "Lightning Node",
+        "Nostr Identity",
+        "Sovereign Server"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "docker run -p 8080:8080 ghcr.io/getalby/hub:latest"
+}

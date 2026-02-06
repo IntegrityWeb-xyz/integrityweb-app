@@ -1,0 +1,20 @@
+{
+    "name": "Blossom",
+    "type": "STORAGE",
+    "status": "BETA",
+    "description": "A decentralized data storage project (part of the Sovereign Engineering program) that allows users to store personal data on public servers without giving up ownership.",
+    "version": "N/A",
+    "docsUrl": "https://github.com/hzrd149/blossom",
+    "repoUrl": "https://github.com/hzrd149/blossom",
+    "features": [
+        "Decentralized Storage",
+        "Data Ownership",
+        "Public Servers"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "git clone https://github.com/hzrd149/blossom.git"
+}
