@@ -102,21 +102,7 @@ export default async function EventsPage() {
           </div>
         </div>
 
-        {/* Subscribe Section */}
-        <div className="mt-24 p-8 border border-white/10 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-lg text-center font-mono">
-          <h3 className="text-lg font-bold text-white mb-2">SUBSCRIBE_TO_SIGNALS</h3>
-          <p className="text-sm text-muted-foreground mb-6">Receive encrypted transmissions about upcoming protocol events.</p>
-          <div className="max-w-md mx-auto flex gap-2">
-            <input
-              type="email"
-              placeholder="ENTER_EMAIL_HASH"
-              className="flex-1 bg-black/50 border border-white/10 rounded px-4 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors placeholder:text-white/20"
-            />
-            <Button variant="default" className="bg-primary text-black hover:bg-cyan-400 font-bold">
-              INIT
-            </Button>
-          </div>
-        </div>
+
 
       </main>
     </div>

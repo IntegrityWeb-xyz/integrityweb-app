@@ -129,7 +129,7 @@ export default async function Home() {
             </Link>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {quotes.slice(0, 3).map((quote, i) => (
+            {quotes.sort(() => Math.random() - 0.5).slice(0, 3).map((quote, i) => (
               <QuoteCard key={i} quote={quote} />
             ))}
           </div>

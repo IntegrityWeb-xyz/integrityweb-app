@@ -12,10 +12,6 @@ export function QuoteCard({ quote }: QuoteCardProps) {
             {/* Header */}
             <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                    {/* Avatar */}
-                    <div className="w-10 h-10 rounded-full bg-zinc-800 overflow-hidden border border-white/10">
-                        <img src={quote.avatar} alt={quote.author} className="w-full h-full object-cover" />
-                    </div>
                     {/* Name/Handle */}
                     <div className="flex flex-col">
                         <div className="flex items-center gap-1">

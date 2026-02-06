@@ -74,9 +74,11 @@ export function ResourceCard({ resource }: ResourceCardProps) {
                     )}
                 </div>
 
-                <h3 className="text-lg font-medium text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                    {resource.name}
-                </h3>
+                <Link href={`/resources/${resource.slug}`} className="block focus:outline-none">
+                    <h3 className="text-lg font-medium text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                        {resource.name}
+                    </h3>
+                </Link>
 
                 <p className="text-sm text-muted-foreground leading-relaxed mb-6 line-clamp-3">
                     {resource.description}

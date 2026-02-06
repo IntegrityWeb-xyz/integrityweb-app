@@ -24,7 +24,7 @@ export default function UserGuidePage() {
                 <div className="grid lg:grid-cols-4 gap-8">
                     {/* Sidebar Navigation */}
                     <div className="lg:col-span-1 hidden lg:block">
-                        <div className="sticky top-24 space-y-8">
+                        <div className="space-y-8">
                             <div className="border border-white/10 bg-zinc-950/50 rounded-lg p-4">
                                 <div className="font-mono text-xs text-muted-foreground mb-4 uppercase tracking-wider">// TABLE_OF_CONTENTS</div>
                                 <nav className="space-y-2 font-mono text-sm">

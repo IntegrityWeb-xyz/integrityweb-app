@@ -1,0 +1,15 @@
+{
+    "slug": "story-buildathon-demo-day",
+    "type": "HACKATHON",
+    "title": "Surreal World Demo Day",
+    "date": "2026.04.15",
+    "time": "16:00 UTC",
+    "format": "ONLINE_UPLINK",
+    "location": "REMOTE",
+    "description": "Showcase of the best Programmable IP applications built during the Surreal World Assets Buildathon.",
+    "attendees": "500+ BUILDERS",
+    "iconName": "Video",
+    "status": "REGISTRATION_OPEN",
+    "color": "text-emerald-400",
+    "content": "Join us for the Surreal World Demo Day, where the top teams from the Surreal World Assets Buildathon will present their projects."
+}

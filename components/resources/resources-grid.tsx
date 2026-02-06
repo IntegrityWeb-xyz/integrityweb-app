@@ -6,6 +6,13 @@ import { ResourceCard } from "@/components/resources/resource-card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Search, Terminal, Filter } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
 
 interface ResourcesGridProps {
     initialResources: ResourceItem[];
@@ -26,11 +33,12 @@ const CATEGORIES = [
 export function ResourcesGrid({ initialResources }: ResourcesGridProps) {
     const [activeCategory, setActiveCategory] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
+    const [sortOrder, setSortOrder] = useState("random");
     const [currentPage, setCurrentPage] = useState(1);
 
     // Filter resources based on category and search query
     const filteredResources = useMemo(() => {
-        return initialResources.filter((resource) => {
+        const filtered = initialResources.filter((resource) => {
             // 1. Filter by category
             const matchesCategory = activeCategory === "all" || resource.type === activeCategory;
 
@@ -43,7 +51,18 @@ export function ResourcesGrid({ initialResources }: ResourcesGridProps) {
 
             return matchesCategory && matchesSearch;
         });
-    }, [initialResources, activeCategory, searchQuery]);
+
+        // 3. Sort
+        if (sortOrder === "az") {
+            return [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+        } else if (sortOrder === "za") {
+            return [...filtered].sort((a, b) => b.name.localeCompare(a.name));
+        }
+
+        // Default is "random" which really just means "original order from props" 
+        // (which we shuffled on the server)
+        return filtered;
+    }, [initialResources, activeCategory, searchQuery, sortOrder]);
 
     // Pagination logic
     const totalPages = Math.ceil(filteredResources.length / ITEMS_PER_PAGE);
@@ -66,10 +85,12 @@ export function ResourcesGrid({ initialResources }: ResourcesGridProps) {
     return (
         <div className="space-y-8">
             {/* Filters and Search Bar Container */}
-            <div className="flex flex-col lg:flex-row gap-5 items-start lg:items-center justify-between sticky top-4 z-10 bg-black/40 backdrop-blur-md p-2 rounded-lg border border-white/10 shadow-xl">
+            <div className="flex flex-col lg:flex-row gap-5 items-start lg:items-center justify-between bg-black/40 backdrop-blur-md p-2 rounded-lg border border-white/10 shadow-xl">
 
-                {/* Category Tabs - Monospace System Tabs */}
-                <div className="flex overflow-x-auto gap-0.5 no-scrollbar w-full lg:w-auto p-1 bg-white/5 rounded border border-white/5">
+
+
+                {/* Category Tabs - Monospace System Tabs (Desktop) */}
+                <div className="hidden lg:flex overflow-x-auto gap-0.5 no-scrollbar w-full lg:w-auto p-1 bg-white/5 rounded border border-white/5">
                     {CATEGORIES.map((category) => (
                         <button
                             key={category.id}
@@ -87,19 +108,50 @@ export function ResourcesGrid({ initialResources }: ResourcesGridProps) {
                     ))}
                 </div>
 
-                {/* Search Input - Command Line Style */}
-                <div className="relative w-full lg:w-72 group">
-                    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-cyan-500 transition-colors">
-                        <Terminal className="h-3.5 w-3.5" />
+                {/* Mobile Filter & Search Group */}
+                <div className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+                    {/* Category Select (Mobile Only) */}
+                    <div className="lg:hidden w-full sm:w-[160px]">
+                        <Select value={activeCategory} onValueChange={handleCategoryChange}>
+                            <SelectTrigger className="w-full h-10 bg-black/50 border-white/10 text-xs font-mono">
+                                <SelectValue placeholder="CATEGORY" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {CATEGORIES.map((category) => (
+                                    <SelectItem key={category.id} value={category.id}>
+                                        {category.label}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
                     </div>
-                    <Input
-                        placeholder="QUERY_DB..."
-                        value={searchQuery}
-                        onChange={handleSearchChange}
-                        className="pl-9 h-10 rounded-md bg-black/50 border-white/10 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 font-mono text-xs placeholder:text-muted-foreground/50"
-                    />
-                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                        <div className="w-1.5 h-4 bg-cyan-500/50 animate-pulse hidden group-focus-within:block" />
+
+                    <div className="relative w-full lg:w-64 group">
+                        <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-cyan-500 transition-colors">
+                            <Terminal className="h-3.5 w-3.5" />
+                        </div>
+                        <Input
+                            placeholder="QUERY_DB..."
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                            className="pl-9 h-10 rounded-md bg-black/50 border-white/10 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 font-mono text-xs placeholder:text-muted-foreground/50"
+                        />
+                        <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                            <div className="w-1.5 h-4 bg-cyan-500/50 animate-pulse hidden group-focus-within:block" />
+                        </div>
+                    </div>
+
+                    <div className="w-full sm:w-[140px]">
+                        <Select value={sortOrder} onValueChange={setSortOrder}>
+                            <SelectTrigger className="w-full h-10 bg-black/50 border-white/10 text-xs font-mono">
+                                <SelectValue placeholder="SORT_BY" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="random">RANDOM</SelectItem>
+                                <SelectItem value="az">A-Z</SelectItem>
+                                <SelectItem value="za">Z-A</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
             </div>

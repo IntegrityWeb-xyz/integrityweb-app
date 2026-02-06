@@ -1,0 +1,15 @@
+{
+    "slug": "ethdenver-2026",
+    "type": "CONFERENCE",
+    "title": "ETHDenver 2026",
+    "date": "2026.02.17",
+    "time": "09:00 - 18:00 MST",
+    "format": "IN_REAL_LIFE",
+    "location": "DENVER",
+    "description": "The largest implementation-focused Web3 innovation festival in the world. Join us for workshops on Programmable IP.",
+    "attendees": "20,000+ BUIDLERS",
+    "iconName": "Users",
+    "status": "REGISTRATION_OPEN",
+    "color": "text-pink-500",
+    "content": "ETHDenver is the largest Web3 BUIDLathon in the world for Ethereum and other blockchain protocol enthusiasts, designers and developers."
+}

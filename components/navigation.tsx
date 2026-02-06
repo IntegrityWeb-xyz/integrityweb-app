@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ShieldCheck, Globe, BookOpen, Cpu, Bot, Lock, Handshake, Menu, X, ChevronRight, Zap, Network } from "lucide-react"
+import { Globe, BookOpen, Cpu, Bot, Lock, Menu, X, ChevronRight, Zap, Network, Home, Sparkles } from "lucide-react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
@@ -21,6 +21,16 @@ const navItems = [
 export function Navigation() {
   const pathname = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Track scroll for subtle visual feedback
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Close sidebar on route change
   useEffect(() => {
@@ -42,61 +52,92 @@ export function Navigation() {
   return (
     <>
       {/* Top Status Bar - HUD Style */}
-      <div className="fixed top-0 left-0 right-0 z-40 h-6 bg-black/70 backdrop-blur-xl border-b border-white/5 flex items-center justify-between px-3 font-mono pointer-events-none select-none">
-        <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.2em]">
-          <span className="text-cyan-400 animate-pulse">◆</span>
-          <span className="text-cyan-500/70">INTEGRITY_WEB</span>
-          <span className="text-white/30 hidden sm:inline">|</span>
-          <span className="text-emerald-400/60 hidden sm:inline">VERIFIED</span>
+      <div className="fixed top-0 left-0 right-0 z-40 h-7 bg-black/80 backdrop-blur-2xl border-b border-cyan-500/10 flex items-center justify-between px-4 font-mono pointer-events-none select-none">
+        <div className="flex items-center gap-3 text-[9px] uppercase tracking-[0.25em]">
+          <span className="relative flex items-center justify-center w-3 h-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400/40" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
+          </span>
+          <span className="text-cyan-400/90 font-medium">INTEGRITY_WEB</span>
+          <span className="text-white/20">|</span>
+          <span className="text-emerald-400/70 hidden sm:inline flex items-center gap-1">
+            <Sparkles className="h-2.5 w-2.5" />
+            VERIFIED
+          </span>
         </div>
-        <div className="flex items-center gap-3 text-[9px] uppercase tracking-wider text-white/40">
-          <span className="hidden sm:inline">NODE::ACTIVE</span>
-          <span className="text-cyan-500/50">{new Date().toISOString().split('T')[0]}</span>
+        <div className="flex items-center gap-4 text-[9px] uppercase tracking-wider text-white/50">
+          <span className="hidden sm:inline text-cyan-500/40">NODE::ACTIVE</span>
+          <span className="text-cyan-400/60 tabular-nums">{new Date().toISOString().split('T')[0]}</span>
         </div>
       </div>
 
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-md md:hidden transition-opacity duration-300"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Mobile Sidebar */}
       <aside className={cn(
-        "fixed top-0 left-0 bottom-0 z-[70] w-72 bg-black/95 backdrop-blur-2xl border-r border-white/10 transform transition-transform duration-300 ease-out md:hidden flex flex-col",
+        "fixed top-0 left-0 bottom-0 z-[70] w-80 bg-gradient-to-b from-zinc-950 to-black backdrop-blur-2xl border-r border-white/10 transform transition-all duration-400 ease-out md:hidden flex flex-col shadow-2xl shadow-cyan-500/5",
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         {/* Animated Border Gradient */}
-        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-zinc-500/50 to-transparent opacity-50" />
+        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-cyan-500/20 via-zinc-500/30 to-cyan-500/20" />
+
+        {/* Glow effect */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Sidebar Header */}
-        <div className="h-14 border-b border-white/5 flex items-center justify-between px-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/0 via-zinc-900/50 to-zinc-900/0 animate-shimmer pointer-events-none" />
+        <div className="h-16 border-b border-white/5 flex items-center justify-between px-5 relative overflow-hidden bg-black/50">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
 
-
-          <div className="flex items-center gap-2 relative z-10">
-            <div className="relative w-5 h-5">
+          <div className="flex items-center gap-3 relative z-10">
+            <div className="relative w-7 h-7 rounded-lg bg-cyan-500/10 flex items-center justify-center">
               <Image
                 src="/icon.svg"
                 alt="Integrity Web Logo"
-                fill
+                width={20}
+                height={20}
                 className="object-contain"
               />
             </div>
-            <span className="font-mono text-[11px] uppercase tracking-widest text-white/90">INTEGRITY WEB</span>
+            <div className="flex flex-col">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-white/90 font-medium">INTEGRITY WEB</span>
+              <span className="font-mono text-[8px] text-cyan-500/50 uppercase tracking-wider">PROTOCOL v1.0</span>
+            </div>
           </div>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/5 text-white/60 relative z-10"
+            className="w-9 h-9 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-white/60 hover:text-white relative z-10 transition-all duration-200 hover:scale-105"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Sidebar Nav */}
-        <nav className="p-3 space-y-1 flex-1 overflow-y-auto">
+        <nav className="p-4 space-y-1.5 flex-1 overflow-y-auto">
+          {/* Home Link */}
+          <Link
+            href="/"
+            className={cn(
+              "relative flex items-center gap-3 px-4 py-3.5 rounded-xl font-mono transition-all duration-200 group overflow-hidden",
+              pathname === "/"
+                ? "bg-gradient-to-r from-cyan-500/15 to-cyan-500/5 text-cyan-400 shadow-lg shadow-cyan-500/10"
+                : "text-white/60 hover:text-white hover:bg-white/5"
+            )}
+          >
+            {pathname === "/" && (
+              <div className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.8)]" />
+            )}
+            <Home className="h-4 w-4 shrink-0 relative z-10" />
+            <span className="text-[11px] uppercase tracking-widest font-medium relative z-10">HOME</span>
+          </Link>
+
+          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-3" />
+
           {navItems.map((item) => {
             const isActive = pathname === item.href || pathname.startsWith(item.href + "/")
             return (
@@ -104,29 +145,29 @@ export function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative flex items-center gap-3 px-3 py-3 rounded-lg font-mono transition-all group overflow-hidden",
+                  "relative flex items-center gap-3 px-4 py-3.5 rounded-xl font-mono transition-all duration-200 group overflow-hidden",
                   isActive
-                    ? "bg-cyan-500/10 text-cyan-400"
+                    ? "bg-gradient-to-r from-cyan-500/15 to-cyan-500/5 text-cyan-400 shadow-lg shadow-cyan-500/10"
                     : "text-white/60 hover:text-white hover:bg-white/5"
                 )}
               >
-                {/* Subtle gradient hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                {/* Hover gradient sweep */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
 
                 {/* Active indicator */}
                 {isActive && (
-                  <div className="absolute left-0 top-1/4 bottom-1/4 w-[2px] rounded-r bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+                  <div className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.8)]" />
                 )}
 
-                <span className="text-[9px] text-cyan-600/70 w-4 relative z-10">{item.code}</span>
+                <span className="text-[9px] text-cyan-500/50 w-5 relative z-10 font-medium">{item.code}</span>
                 <item.icon className="h-4 w-4 shrink-0 relative z-10" />
                 <div className="flex-1 min-w-0 relative z-10">
-                  <div className="text-[11px] uppercase tracking-widest">{item.label}</div>
-                  <div className="text-[9px] text-white/30 truncate">{item.desc}</div>
+                  <div className="text-[11px] uppercase tracking-widest font-medium">{item.label}</div>
+                  <div className="text-[9px] text-white/30 truncate mt-0.5">{item.desc}</div>
                 </div>
                 <ChevronRight className={cn(
-                  "h-3 w-3 opacity-0 transition-opacity relative z-10",
-                  isActive ? "opacity-100" : "group-hover:opacity-50"
+                  "h-3.5 w-3.5 transition-all duration-200 relative z-10",
+                  isActive ? "opacity-100 text-cyan-400" : "opacity-0 group-hover:opacity-50 group-hover:translate-x-1"
                 )} />
               </Link>
             )
@@ -134,49 +175,53 @@ export function Navigation() {
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-white/5 relative">
+        <div className="p-5 border-t border-white/5 relative bg-black/30">
           <SignedOut>
             <Link href="/join" onClick={() => setSidebarOpen(false)}>
-              <Button className="w-full h-11 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-400 border border-cyan-500/30 font-mono text-[11px] uppercase tracking-widest relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1s_infinite]" />
+              <Button className="w-full h-12 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 hover:from-cyan-500/30 hover:to-cyan-600/30 text-cyan-400 border border-cyan-500/30 font-mono text-[11px] uppercase tracking-widest relative overflow-hidden group rounded-xl transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/20">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
                 <Zap className="h-4 w-4 mr-2" />
-                CONNECT
+                CONNECT TO NETWORK
               </Button>
             </Link>
           </SignedOut>
           <SignedIn>
-            <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5">
+            <div className="flex items-center gap-4 px-4 py-3 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/5">
               <UserButton afterSignOutUrl="/" />
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-white/80 uppercase">CONNECTED</span>
-                <span className="font-mono text-[8px] text-cyan-500/50">SECURE_LINK</span>
+                <span className="font-mono text-[10px] text-white/80 uppercase font-medium">CONNECTED</span>
+                <span className="font-mono text-[8px] text-cyan-500/60">SECURE_LINK::ACTIVE</span>
               </div>
             </div>
           </SignedIn>
         </div>
       </aside>
 
-      {/* Bottom Navigation Bar */}
-      <header className="fixed bottom-4 left-4 right-4 z-50 flex justify-center pointer-events-none">
-        <div className="w-full max-w-5xl bg-zinc-950/50 backdrop-blur-2xl border border-white/10 group/nav rounded-2xl overflow-hidden shadow-2xl pointer-events-auto">
-          {/* Subtle animated border gradient */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/50 to-transparent opacity-50 group-hover/nav:opacity-100 transition-opacity" />
-          <div className="absolute -top-[1px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent w-1/2 animate-[shimmer_3s_infinite]" />
+      {/* Bottom Navigation Bar - Full Width */}
+      <header className={cn(
+        "fixed bottom-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "translate-y-0" : "translate-y-0"
+      )}>
+        {/* Main Navigation Container */}
+        <div className="w-full bg-gradient-to-t from-black via-zinc-950/98 to-zinc-950/95 backdrop-blur-2xl border-t border-white/10 shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.8)]">
+          {/* Animated top border glow */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+          <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent animate-pulse" />
 
           <div className="flex items-stretch">
-            {/* Mobile: Logo + Spacer + Start + Connect */}
-            <div className="flex md:hidden items-center flex-1 pr-1">
+            {/* Mobile: Compact Navigation */}
+            <div className="flex md:hidden items-center w-full">
               {/* Logo */}
               <Link
                 href="/"
                 className={cn(
-                  "flex items-center justify-center w-14 h-14 border-r border-white/5 transition-colors",
+                  "flex items-center justify-center w-16 h-16 border-r border-white/5 transition-all duration-200",
                   pathname === "/"
                     ? "bg-cyan-500/10 text-cyan-400"
-                    : "text-white/40 hover:text-cyan-400"
+                    : "text-white/40 hover:text-cyan-400 hover:bg-white/5"
                 )}
               >
-                <div className="relative w-6 h-6">
+                <div className="relative w-7 h-7">
                   <Image
                     src="/icon.svg"
                     alt="Start"
@@ -189,42 +234,47 @@ export function Navigation() {
               {/* Spacer */}
               <div className="flex-1" />
 
-              {/* Start Button (Menu) */}
+              {/* Menu Button */}
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="flex items-center gap-2 px-4 h-14 text-white/60 hover:text-cyan-400 transition-colors border-l border-white/5 hover:bg-white/5 group relative overflow-hidden"
+                className="flex items-center gap-2 px-5 h-16 text-white/60 hover:text-cyan-400 transition-all duration-200 border-l border-white/5 hover:bg-white/5 group relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-500/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
-                <Menu className="h-4 w-4" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Menu className="h-5 w-5" />
+                <span className="font-mono text-[9px] uppercase tracking-wider hidden xs:inline">MENU</span>
               </button>
 
               {/* Connect Button */}
               <SignedOut>
-                <Link href="/join" className="flex items-center gap-2 px-4 h-14 text-cyan-400 border-l border-white/5 hover:bg-cyan-500/5 transition-colors group relative overflow-hidden">
-                  <span className="font-mono text-[10px]">CONNECT</span>
+                <Link href="/join" className="flex items-center gap-2 px-5 h-16 text-cyan-400 border-l border-white/5 hover:bg-cyan-500/10 transition-all duration-200 group relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="font-mono text-[10px] uppercase tracking-wider font-medium">CONNECT</span>
                   <Zap className="h-4 w-4" />
                 </Link>
               </SignedOut>
               <SignedIn>
-                <div className="px-4 h-14 flex items-center border-l border-white/5">
+                <div className="px-5 h-16 flex items-center border-l border-white/5 bg-white/5">
                   <UserButton afterSignOutUrl="/" />
                 </div>
               </SignedIn>
             </div>
 
-            {/* Desktop: Full Nav */}
-            <div className="hidden md:flex items-stretch w-full justify-between bg-zinc-900/30 backdrop-blur-2xl">
+            {/* Desktop: Full Navigation */}
+            <div className="hidden md:flex items-stretch w-full">
               {/* Home */}
               <Link
                 href="/"
                 className={cn(
-                  "flex items-center gap-2 px-6 py-3 border-r border-white/5 transition-colors hover:bg-white/5",
+                  "flex items-center gap-3 px-6 py-4 border-r border-white/5 transition-all duration-200 group relative overflow-hidden",
                   pathname === "/"
                     ? "bg-cyan-500/10 text-cyan-400"
-                    : "text-white/60 hover:text-cyan-400"
+                    : "text-white/60 hover:text-cyan-400 hover:bg-white/5"
                 )}
               >
-                <div className="relative w-5 h-5">
+                {pathname === "/" && (
+                  <div className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
+                )}
+                <div className="relative w-6 h-6 group-hover:scale-110 transition-transform duration-200">
                   <Image
                     src="/icon.svg"
                     alt="Start"
@@ -232,7 +282,7 @@ export function Navigation() {
                     className="object-contain"
                   />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest">Start</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest font-medium">Start</span>
               </Link>
 
               {/* Nav Items - Centered */}
@@ -244,48 +294,62 @@ export function Navigation() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "relative flex items-center gap-2 px-6 py-3 font-mono text-[10px] uppercase tracking-widest border-x border-white/0 hover:border-white/5 transition-all group",
+                        "relative flex items-center gap-2.5 px-5 lg:px-6 py-4 font-mono text-[10px] uppercase tracking-widest transition-all duration-200 group",
                         isActive
-                          ? "bg-cyan-500/5 text-cyan-400"
+                          ? "bg-cyan-500/10 text-cyan-400"
                           : "text-white/50 hover:text-cyan-400 hover:bg-white/5"
                       )}
                     >
+                      {/* Hover gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+
+                      {/* Active indicator */}
                       {isActive && (
-                        <div className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+                        <div className="absolute bottom-0 left-4 right-4 h-[2px] bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
                       )}
-                      <span className="text-[8px] text-cyan-600/40 group-hover:text-cyan-500/60 transition-colors">{item.code}</span>
-                      <item.icon className="h-4 w-4 opacity-70 group-hover:opacity-100" />
-                      <span>{item.label}</span>
+
+                      <span className="text-[8px] text-cyan-600/50 group-hover:text-cyan-500/70 transition-colors font-medium">{item.code}</span>
+                      <item.icon className="h-4 w-4 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-200" />
+                      <span className="font-medium">{item.label}</span>
                     </Link>
                   )
                 })}
               </nav>
 
-              {/* Auth */}
-              <div className="flex items-center border-l border-white/5 bg-black/20">
+              {/* Auth Section */}
+              <div className="flex items-center border-l border-white/5 bg-black/30">
                 <SignedOut>
-                  <Link href="/join" className="flex items-center gap-2 px-2 py-3 text-cyan-400 hover:bg-cyan-500/10 transition-colors">
-
-                    <span className="font-mono text-[10px]">CONNECT</span>
-                    <Zap className="h-4 w-4 pr-2" />
+                  <Link href="/join" className="flex items-center gap-3 px-6 py-4 text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200 group relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="font-mono text-[10px] uppercase tracking-wider font-medium">CONNECT</span>
+                    <Zap className="h-4 w-4 group-hover:animate-pulse" />
                   </Link>
                 </SignedOut>
                 <SignedIn>
-                  <div className="px-5 py-2">
+                  <div className="px-6 py-3 flex items-center gap-3">
                     <UserButton afterSignOutUrl="/" />
+                    <div className="flex flex-col">
+                      <span className="font-mono text-[9px] text-white/60 uppercase">VERIFIED</span>
+                    </div>
                   </div>
                 </SignedIn>
               </div>
             </div>
           </div>
 
-          {/* Status line */}
-          <div className="h-4 bg-black/50 border-t border-white/5 flex items-center justify-between px-4 font-mono text-[6px] uppercase tracking-widest text-cyan-500/30">
-            <span>PROOF_REPLACES_TRUST</span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-1 H-1 rounded-full bg-emerald-500/70 animate-pulse" />
-              ZK_VERIFIED
-            </span>
+          {/* Status Bar */}
+          <div className="h-5 bg-black/60 border-t border-white/5 flex items-center justify-between px-6 font-mono text-[8px] uppercase tracking-[0.2em]">
+            <span className="text-cyan-500/40">PROOF_REPLACES_TRUST</span>
+            <div className="flex items-center gap-4">
+              <span className="text-white/30 hidden sm:inline">LATENCY::2ms</span>
+              <span className="flex items-center gap-2 text-emerald-400/60">
+                <span className="relative flex items-center justify-center w-2 h-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/40" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                </span>
+                ZK_VERIFIED
+              </span>
+            </div>
           </div>
         </div>
       </header>

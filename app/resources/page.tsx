@@ -24,7 +24,7 @@ export default async function ResourcesPage() {
         </section>
 
         {/* Resources Grid */}
-        <ResourcesGrid initialResources={resources} />
+        <ResourcesGrid initialResources={resources.sort(() => Math.random() - 0.5)} />
 
       </main>
     </div>
