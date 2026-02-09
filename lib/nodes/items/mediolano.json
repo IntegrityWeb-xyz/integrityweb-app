@@ -1,0 +1,15 @@
+{
+    "name": "Mediolano",
+    "type": "TOKENIZATION",
+    "status": "ACTIVE",
+    "color": "text-blue-400",
+    "description": "Mediolano is programmable IP provider with zero fees, powered on Starknet",
+    "founded": "2024",
+    "website": "https://mediolano.xyz",
+    "twitter": "https://x.com/mediolanoapp",
+    "github": "https://github.com/mediolano-app",
+    "stats": {
+        "latency": "24ms",
+        "proposals": 12
+    }
+}

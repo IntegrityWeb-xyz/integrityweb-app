@@ -1,0 +1,15 @@
+{
+    "name": "ChipiPay",
+    "type": "PAYMENTS",
+    "status": "SYNCED",
+    "color": "text-green-400",
+    "description": "Chipipay offer frictionless web3 experience with invisible wallet, paymaster transactions.",
+    "founded": "2023",
+    "website": "https://chipipay.com",
+    "twitter": "https://twitter.com/hichipipay",
+    "github": "https://github.com/hipchipipay",
+    "stats": {
+        "latency": "8ms",
+        "uptime": "99.95%"
+    }
+}
