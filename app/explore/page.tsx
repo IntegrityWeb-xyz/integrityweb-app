@@ -1,46 +1,22 @@
 import { TerminalPageHeader } from "@/components/ui/terminal-page-header"
 import { Button } from "@/components/ui/button"
-import { Globe, Search, Filter, Database, Server, Shield, Cpu, ExternalLink } from "lucide-react"
+import { ExternalLink, Zap, Grid3x3, Code2, Cpu } from "lucide-react"
 import { getAllResources } from "@/lib/resources/data"
+import { getAllPrimitives } from "@/lib/primitives/data"
+import { getAllNodes } from "@/lib/nodes/data"
 import { RecentResourcesCarousel } from "@/components/resources/recent-resources-carousel"
+import { PrimitivesShowcase } from "@/components/primitives/primitives-showcase"
+import { NodesGrid } from "@/components/nodes/nodes-grid"
+import { ResourcesGrid } from "@/components/resources/resources-grid"
 import Link from "next/link"
 import { ResourceCard } from "@/components/resources/resource-card"
 
-const networkStats = [
-  {
-    title: "Sovereign Money Layer",
-    type: "BITCOIN",
-    desc: "The decentralized hard asset foundation for the global economy.",
-    stats: "650 EH/s HASHRATE",
-    icon: Database
-  },
-  {
-    title: "Sovereign Identity",
-    type: "NOSTR / DID",
-    desc: "Censorship-resistant profiles and social graphs owned by users.",
-    stats: "2M+ IDENTITIES",
-    icon: Shield
-  },
-  {
-    title: "Verifiable Compute",
-    type: "ZK-STARKS",
-    desc: "Trustless execution verification for AI agents and smart contracts.",
-    stats: "PROOFS: VALID",
-    icon: Cpu
-  },
-  {
-    title: "Freedom Network",
-    type: "TOR / P2P",
-    desc: "Anonymity layer preventing surveillance and traffic analysis.",
-    stats: "7,000+ RELAYS",
-    icon: Globe
-  },
-]
-
 export default async function ExplorePage() {
   const resources = await getAllResources();
+  const primitives = getAllPrimitives();
+  const nodes = getAllNodes();
+  
   const agentResources = resources.filter(r => r.type === 'agent').slice(0, 4);
-  const otherResources = resources.filter(r => r.type !== 'agent').slice(0, 4);
 
   return (
     <div className="min-h-screen pb-20 pt-24">
@@ -60,7 +36,7 @@ export default async function ExplorePage() {
           <RecentResourcesCarousel resources={resources} />
         </section>
 
-        {/* Featured Agents Grid */}
+        {/* Featured Agents Grid 
         <section className="mb-24">
           <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
             <div className="flex items-center gap-3">
@@ -88,9 +64,82 @@ export default async function ExplorePage() {
               </div>
             )}
           </div>
+        </section>*/}
+
+        {/* Primitives Section */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Grid3x3 className="w-5 h-5 text-emerald-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Core Primitives
+              </h2>
+            </div>
+            <Link href="/primitives">
+              <Button variant="ghost" size="sm" className="text-xs font-mono text-muted-foreground hover:text-emerald-400">
+                VIEW_ALL_PRIMITIVES <ExternalLink className="ml-2 w-3 h-3" />
+              </Button>
+            </Link>
+          </div>
+
+          {primitives.length > 0 ? (
+            <PrimitivesShowcase primitives={primitives} />
+          ) : (
+            <div className="h-32 flex items-center justify-center border border-dashed border-white/10 rounded-xl bg-white/5">
+              <p className="font-mono text-sm text-muted-foreground">NO_PRIMITIVES_AVAILABLE</p>
+            </div>
+          )}
         </section>
 
-        {/* Network Infrastructure section removed as it contained mock data */}
+        {/* Nodes Section */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Zap className="w-5 h-5 text-purple-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                Network Nodes
+              </h2>
+            </div>
+            <Link href="/nodes">
+              <Button variant="ghost" size="sm" className="text-xs font-mono text-muted-foreground hover:text-purple-400">
+                VIEW_ALL_NODES <ExternalLink className="ml-2 w-3 h-3" />
+              </Button>
+            </Link>
+          </div>
+
+          {nodes.length > 0 ? (
+            <NodesGrid nodes={nodes} />
+          ) : (
+            <div className="h-32 flex items-center justify-center border border-dashed border-white/10 rounded-xl bg-white/5">
+              <p className="font-mono text-sm text-muted-foreground">NO_NODES_DETECTED</p>
+            </div>
+          )}
+        </section>
+
+        {/* Resources Section */}
+        <section className="mb-24">
+          <div className="flex items-center justify-between mb-8 px-1 border-b border-white/5 pb-4">
+            <div className="flex items-center gap-3">
+              <Code2 className="w-5 h-5 text-blue-400" />
+              <h2 className="text-xl font-medium tracking-tight text-white">
+                All Resources
+              </h2>
+            </div>
+            <Link href="/resources">
+              <Button variant="ghost" size="sm" className="text-xs font-mono text-muted-foreground hover:text-blue-400">
+                VIEW_FULL_CATALOG <ExternalLink className="ml-2 w-3 h-3" />
+              </Button>
+            </Link>
+          </div>
+
+          {resources.length > 0 ? (
+            <ResourcesGrid initialResources={resources} />
+          ) : (
+            <div className="h-32 flex items-center justify-center border border-dashed border-white/10 rounded-xl bg-white/5">
+              <p className="font-mono text-sm text-muted-foreground">NO_RESOURCES_FOUND</p>
+            </div>
+          )}
+        </section>
 
       </div>
     </div>
