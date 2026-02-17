@@ -1,0 +1,20 @@
+{
+    "name": "Bitcoin",
+    "type": "Cryptocurrency",
+    "status": "Active",
+    "description": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without the need for intermediaries. It was created in 2009 by an unknown person or group of people using the pseudonym Satoshi Nakamoto. Bitcoin operates on a blockchain, which is a distributed ledger that records all transactions across a network of computers. It is often referred to as digital gold due to its limited supply and store of value properties.",
+    "version": "30.2",
+    "docsUrl": "https://github.com/bitcoin/bitcoin",
+    "repoUrl": "https://github.com/bitcoin/bitcoin",
+    "features": [
+        "Self-Sovereign",
+        "Blockchain",
+        "De"
+    ],
+    "stats": {
+        "downloads": "N/A",
+        "stars": "N/A",
+        "dependents": "N/A"
+    },
+    "installCommand": "git clone https://github.com/bitcoin/bitcoin.git"
+}
